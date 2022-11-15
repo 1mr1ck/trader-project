@@ -1,11 +1,11 @@
 package com.example.trader.service;
 
-import com.example.trader.board.Board;
-import com.example.trader.board.BoardRepository;
+import com.example.trader.domain.board.Board;
+import com.example.trader.domain.board.BoardRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.example.trader.board.BoardDto;
+import com.example.trader.domain.board.BoardDto;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
