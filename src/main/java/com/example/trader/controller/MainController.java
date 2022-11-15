@@ -42,4 +42,9 @@ public class MainController {
     public String product() {
         return "product";
     }
+
+    @RequestMapping("/createProduct")
+    public String createProduct() {
+        return "createProduct";
+    }
 }

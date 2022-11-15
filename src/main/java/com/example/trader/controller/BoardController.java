@@ -31,6 +31,7 @@ public class BoardController {
         Board board = service.readBoardByB_no(b_no);
         return board;
     }
+
     //getBoardAll
     @GetMapping("/v1/search/boardAll")
     public List<Board> getBoardAll(){
