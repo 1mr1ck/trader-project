@@ -22,5 +22,6 @@ public class ProductController {
         service.createProduct(productDto);
     }
 
-
+    // GetProduct
+//    @GetMapping("/v1/search/product")
 }
