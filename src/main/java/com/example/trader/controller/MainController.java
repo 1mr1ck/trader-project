@@ -16,4 +16,7 @@ public class MainController {
     public String join(){
         return "join";
     }
+
+    @RequestMapping(path = "/join/joinUser", method = RequestMethod.POST)
+    public String joinUser(){ return "joinUser"; }
 }

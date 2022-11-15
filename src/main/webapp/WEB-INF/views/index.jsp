@@ -11,6 +11,6 @@
     <title>Title</title>
 </head>
 <body>
-
+    <button onclick="location.href='join'">회원가입</button>
 </body>
 </html>
