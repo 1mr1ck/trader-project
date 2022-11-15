@@ -1,5 +1,6 @@
 package com.example.trader.board;
 
+import com.example.trader.service.util.Timestamp;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
