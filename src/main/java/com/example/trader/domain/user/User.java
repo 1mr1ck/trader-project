@@ -12,7 +12,6 @@ import javax.persistence.*;
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int no;
     private String id;
     private String password;
@@ -30,6 +29,5 @@ public class User {
         this.phone = userDto.getPhone();
         this.address = userDto.getAddress();
         this.nickname = userDto.getNickname();
-        this.token = userDto.getToken();
     }
 }
