@@ -17,4 +17,13 @@ public class UserDto {
     private String address;
     private String nickname;
     private String token;
+
+    public UserDto(String id, String password, String email, String phone, String address, String nickname){
+        this.id = id;
+        this.password = password;
+        this.email = email;
+        this.phone = phone;
+        this.address = address;
+        this.nickname = nickname;
+    }
 }
