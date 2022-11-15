@@ -17,7 +17,7 @@ import javax.persistence.Table;
 @Getter
 @Setter
 @AllArgsConstructor
-public class Board extends Timestamp{
+public class Board extends Timestamp {
 
     @Id
     private int b_no;  //PK

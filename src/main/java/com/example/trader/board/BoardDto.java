@@ -11,7 +11,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-public class BoardDto extends Timestamp{
+public class BoardDto extends Timestamp {
 
     private int b_no;  //PK
     private int user_no;

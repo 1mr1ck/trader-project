@@ -1,6 +1,5 @@
 package com.example.trader.controller;
 
-import com.example.trader.board.Board;
 import com.example.trader.board.BoardDto;
 import com.example.trader.service.BoardService;
 import lombok.RequiredArgsConstructor;
@@ -27,7 +26,5 @@ public class BoardController {
     @GetMapping("/v1/search/board")
     public Board getBoard(@RequestParam int b_no){
         Board board = service.readBoardByB_no(b_no);
-        return board;
     }
-
 }
