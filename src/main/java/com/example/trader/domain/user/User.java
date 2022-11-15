@@ -2,9 +2,8 @@ package com.example.trader.domain.user;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.persistence.Entity;
+
+import javax.persistence.*;
 
 @NoArgsConstructor
 @Table(name="user")
@@ -13,6 +12,7 @@ import javax.persistence.Entity;
 public class User {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int no;
     private String id;
     private String password;
@@ -21,4 +21,15 @@ public class User {
     private String address;
     private String nickname;
     private String token;
+
+    public User(UserDto userDto){
+        this.no = userDto.getNo();
+        this.id = userDto.getId();
+        this.password = userDto.getPassword();
+        this.email = userDto.getEmail();
+        this.phone = userDto.getPhone();
+        this.address = userDto.getAddress();
+        this.nickname = userDto.getNickname();
+        this.token = userDto.getToken();
+    }
 }
