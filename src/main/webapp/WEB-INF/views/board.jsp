@@ -11,6 +11,9 @@
     <title>Title</title>
 </head>
 <body>
-
+<div class="layout">
+    <input type="text">
+    <textarea>작성</textarea>
+</div>
 </body>
 </html>
