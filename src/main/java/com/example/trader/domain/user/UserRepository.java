@@ -5,4 +5,6 @@ import org.springframework.data.jpa.repository.Query;
 
 public interface UserRepository extends JpaRepository<User, Integer> {
 
+    @Query(value = "SELECT * FROM `user` WHERE `id`=? and `password`=?", nativeQuery = true)
+    public User findUserIdPw(String id, String password);
 }

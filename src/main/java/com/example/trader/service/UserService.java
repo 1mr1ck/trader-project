@@ -15,9 +15,23 @@ public class UserService {
     @Autowired
     private UserRepository repository;
 
+    // create
     public User createUser(UserDto userDto){
         User user = new User(userDto);
 
         return repository.save(user);
     }
+
+    // Read
+    // 1user
+    public User readUserByIdAndPassword(String id, String password){
+        User result = repository.findUserIdPw(id, password);
+        return result;
+    }
+
+    // AllUser
+
+    // Update
+
+    // delete
 }

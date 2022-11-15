@@ -17,8 +17,26 @@ public class MainController {
         return "join";
     }
 
+    @RequestMapping(path = "/login", method = RequestMethod.GET)
+    public String login(){
+        return "login";
+    }
+
+
+    @RequestMapping(path = "/logout", method = RequestMethod.GET)
+    public String logout(){
+        return "logout";
+    }
+
+    @RequestMapping(path = "/join/JoinUser", method = RequestMethod.POST)
+    public String joinUser(){
+        return "joinUser";
+    }
+
     @RequestMapping(path = "/board", method = RequestMethod.GET)
-    public String board() {return "board";}
+    public String board() {
+        return "board";
+    }
 
     @RequestMapping("/product")
     public String product() {

@@ -12,5 +12,6 @@
 </head>
 <body>
     <button onclick="location.href='join'">회원가입</button>
+    <button onclick="location.href='login'">로그인</button>
 </body>
 </html>
