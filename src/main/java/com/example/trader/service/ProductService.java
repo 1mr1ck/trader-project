@@ -27,7 +27,7 @@ public class ProductService {
     // Read
     public Product readProductByP_no(int p_no) {
         Product product = repository.findById(p_no).orElseThrow(
-            () -> new IllegalArgumentException("게시을을 찾지 못했습니다.")
+            () -> new IllegalArgumentException("게시글을 찾지 못했습니다.")
         );
         return product;
     }

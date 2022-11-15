@@ -22,4 +22,9 @@ public class MainController {
 
     @RequestMapping(path = "/board", method = RequestMethod.GET)
     public String board() {return "board";}
+
+    @RequestMapping("/product")
+    public String product() {
+        return "product";
+    }
 }
