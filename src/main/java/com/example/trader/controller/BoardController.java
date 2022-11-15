@@ -1,7 +1,7 @@
 package com.example.trader.controller;
 
-import com.example.trader.board.Board;
-import com.example.trader.board.BoardDto;
+import com.example.trader.domain.board.Board;
+import com.example.trader.domain.board.BoardDto;
 import com.example.trader.service.BoardService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;

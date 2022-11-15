@@ -1,4 +1,4 @@
-package com.example.trader.board;
+package com.example.trader.domain.board;
 
 import com.example.trader.service.util.Timestamp;
 import lombok.AllArgsConstructor;

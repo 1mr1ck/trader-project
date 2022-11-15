@@ -1,4 +1,4 @@
-package com.example.trader.board;
+package com.example.trader.domain.board;
 
 import com.example.trader.service.util.Timestamp;
 import lombok.AllArgsConstructor;
@@ -18,7 +18,6 @@ import javax.persistence.*;
 public class Board extends Timestamp {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int b_no;  //PK
     private int user_no;
     private String b_title;
