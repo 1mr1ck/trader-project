@@ -12,5 +12,6 @@
 </head>
 <body>
     <button onclick="location.href='join'">회원가입</button>
+    <button onclick="location.href='createProduct'">게시글작성</button>
 </body>
 </html>
