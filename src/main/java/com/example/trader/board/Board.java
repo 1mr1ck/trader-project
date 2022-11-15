@@ -6,9 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 
 @NoArgsConstructor
@@ -20,6 +18,7 @@ import javax.persistence.Table;
 public class Board extends Timestamp {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int b_no;  //PK
     private int user_no;
     private String b_title;
