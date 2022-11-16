@@ -1,10 +1,7 @@
 package com.example.trader.domain.board;
 
 import com.example.trader.service.util.Timestamp;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 
 @AllArgsConstructor

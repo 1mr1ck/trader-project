@@ -1,10 +1,7 @@
 package com.example.trader.domain.board;
 
 import com.example.trader.service.util.Timestamp;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 
@@ -35,5 +32,12 @@ public class Board extends Timestamp {
     public void setBoard(BoardDto boardDto){
         this.b_title = boardDto.getB_title();
         this.b_content = boardDto.getB_content();
+    }
+
+    //set대신용
+    public Board(int User_no, String b_title, String b_content) {
+        this.user_no = user_no;
+        this.b_title = b_title;
+        this.b_content = b_content;
     }
 }

@@ -8,7 +8,6 @@ function createBoard(){
     if(notice==="공지"){
         noticeCheck=true;
     }
-    console.log("아무거나");
 
     let settings = {
         "url": "http://localhost:8080/v1/write/board",

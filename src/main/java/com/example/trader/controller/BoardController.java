@@ -6,8 +6,11 @@ import com.example.trader.service.BoardService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
+import java.io.IOException;
 import java.util.List;
 
 @Controller
@@ -32,11 +35,20 @@ public class BoardController {
         return board;
     }
 
+    @GetMapping("/boardView")
+    public ModelAndView SearchTotalPageviews() throws IOException {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("boardView");
+        modelAndView.addObject("response", getBoardAll());
+        return modelAndView;
+    }
+
     //getBoardAll
     @GetMapping("/v1/search/boardAll")
-    public List<Board> getBoardAll(){
+    public List<Board> getBoardAll() {
         return service.readBoardAll();
     }
+
     //post
     //updateBoard
     @PostMapping("/v1/update/board")
@@ -50,4 +62,5 @@ public class BoardController {
     public void deleteBoard(@RequestParam int b_no){
         service.deleteBoard(b_no);
     }
+
 }

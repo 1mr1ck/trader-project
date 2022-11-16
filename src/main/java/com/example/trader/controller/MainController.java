@@ -27,8 +27,11 @@ public class MainController {
     @RequestMapping(path = "/board", method = RequestMethod.GET)
     public String board() {return "board";}
 
-    @RequestMapping(path = "/createBoard", method = RequestMethod.GET)
-    public String createBoard() {return "createBoard";}
+    @RequestMapping(path = "/boardCreate", method = RequestMethod.GET)
+    public String boardCreate() {return "boardCreate";}
+
+    @RequestMapping(path = "/boardView")
+    public String boardView() {return "boardView";}
 
     @RequestMapping("/product")
     public String product() {

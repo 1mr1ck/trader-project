@@ -10,7 +10,11 @@
 <head>
     <title>Trader myPage</title>
 </head>
+<jsp:include page="header.jsp"></jsp:include>
 <body>
+<jsp:include page="sidebar.jsp"></jsp:include>
+
     마이페이지
 </body>
+<jsp:include page="footer.jsp"></jsp:include>
 </html>

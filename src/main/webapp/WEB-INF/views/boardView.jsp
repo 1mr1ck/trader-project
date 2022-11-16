@@ -1,22 +1,54 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
     <title>Title</title>
 </head>
 <body>
-<div class="container">
-  <table class="table table-hover">
-    <thead>
-    <th>글번호</th>
-    <th>작성자</th>
-    <th>제목</th>
-    </thead>
-    <tr th:each="list :${list}"> // 타임리프를 이용해 리스트 형식의 데이터를 가공할 수 있도록 함.
-      <td>[[${list.user_no}]]</td>
-      <td>[[${list.b_title}]]</td>
-      <td>[[${list.b_content}]]</td>
-    </tr>
-  </table>
+
+<div id="wrap">
+
+    <form action="/board/search" method="GET">
+        <div class="search">
+            <input name="keyword" type="text" placeholder="검색어를 입력해주세요">
+        </div>
+
+        <button>검색하기</button>
+    </form>
+
+    <table>
+        <thead>
+        <tr>
+            <th>번호</th>
+            <th>글제목</th>
+            <th>글내용</th>
+            <th>작성자</th>
+            <th>작성일</th>
+            <th>수정일</th>
+        </tr>
+        </thead>
+        <tbody>
+        <c:forEach items="${response}" var="list">
+            <tr>
+                <td>${list.b_no}</td>
+                <td>${list.b_title}</td>
+                <td>${list.b_content}</td>
+                <td>${list.user_no}</td>
+                <c:set var="regDate" value="${(String.valueOf(list.regDate)).substring(0, 10)}"/>
+                <td>${regDate}</td>
+                <c:set var="modDate" value="${(String.valueOf(list.modDate)).substring(0, 10)}"/>
+                <td>${modDate}</td>
+            </tr>
+        </c:forEach>
+        </tbody>
+    </table>
+
+<%--    <div>--%>
+<%--    <span th:each="pageNum : ${pageList}" th:inline="text">--%>
+<%--        <a th:href="@{'/?page=' + ${pageNum}}">[[${pageNum}]]</a>--%>
+<%--    </span>--%>
+<%--    </div>--%>
 </div>
 </body>
 </html>
