@@ -11,10 +11,15 @@
     <title>게시글작성</title>
 </head>
 <body>
+    <%
+        HttpSession sessionCheck = request.getSession();
+        String id = (String)sessionCheck.getAttribute("log");
+
+    %>
     <h1>게시글작성</h1>
     <form>
         <div>
-            <input type="text" id="user_no" name="user_no" placeholder="user_no" required>
+            <input type="text" id="user_no" name="user_no" value="<%=id%>" readonly>
         </div>
         <div>
             <input type="text" id="p_title" name="p_title" placeholder="p_title" required>
@@ -43,11 +48,11 @@
         <input type="hidden" id="other_no" name="other_no" value="1">
         <input type="hidden" id="p_check" name="p_check" value="진행중">
         <div>
-            <input type="button" onclick="createProduct()" value="submit">
-            <input type="button" onclick="location.href='/'" value="home">
+            <input type="button" onclick="productCreate()" value="submit" style="cursor: pointer">
+            <input type="button" onclick="location.href='/'" value="home" style="cursor: pointer">
         </div>
     </form>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <script src="script/createProduct.js"></script>
+    <script src="script/productCreate.js"></script>
 </body>
 </html>

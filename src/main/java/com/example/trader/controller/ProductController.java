@@ -6,7 +6,9 @@ import com.example.trader.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
+import java.io.IOException;
 import java.util.List;
 
 @RequiredArgsConstructor
@@ -22,11 +24,27 @@ public class ProductController {
         service.createProduct(productDto);
     }
 
+    @GetMapping("/productView/{p_no}")
+    public ModelAndView SearchTotalPageviews(@PathVariable int p_no) throws IOException {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("productView");
+        modelAndView.addObject("response", getProduct(p_no));
+        return modelAndView;
+    }
+
     // GetProduct
     @GetMapping("/v1/search/product")
     public Product getProduct(@RequestParam int p_no) {
         Product product = service.readProductByP_no(p_no);
         return product;
+    }
+
+    @GetMapping("/product")
+    public ModelAndView SearchTotalPageviews() throws IOException {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("product");
+        modelAndView.addObject("response", getProductAll());
+        return modelAndView;
     }
 
     // GetProductAll
