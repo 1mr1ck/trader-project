@@ -1,0 +1,14 @@
+.footer{
+    display: flex;
+    background:#ffc9f6;
+    padding:50px;
+}
+.footer > div:first-child {
+    flex:3;
+    text-align: center;
+    color: #fff;
+}
+.footer > div:last-child {
+    flex:9;
+    color: #fff;
+}

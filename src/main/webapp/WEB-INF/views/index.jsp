@@ -10,9 +10,11 @@
 <head>
     <title>게시판</title>
 </head>
+<jsp:include page="header.jsp"></jsp:include>
 <body>
     <button onclick="location.href='join'">회원가입</button>
     <button onclick="location.href='login'">로그인</button>
     <button onclick="location.href='createProduct'">게시글작성</button>
 </body>
+<jsp:include page="footer.jsp"></jsp:include>
 </html>
