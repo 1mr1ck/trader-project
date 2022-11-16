@@ -11,15 +11,17 @@ public class MainController {
     public String index(){
         return "index";
     }
-
     @RequestMapping(path = "/join", method = RequestMethod.GET)
     public String join(){
         return "join";
     }
-
     @RequestMapping(path = "/login", method = RequestMethod.GET)
     public String login(){
         return "login";
+    }
+    @RequestMapping(path = "/myPage", method = RequestMethod.GET)
+    public String myPage(){
+        return "myPage";
     }
 
     @RequestMapping(path = "/board", method = RequestMethod.GET)
@@ -37,4 +39,6 @@ public class MainController {
     public String createProduct() {
         return "createProduct";
     }
+
+
 }

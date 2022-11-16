@@ -45,7 +45,16 @@ dependencies {
 
     // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core
     implementation 'com.fasterxml.jackson.core:jackson-core:2.13.3'
+
+    // JSTL 사용을위함
+    // https://mvnrepository.com/artifact/javax.servlet/jstl
+    implementation 'javax.servlet:jstl:1.2'
+
+    // JSTL 사용을 위함
+    // https://mvnrepository.com/artifact/taglibs/standard
+    implementation 'taglibs:standard:1.1.2'
 }
+
 
 tasks.named('test') {
     useJUnitPlatform()
