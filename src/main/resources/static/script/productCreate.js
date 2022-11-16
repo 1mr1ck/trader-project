@@ -1,4 +1,4 @@
-function createProduct() {
+function productCreate() {
 
     let user_no = $('#user_no').val();
     let other_no = $('#other_no').val();

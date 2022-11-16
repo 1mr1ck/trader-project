@@ -35,10 +35,18 @@ public class MainController {
         return "product";
     }
 
-    @RequestMapping("/createProduct")
-    public String createProduct() {
-        return "createProduct";
+    @RequestMapping("/productCreate")
+    public String productCreate() {
+        return "productCreate";
     }
 
+    @RequestMapping("/productSearch")
+    public String productSearch() {
+        return "productSearch";
+    }
 
+    @RequestMapping("/productView")
+    public String productView() {
+        return "productView";
+    }
 }
