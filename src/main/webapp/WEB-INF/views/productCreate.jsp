@@ -11,10 +11,15 @@
     <title>게시글작성</title>
 </head>
 <body>
+    <%
+        HttpSession sessionCheck = request.getSession();
+        String id = (String)sessionCheck.getAttribute("log");
+
+    %>
     <h1>게시글작성</h1>
     <form>
         <div>
-            <input type="text" id="user_no" name="user_no" placeholder="user_no" required>
+            <input type="text" id="user_no" name="user_no" value="<%=id%>" readonly>
         </div>
         <div>
             <input type="text" id="p_title" name="p_title" placeholder="p_title" required>

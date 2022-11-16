@@ -29,8 +29,6 @@ public class ProductController {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("productView");
         modelAndView.addObject("response", getProduct(p_no));
-        System.out.println("1111111111111111");
-        System.out.println(p_no);
         return modelAndView;
     }
 
