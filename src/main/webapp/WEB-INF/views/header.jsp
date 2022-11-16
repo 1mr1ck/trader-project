@@ -12,6 +12,10 @@
   <link rel="stylesheet" href="/css/header.css">
 </head>
 <body>
+<%
+  HttpSession sessionCheck = request.getSession();
+  String id = (String)sessionCheck.getAttribute("log");
+%>
 <header>
   <nav class="navbar">
     <div class="navbar_logo">
@@ -25,9 +29,13 @@
       <li><a href="#"></a>어디일카</li>
     </ul>
     <ul class="navbar_links">
-      <li><a href="#">로그인</a></li>
-      <li><a href="#">회원가입
-      </a></li>
+      <%if(id == null){%>
+      <li><a href="login">로그인</a></li>
+      <li><a href="join">회원가입</a></li>
+      <%} else {%>
+      <li><a href="myPage">마이페이지</a></li>
+      <li><a href="logout">로그아웃</a></li>
+      <%}%>
     </ul>
     <a href="#" class="navbar_manubtn">메뉴</a>
   </nav>

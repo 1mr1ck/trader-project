@@ -13,17 +13,6 @@
 </head>
 <jsp:include page="header.jsp"></jsp:include>
 <body>
-<%
-    HttpSession sessionCheck = request.getSession();
-    String id = (String)sessionCheck.getAttribute("log");
-%>
-<%if(id == null){%>
-    <button onclick="location.href='join'">회원가입</button>
-    <button onclick="location.href='login'">로그인</button>
-<%} else {%>
-    <button onclick="location.href='myPage'">마이페이지</button>
-    <button onclick="location.href='logout'">로그아웃</button>
-<%}%>
     <button onclick="location.href='createProduct'">게시글작성</button>
 </body>
 <jsp:include page="footer.jsp"></jsp:include>
