@@ -11,6 +11,7 @@
 <head>
     <title>게시판</title>
 </head>
+<jsp:include page="header.jsp"></jsp:include>
 <body>
 <%
     HttpSession sessionCheck = request.getSession();
@@ -25,4 +26,5 @@
 <%}%>
     <button onclick="location.href='createProduct'">게시글작성</button>
 </body>
+<jsp:include page="footer.jsp"></jsp:include>
 </html>
