@@ -18,7 +18,7 @@ public class B_commentDto extends Timestamp {
 
     private int user_no;
 
-    private String bc_comment;
+    private String bc_content;
 
 
     public static B_commentDto toB_commentDto(B_comment b_comment) {
@@ -26,7 +26,7 @@ public class B_commentDto extends Timestamp {
         b_commentDto.setBc_no(b_comment.getBc_no());
         b_commentDto.setB_no(b_comment.getB_no());
         b_commentDto.setUser_no(b_comment.getUser_no());
-        b_commentDto.setBc_comment(b_comment.getBc_comment());
+        b_commentDto.setBc_content(b_comment.getBc_content());
 
         return b_commentDto;
     }
