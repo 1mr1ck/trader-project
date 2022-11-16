@@ -27,6 +27,7 @@
         </thead>
         <tbody>
         <c:set var="product" value="${response}"/>
+        <input type="hidden" value="${product.p_no}" class="p_no">
             <tr>
                 <td>${product.img_url}</td>
                 <td>${product.p_title}</td>
@@ -40,5 +41,15 @@
             </tr>
         </tbody>
     </table>
+    <!-- 댓글 -->
+    <!-- 댓글 등록 div -->
+    <div class="comment-create-box">
+        <textarea class="commentContent" placeholder="댓글 내용을 입력하세요."></textarea>
+        <button class="comment-create-btn">등록</button>
+    </div>
+    <!-- 댓글 목록 -->
+    <div class="comment-list">
+
+    </div>
 </body>
 </html>

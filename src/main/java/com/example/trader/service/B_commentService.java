@@ -18,17 +18,32 @@ public class B_commentService {
     @Autowired
     private B_commentRepository b_commentRepository;
 
-    // 그 게시글의 댓글 전체 불러오기
-    public List<B_comment> comments(int b_no) {
-        List<B_comment> b_commentEntityList = b_commentRepository.findByB_no(b_no);
-        return b_commentEntityList;
-    }
 
     // 댓글 생성
     public B_comment createB_comment(int b_no, B_commentDto b_commentDto) {
         B_comment b_comment = B_comment.createB_comment(b_no, b_commentDto);
 
         return b_commentRepository.save(b_comment);
+    }
+
+    // 그 게시글의 댓글 전체 불러오기
+    public List<B_comment> commentsByB_no(int b_no) {
+        List<B_comment> b_commentEntityList = b_commentRepository.findByB_no(b_no);
+        if(b_commentEntityList != null) {
+            return b_commentEntityList;
+        }
+
+        return null;
+    }
+
+    // 한 유저의 댓글 전체 불러오기
+    public List<B_comment> commentsByUser_no(int user_no) {
+        List<B_comment> b_commentEntityList = b_commentRepository.findByUser_no(user_no);
+        if(b_commentEntityList != null) {
+            return b_commentEntityList;
+        }
+
+        return null;
     }
 
     // 댓글 업데이트
