@@ -18,5 +18,7 @@ public class P_commentDto extends Timestamp {
 
     private int user_no;
 
+    private String user_nickname;
+
     private String pc_content;
 }

@@ -28,6 +28,6 @@ function join(){
         console.log(response);
     });
 
-    location.href="../../webapp"
+    location.href="../../../webapp"
 }
 
