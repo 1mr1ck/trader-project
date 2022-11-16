@@ -30,4 +30,12 @@ public class User {
         this.address = userDto.getAddress();
         this.nickname = userDto.getNickname();
     }
+
+    public void setUser(UserDto userDto){
+        this.password = userDto.getPassword();
+        this.email = userDto.getEmail();
+        this.phone = userDto.getPhone();
+        this.address = userDto.getAddress();
+        this.nickname = userDto.getNickname();
+    }
 }

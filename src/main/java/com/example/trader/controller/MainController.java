@@ -23,6 +23,28 @@ public class MainController {
     public String myPage(){
         return "myPage";
     }
+    @RequestMapping(path = "/userUpdate", method = RequestMethod.GET)
+    public String userUpdate(){
+        return "userUpdate";
+    }
+    @RequestMapping(path = "/userDelete", method = RequestMethod.GET)
+    public String userDelete(){
+        return "userDelete";
+    }
+    @RequestMapping(path = "/userTrader", method = RequestMethod.GET)
+    public String userTrader(){
+        return "userTrader";
+    }
+
+    @RequestMapping(path = "/userBoard", method = RequestMethod.GET)
+    public String userBoard(){
+        return "userBoard";
+    }
+
+    @RequestMapping(path = "/userComment", method = RequestMethod.GET)
+    public String userComment(){
+        return "userComment";
+    }
 
     @RequestMapping(path = "/board", method = RequestMethod.GET)
     public String board() {return "board";}

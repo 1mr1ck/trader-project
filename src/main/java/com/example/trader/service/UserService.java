@@ -8,6 +8,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
+
 @RequiredArgsConstructor
 @Service
 public class UserService {
@@ -24,6 +26,14 @@ public class UserService {
 
     // Read
     // 1user
+    public User readUserById(int no){
+        User user = repository.findById(no).orElseThrow(
+                ()-> new IllegalArgumentException("사용자를 찾지 못했습니다")
+        );
+        return user;
+    }
+
+    // 1user id, pw
     public User readUserByIdAndPassword(String id, String password){
         User result = repository.findUserIdPw(id, password);
         return result;
@@ -32,6 +42,16 @@ public class UserService {
     // AllUser
 
     // Update
+    @Transactional
+    public void userUpdate(UserDto userDto){
+        User user = readUserById(userDto.getNo());
+        if(user != null){
+            user.setUser(userDto);
+        }
+    }
 
     // delete
+    public void deleteUser(int no){
+        repository.deleteById(no);
+    }
 }
