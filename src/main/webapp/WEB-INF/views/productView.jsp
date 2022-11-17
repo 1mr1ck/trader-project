@@ -33,7 +33,7 @@
                 <td>${product.p_title}</td>
                 <td>${product.category}</td>
                 <td>${product.p_type}</td>
-                <td>${product.user_no}</td>
+                <td>${product.nickname}</td>
                 <c:set var="regDate" value="${(String.valueOf(product.regDate)).substring(0, 10)}"/>
                 <td>${regDate}</td>
                 <c:set var="modDate" value="${(String.valueOf(product.modDate)).substring(0, 10)}"/>
@@ -72,6 +72,9 @@
             </c:forEach>
         </tbody>
     </table>
+    </div>
+    <div>
+        <button onclick="window.open('/letterWrite/${product.p_no}/${sessionScope.no}', '쪽지보내기', 'width=500, height=500');">쪽지보내기</button>
     </div>
 <script src="script/P_commentList.js"></script>
 </body>

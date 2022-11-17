@@ -4,9 +4,13 @@ function productSearch() {
 
     let category = $('#category').val();
     let p_type = $('#p_type').val();
+    let keyword = $('#keyword').val();
+    
+    if(keyword === "")
+        keyword = "전체"
 
     let settings = {
-        "url": "http://localhost:8080/v1/search/productAll",
+        "url": "http://localhost:8080/v1/search/product/category/" + category + "/p_type/" + p_type + "/keyword/" + keyword,
         "method": "GET",
         "timeout": 0,
         "headers": {
@@ -37,7 +41,7 @@ function productSearch() {
             const p_title = e.p_title;
             const category = e.category;
             const p_type = e.p_type;
-            const user_no = e.user_no;
+            const nickname = e.nickname;
             const regStr = e.regDate;
             const p_regDate = regStr.substring(0, 10);
             const modStr = e.modDate;
@@ -49,7 +53,7 @@ function productSearch() {
 					<td><a href="productView/${p_no}">${p_title}</a></td>
 					<td>${category}</td>
 					<td>${p_type}</td>
-					<td>${user_no}</td>
+					<td>${nickname}</td>
 					<td>${p_regDate}</td>
 					<td>${p_modDate}</td>
 				</tr>`

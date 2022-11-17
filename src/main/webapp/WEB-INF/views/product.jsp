@@ -34,7 +34,7 @@
                 <td>${list.p_title}</td>
                 <td>${list.category}</td>
                 <td>${list.p_type}</td>
-                <td>${list.user_no}</td>
+                <td>${list.nickname}</td>
                 <c:set var="regDate" value="${(String.valueOf(list.regDate)).substring(0, 10)}"/>
                 <td>${regDate}</td>
                 <c:set var="modDate" value="${(String.valueOf(list.modDate)).substring(0, 10)}"/>

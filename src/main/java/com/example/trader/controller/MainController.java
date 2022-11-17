@@ -77,4 +77,14 @@ public class MainController {
     public String productView() {
         return "productView";
     }
+
+    @RequestMapping("/letter")
+    public String letter() {
+        return "letter";
+    }
+
+    @RequestMapping("/letterWrite")
+    public String letterWrite() {
+        return "letterWrite";
+    }
 }

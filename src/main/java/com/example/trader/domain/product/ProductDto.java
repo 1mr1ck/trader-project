@@ -21,5 +21,6 @@ public class ProductDto extends Timestamp {
     private String p_check;
     private String img_url;
     private String p_type;
+    private String nickname;
 
 }
