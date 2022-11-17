@@ -25,6 +25,7 @@
     <button onclick="location.href='logout'">로그아웃</button>
 <%}%>
     <button onclick="location.href='product'" style="cursor: pointer">상품</button>
+    <button onclick="location.href='boardView'" style="cursor: pointer">커뮤니티</button>
 </body>
 <jsp:include page="footer.jsp"></jsp:include>
 </html>

@@ -22,7 +22,7 @@
     <ul class="navbar1_manu">
       <li><a href="#"></a>홈</li>
       <li><a href="#"></a>중고장터</li>
-      <li><a href="#"></a>커뮤니티</li>
+      <li><a href="/boardView.jsp"></a>커뮤니티</li>
       <li><a href="#"></a>어디일카</li>
     </ul>
     <ul class="navbar1_links">

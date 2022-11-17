@@ -52,6 +52,9 @@ public class MainController {
     @RequestMapping(path = "/boardCreate", method = RequestMethod.GET)
     public String boardCreate() {return "boardCreate";}
 
+    @RequestMapping(path = "/boardDetail", method = RequestMethod.GET)
+    public String boardDetail() {return "boardDetail";}
+
     @RequestMapping(path = "/boardView")
     public String boardView() {return "boardView";}
 
