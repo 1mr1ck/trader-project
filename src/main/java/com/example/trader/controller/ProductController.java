@@ -1,7 +1,9 @@
 package com.example.trader.controller;
 
+import com.example.trader.domain.p_comment.P_comment;
 import com.example.trader.domain.product.Product;
 import com.example.trader.domain.product.ProductDto;
+import com.example.trader.service.P_commentService;
 import com.example.trader.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +20,9 @@ public class ProductController {
     @Autowired
     private ProductService service;
 
+    @Autowired
+    private P_commentService p_commentService;
+
     // Create
     @PostMapping("/v1/write/product")
     public void writeProduct(@RequestBody ProductDto productDto) {
@@ -29,6 +34,8 @@ public class ProductController {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("productView");
         modelAndView.addObject("response", getProduct(p_no));
+        List<P_comment> p_commentList = p_commentService.commentsByP_no(p_no);
+        modelAndView.addObject("comments", p_commentList);
         return modelAndView;
     }
 
