@@ -60,10 +60,10 @@ public class ProductController {
         return service.readProductAll();
     }
 
-    // GetProductByCategory
-    @GetMapping("/v1/search/product/category")
-    public List<Product> getProductByCategory(@RequestParam String category) {
-        return service.searchProductByCategory(category);
+    // GetProductByCategoryAndP_type
+    @GetMapping("/v1/search/product/category/{category}/p_type/{p_type}/keyword/{keyword}")
+    public List<Product> getProductByCategoryAndP_type(@PathVariable String category, @PathVariable String p_type, @PathVariable String keyword) {
+        return service.searchProductByCategoryAndP_typeAndKeyword(category, p_type, keyword);
     }
 
     // UpdateProduct

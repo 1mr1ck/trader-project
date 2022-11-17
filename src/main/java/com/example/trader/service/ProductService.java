@@ -27,7 +27,7 @@ public class ProductService {
     // Read
     public Product readProductByP_no(int p_no) {
         Product product = repository.findById(p_no).orElseThrow(
-            () -> new IllegalArgumentException("게시글을 찾지 못했습니다.")
+            () -> new IllegalArgumentException("상품을 찾지 못했습니다.")
         );
         return product;
     }
@@ -50,9 +50,18 @@ public class ProductService {
         repository.deleteById(p_no);
     }
 
-    // Search
+    // Search By Category And P_type And Keyword
     @Transactional
-    public List<Product> searchProductByCategory(String category) {
-        return repository.findByCategory(category);
+    public List<Product> searchProductByCategoryAndP_typeAndKeyword(String category, String p_type, String keyword) {
+        if(category.equals("전체"))
+            category = "";
+        if(p_type.equals("전체"))
+            p_type = "";
+        if(keyword.equals("전체"))
+            keyword = "";
+        category = "%" + category + "%";
+        p_type = "%" + p_type + "%";
+        keyword = "%" + keyword + "%";
+        return repository.findByCategoryAndP_typeAndKeyword(category, p_type, keyword);
     }
 }

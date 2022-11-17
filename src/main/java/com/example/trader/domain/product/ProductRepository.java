@@ -7,6 +7,6 @@ import java.util.List;
 
 public interface ProductRepository extends JpaRepository<Product, Integer> {
 
-    @Query(value = "SELECT * FROM product WHERE category = ?", nativeQuery = true)
-    public List<Product> findByCategory(String category);
+    @Query(value = "SELECT * FROM product WHERE category LIKE ? AND p_type LIKE ? AND p_title LIKE ?", nativeQuery = true)
+    public List<Product> findByCategoryAndP_typeAndKeyword(String category, String p_type, String keyword);
 }
