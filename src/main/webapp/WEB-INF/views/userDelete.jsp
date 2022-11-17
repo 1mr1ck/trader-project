@@ -11,6 +11,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <title>Title</title>
 </head>
+<jsp:include page="header.jsp"></jsp:include>
 <body>
 <%
     HttpSession sessionCheck = request.getSession();
@@ -19,12 +20,18 @@
     String nickname = (String)sessionCheck.getAttribute("nickname");
     String password = (String)sessionCheck.getAttribute("password");
 %>
+
+<nav>
+    <jsp:include page="sidebar.jsp"/>
+</nav>
     <h1>회원탈퇴</h1>
+<section>
     <form method="post">
         <input type="hidden" id="no" value="<%=no%>">
         <input type="text" id="password" placeholder="pw">
         <input type="button" onclick="userDelete()">
     </form>
+</section>
 <script>
     function userDelete(){
         let no = document.getElementById("no").value;
@@ -50,4 +57,5 @@
 
 </script>
 </body>
+<jsp:include page="footer.jsp"></jsp:include>
 </html>
