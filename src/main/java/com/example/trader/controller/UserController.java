@@ -23,7 +23,7 @@ public class UserController {
     @Autowired
     private UserRepository repository;
 
-    // create
+    // join
     @PostMapping("/join/joinUser")
     public User JoinUser(@RequestBody UserDto userDto){
         User result = service.createUser(userDto);
@@ -40,6 +40,7 @@ public class UserController {
 
         if(login != null){
             session.setAttribute("log",id);
+            session.setAttribute("id",id);
             session.setAttribute("nickname", user.getNickname());
             session.setAttribute("no", user.getNo());
             session.setAttribute("password", user.getPassword());
@@ -78,6 +79,25 @@ public class UserController {
     @PostMapping("/userDelete/userDeleteProc")
     public void userDelete(@RequestBody UserDto userDto){
         service.deleteUser(userDto.getNo());
+    }
+
+    // idCheck
+    @PostMapping("/idCheck")
+    public String userIdCheck(@RequestParam String id){
+
+        String idCheck = "Y";
+
+
+
+        return idCheck;
+    }
+
+    @PostMapping("/nicknameCheck")
+    public String userNicknameCheck(@RequestParam String nickname){
+        String nicknameCheck = "Y";
+
+        return nicknameCheck;
+
     }
 
 }

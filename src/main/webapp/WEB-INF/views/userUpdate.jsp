@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
@@ -13,26 +14,44 @@
 </head>
 <body>
 
-<%
-    HttpSession sessionCheck = request.getSession();
-    String id = (String)sessionCheck.getAttribute("log");
-    int no = (Integer)sessionCheck.getAttribute("no");
-    String nickname = (String)sessionCheck.getAttribute("nickname");
-%>
-
 <div>
     <form method="post">
-        <input type="hidden" id="no" value="<%=no%>">
-        <input type="text" id="id" name="id" value="<%=id %>" placeholder="id" readonly>
-        <input type="text" id="password" name="password" placeholder="pw">
-        <input type="text" id="email" name="email" placeholder="email">
-        <input type="text" id="phone" name="phone" placeholder="phone">
-        <input type="text" id="address" name="address" placeholder="address">
-        <input type="text" id="nickname" name="nickname" placeholder="nickname" value="<%=nickname%>">
+        <input type="hidden" id="no" autocomplete="off" value="${sessionScope.log}">
+        <input type="text" id="id" name="id" autocomplete="off" value="${sessionScope.}" placeholder="id" readonly>
+        <input type="text" id="password" name="password" autocomplete="off" placeholder="pw">
+        <input type="text" id="email" name="email" autocomplete="off" value="${sessionScope.email}" placeholder="email" readonly>
+        <input type="text" id="phone" name="phone" autocomplete="off" value="${sessionScope.phone}" onblur="phoneNullCheck('${sessionScope.phone}')" placeholder="phone">
+        <input type="text" id="address" name="address" autocomplete="off" value="${sessionScope.address}" onblur="addressNullCheck('${sessionScope.address}')" placeholder="address">
+        <input type="text" id="nickname" name="nickname" autocomplete="off" value="${sessionScope.nickname}" onblur="nicknameNullCheck('${sessionScope.nickname}')" placeholder="nickname">
         <input type="button" value="정보수정" onclick="update()">
     </form>
 </div>
 <script>
+
+    function nicknameNullCheck(nameCheck){
+        name1 = document.getElementById('name').value;
+
+        if(name1 === ''){
+            document.getElementById('name').value = nameCheck;
+        }
+    }
+
+    function phoneNullCheck(phoneCheck){
+        phone1 = document.getElementById('phone').value;
+
+        if(phone1 === ''){
+            document.getElementById('phone').value = phoneCheck;
+        }
+    }
+
+    function addressNullCheck(addressCheck){
+        address1 = document.getElementById('address').value;
+
+        if(address1 === ''){
+            document.getElementById('address').value = addressCheck;
+        }
+    }
+
     function update(){
 
         let no = document.getElementById("no").value;
