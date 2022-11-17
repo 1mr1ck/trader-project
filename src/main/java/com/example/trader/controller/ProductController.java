@@ -53,6 +53,12 @@ public class ProductController {
         return service.readProductAll();
     }
 
+    // GetProductByCategory
+    @GetMapping("/v1/search/product/category")
+    public List<Product> getProductByCategory(@RequestParam String category) {
+        return service.searchProductByCategory(category);
+    }
+
     // UpdateProduct
     @PostMapping("/v1/update/product")
     public void updateProduct(@RequestBody ProductDto productDto) {

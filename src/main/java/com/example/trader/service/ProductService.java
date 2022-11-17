@@ -51,5 +51,8 @@ public class ProductService {
     }
 
     // Search
-
+    @Transactional
+    public List<Product> searchProductByCategory(String category) {
+        return repository.findByCategory(category);
+    }
 }
