@@ -10,6 +10,7 @@
 <html>
 <head>
     <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 </head>
 <body>
     <button onclick="location.href='/'" style="cursor: pointer">home</button>
@@ -27,7 +28,6 @@
         </thead>
         <tbody>
         <c:set var="product" value="${response}"/>
-        <input type="hidden" value="${product.p_no}" class="productNo" id="productNo" name="productNo">
             <tr>
                 <td>${product.img_url}</td>
                 <td>${product.p_title}</td>
@@ -44,15 +44,18 @@
     <!-- 댓글 -->
     <!-- 댓글 등록 div -->
     <div class="comment-create-box">
-        <textarea class="commentContent" placeholder="댓글 내용을 입력하세요."></textarea>
-        <button class="comment-create-btn">등록</button>
+        <input type="hidden" value="${product.p_no}" id="p_no">
+        <input type="hidden" value="${sessionScope.no}" id="no">
+        <input type="hidden" value="${sessionScope.nickname}" id="nickname">
+        <textarea id="cmt-content" class="cmt-content" placeholder="댓글 내용을 입력하세요."></textarea>
+        <input type="button" onclick="saveComment(${product.p_no})" value="등록" style="cursor: pointer">
     </div>
     <!-- 댓글 목록 -->
     <table border="1">
         <tbody class="cmt-list">
             <c:forEach items="${comments}" var="comment">
-                <input type="hidden" value="${comment.user_no}">
-                <input type="hidden" value="${comment.pc_no}">
+                <input type="hidden" value="${comment.user_no}" id="comment-user_no">
+                <input type="hidden" value="${comment.pc_no}" id="pc_no">
                 <tr>
                     <td class="nickname">${comment.user_nickname}</td>
                     <c:if test="${comment.modDate == null}">
@@ -64,9 +67,8 @@
                 </tr>
                 <tr class="content-box">
                     <td class="content">${comment.pc_content}</td>
-                    <!-- 현재 로그인한 세션값과 comment.user_no 이 같을 때만 출력 어케 해야할까 ? -->
                     <c:if test="${comment.user_no == sessionScope.no}">
-                        <td><button>수정</button><button>삭제</button></td>
+                        <td><button onclick="updateComment(${product.p_no}, ${comment.pc_no})">수정</button><button onclick="deleteComment(${product.p_no}, ${comment.pc_no})">삭제</button></td>
                     </c:if>
                 </tr>
             </c:forEach>
@@ -76,6 +78,6 @@
     <div>
         <button onclick="window.open('/letterWrite/${product.p_no}/${sessionScope.no}', '쪽지보내기', 'width=500, height=500');">쪽지보내기</button>
     </div>
-<script src="script/P_commentList.js"></script>
+    <script src="/script/p_comment.js"></script>
 </body>
 </html>

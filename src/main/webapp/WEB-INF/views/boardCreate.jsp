@@ -11,6 +11,13 @@
     <title>게시판 작성</title>
 </head>
 <body>
+
+<%
+    HttpSession sessionCheck = request.getSession();
+    String id = (String)sessionCheck.getAttribute("log");
+
+%>
+
 <form class="write">
     <div class="board_wrap">
         <div class="board_title">
@@ -27,8 +34,9 @@
                 </div>
                 <div class="info">
                     <dl>
-                        <dt>유저넘버</dt>
-                        <dd><input type="text"  id="user_no" style="border: none; outline :none" name="user_no" required></dd>
+                        <dt>작성자</dt>
+                        <input type="text" id="nickname" name="nickname" value="${sessionScope.nickname}" readonly>
+                        <input type="hidden" id="user_no" name="user_no" value="${sessionScope.no}" readonly>
                     </dl>
 
                 </div>
@@ -44,7 +52,7 @@
 <%--                <input type="button" onclick="location.href='boardForm'" value="돌아가기">--%>
 
                 <input type="button" value="submit" onclick="createBoard()">
-                <input type="button" value="home" onclick="location.href='/boardView.jsp'">
+                <input type="button" value="home" onclick="location.href='/boardView'">
             </div>
         </div>
     </div>

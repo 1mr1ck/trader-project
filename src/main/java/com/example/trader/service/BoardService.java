@@ -2,14 +2,12 @@ package com.example.trader.service;
 
 import com.example.trader.domain.board.Board;
 import com.example.trader.domain.board.BoardRepository;
-import com.example.trader.domain.product.Product;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.example.trader.domain.board.BoardDto;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -50,4 +48,7 @@ public class BoardService {
     //Delete
     @Transactional
     public void deleteBoard(int b_no) {repository.deleteById(b_no);}
+
+
+
 }
