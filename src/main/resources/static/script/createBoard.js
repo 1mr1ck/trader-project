@@ -3,6 +3,7 @@ function createBoard(){
     let user_no = $('#user_no').val();
     let b_title = $('#b_title').val();
     let b_content = $('#b_content').val();
+    let nickname = $('#nickname').val();
     let notice = $('#notice').val();
     let noticeCheck = false;
     if(notice==="공지"){
@@ -20,12 +21,18 @@ function createBoard(){
             "user_no": user_no,
             "b_title": b_title,
             "b_content": b_content,
-            "notice": noticeCheck
+            "notice": noticeCheck,
+            "nickname" : nickname
         }),
     };
 
     $.ajax(settings).done(function (response) {
         console.log(response);
+        alert("글쓰기 성공");
         location.href="/";
-    });
+    });fail(function(error){
+        alert("글쓰기 실패");
+        console.log(error);
+    })
+
 }

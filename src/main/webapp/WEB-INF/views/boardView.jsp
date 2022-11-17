@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
-    <title>Title</title>
+    <title>게시판 목록</title>
 </head>
 <body>
 
@@ -32,8 +32,8 @@
         <c:forEach items="${response}" var="list">
             <tr>
                 <td>${list.b_no}</td>
-                <td><a href="/boardCreate/${board.b_no}">${list.b_title}</a></td>
-                <td>${list.b_content}</td>
+                <td>${list.b_title}</td>
+                <td><a href="/boardDetail/${list.b_no}">${list.b_content}</a></td>
                 <td>${list.user_no}</td>
                 <c:set var="regDate" value="${(String.valueOf(list.regDate)).substring(0, 10)}"/>
                 <td>${regDate}</td>
@@ -44,6 +44,8 @@
         </tbody>
     </table>
     <input type="button" value="글쓰기" onclick="location.href='/boardCreate'">
+    <input type="button" value="home" onclick="location.href='/boardView'">
+
 
 <%--    <div>--%>
 <%--    <span th:each="pageNum : ${pageList}" th:inline="text">--%>

@@ -20,12 +20,14 @@ public class Board extends Timestamp {
     private String b_title;
     private String b_content;
     private boolean notice;
+    private String nickname;
 
     public Board(BoardDto boardDto){
         this.user_no = boardDto.getUser_no();
         this.b_title = boardDto.getB_title();
         this.b_content = boardDto.getB_content();
         this.notice = boardDto.isNotice();
+        this.nickname = boardDto.getNickname();
     }
 
     //update용 set
