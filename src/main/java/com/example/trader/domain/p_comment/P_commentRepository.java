@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface P_commentRepository extends JpaRepository<P_comment, Integer> {
 
-    @Query(value = "SELECT * FROM p_comment WHERE p_no = ?", nativeQuery = true)
+    @Query(value = "SELECT * FROM p_comment WHERE p_no = ? ORDER BY pc_no DESC", nativeQuery = true)
     public List<P_comment> findByP_no(int p_no);
 
     @Query(value = "SELECT * FROM p_comment WHERE pc_no = ?", nativeQuery = true)

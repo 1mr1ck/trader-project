@@ -28,7 +28,6 @@ public class P_comment extends Timestamp {
     public static P_comment createB_comment(P_commentDto p_commentDto) {
         P_comment p_comment = new P_comment();
         p_comment.setP_no(p_commentDto.getP_no());
-        p_comment.setPc_no(p_commentDto.getPc_no());
         p_comment.setUser_no(p_commentDto.getUser_no());
         p_comment.setUser_nickname(p_commentDto.getUser_nickname());
         p_comment.setPc_content(p_commentDto.getPc_content());
