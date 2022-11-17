@@ -15,4 +15,5 @@ public class BoardDto extends Timestamp {
     private String b_title;
     private String b_content;
     private boolean notice;
+    private String nickname;
 }
