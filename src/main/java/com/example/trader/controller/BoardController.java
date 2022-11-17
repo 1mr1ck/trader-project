@@ -56,11 +56,15 @@ public class BoardController {
         service.updateBoard(boardDto);
     }
 
+
+
     //post
     //deleteBoard
     @DeleteMapping("/v1/delete/board")
     public void deleteBoard(@RequestParam int b_no){
         service.deleteBoard(b_no);
     }
+
+
 
 }

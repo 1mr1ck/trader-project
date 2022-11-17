@@ -32,7 +32,7 @@
         <c:forEach items="${response}" var="list">
             <tr>
                 <td>${list.b_no}</td>
-                <td>${list.b_title}</td>
+                <td><a href="/boardCreate/${board.b_no}">${list.b_title}</a></td>
                 <td>${list.b_content}</td>
                 <td>${list.user_no}</td>
                 <c:set var="regDate" value="${(String.valueOf(list.regDate)).substring(0, 10)}"/>
@@ -43,6 +43,7 @@
         </c:forEach>
         </tbody>
     </table>
+    <input type="button" value="글쓰기" onclick="location.href='/boardCreate'">
 
 <%--    <div>--%>
 <%--    <span th:each="pageNum : ${pageList}" th:inline="text">--%>

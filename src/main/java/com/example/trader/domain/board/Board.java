@@ -33,11 +33,4 @@ public class Board extends Timestamp {
         this.b_title = boardDto.getB_title();
         this.b_content = boardDto.getB_content();
     }
-
-    //set대신용
-    public Board(int User_no, String b_title, String b_content) {
-        this.user_no = user_no;
-        this.b_title = b_title;
-        this.b_content = b_content;
-    }
 }

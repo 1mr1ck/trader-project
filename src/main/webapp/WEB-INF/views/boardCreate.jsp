@@ -44,7 +44,7 @@
 <%--                <input type="button" onclick="location.href='boardForm'" value="돌아가기">--%>
 
                 <input type="button" value="submit" onclick="createBoard()">
-                <input type="button" value="home" onclick="location.href='/'">
+                <input type="button" value="home" onclick="location.href='/boardView.jsp'">
             </div>
         </div>
     </div>
