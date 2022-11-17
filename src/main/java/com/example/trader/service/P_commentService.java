@@ -19,10 +19,11 @@ public class P_commentService {
 
     // Create
     // 생성
-    public P_comment createP_comment(int p_no, P_commentDto p_commentDto) {
+    public List<P_comment> createP_comment(int p_no, P_commentDto p_commentDto) {
         P_comment p_comment = P_comment.createB_comment(p_commentDto);
-
-        return p_commentRepository.save(p_comment);
+        p_commentRepository.save(p_comment);
+        List<P_comment> p_commentList = p_commentRepository.findByP_no(p_no);
+        return p_commentList;
     }
 
     // Read
@@ -52,12 +53,16 @@ public class P_commentService {
     // Delete
     // 삭제
     @Transactional
-    public void delete(int pc_no) {
+    public List<P_comment> delete(int p_no, int pc_no) {
         P_comment p_comment = p_commentRepository.findByPc_no(pc_no);
 
         if(p_comment != null) {
             p_commentRepository.delete(p_comment);
         }
+
+        List<P_comment> p_commentList = p_commentRepository.findByP_no(p_no);
+
+        return p_commentList;
     }
 
 }
