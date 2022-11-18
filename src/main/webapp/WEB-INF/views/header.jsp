@@ -22,12 +22,12 @@
 %>
 <header class="header1">
     <div class="navbar_logo">
-      <a href="#">공주마켓</a>
+      <a href="/">공주마켓</a>
     </div>
     <ul class="navbar1_manu">
-      <li><a href="index"></a>홈</li>
-      <li><a href="product"></a>중고장터</li>
-      <li><a href="boardView"></a>커뮤니티</li>
+      <li><a href="/">홈</a></li>
+      <li><a href="/product">중고장터</a></li>
+      <li><a href="/boardView">커뮤니티</a></li>
       <li><a href="#"></a>어디일카</li>
     </ul>
     <%if(id == null){%>
