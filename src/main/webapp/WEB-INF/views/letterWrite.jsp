@@ -31,10 +31,10 @@
         <input type="hidden" value="${sessionScope.no}" id="user_no" name="user_no">
         <input type="hidden" value="${sessionScope.nickname}" id="nickname" name="nickname">
         <div>
-            <input type="text" id="l_content" name="l_content" required>
+            <input type="text" id="l_content" name="l_content" onkeypress="inputEnter(event)" required autofocus>
         </div>
         <div>
-            <input type="button" onclick="letterWrite()" value="submit" style="cursor: pointer">
+            <input type="button" onclick="letterWrite()" value="submit" id="btnInput" style="cursor: pointer">
             <input type="button" onclick="location.href='/'" value="home" style="cursor: pointer">
         </div>
     </form>

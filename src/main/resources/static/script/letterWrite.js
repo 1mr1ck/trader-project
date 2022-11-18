@@ -1,10 +1,23 @@
 const ltList = document.querySelector('.letterList');
 
+let content = document.getElementById('l_content');
+
+function inputEnter(e) {
+    const code = e.code;
+    if(code == "Enter")
+        letterWrite();
+}
+
 function letterWrite() {
     let user_no = $('#user_no').val();
     let p_no = $('#p_no').val();
     let nickname = $('#nickname').val();
     let l_content = $('#l_content').val();
+
+    if(l_content === "") {
+        alert("ㄷㅈ?");
+        return;
+    }
 
     let writeSettings = {
         "url": "http://localhost:8080/v1/write/letter",
@@ -42,12 +55,15 @@ function letterWrite() {
             list.forEach(e => {
                 const nickname = e.nickname;
                 const l_content = e.l_content;
-                const regDate = e.regDate;
+                const regStr = e.regDate;
+                const regDate = regStr.substring(0, 10) + " " + regStr.substring(12, 19);
 
                 output += '<tr><td>' + nickname + '</td><td>' + l_content + '</td><td>' + regDate + '</td></tr>';
             });
 
             ltList.innerHTML = output;
+            content.value = null;
+            content.autofocus;
         });
     });
 
