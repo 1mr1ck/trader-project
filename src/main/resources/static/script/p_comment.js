@@ -1,9 +1,9 @@
 const cmtList = document.querySelector('.cmt-list');
 const login_no = document.getElementById('no').value;
-const nickname = document.getElementById('nickname').value;
+const login_nickname = document.getElementById('nickname').value;
 // 등록
 function saveComment(p_no) {
-    if(nickname === "") {
+    if(login_nickname === "") {
         alert("로그인을 해주세요.");
         return;
     }
@@ -19,7 +19,7 @@ function saveComment(p_no) {
         "data": JSON.stringify({
             "p_no": p_no,
             "user_no": login_no,
-            "user_nickname": nickname,
+            "user_nickname": login_nickname,
             "pc_content": pc_content
         }),
     };
@@ -75,7 +75,7 @@ function updateComment(p_no, pc_no) {
             "p_no" : p_no,
             "pc_no" : pc_no,
             "user_no" : login_no,
-            "user_nickname" : nickname
+            "user_nickname" : login_nickname
         })
     }
 
@@ -98,9 +98,9 @@ function updateComment(p_no, pc_no) {
             output += '</tr>';
             output += '<tr claass="content-box">';
             if(pc_no == cmt_no) {
-                output += '<td><input type="text" id="updateContent" value="' + content + '"</td>';
-                output += '<td><button onclick="modifyComment(' + cmt_no + ')">수정</button>' +
-                    '<button onclick="modCancleComment(' + cmt_no + ')">취소</button></td>';
+                output += '<td><input type="text" id="updateContent" name="updateContent" value="' + content + '"</td>';
+                output += '<td><button onclick="modifyComment(' + p_no + ','  + cmt_no + ')">수정</button>' +
+                    '<button onclick="modCancleComment(' + p_no + ','  + cmt_no + ')">취소</button></td>';
             } else {
                 output += '<td class="content">' + content + '</td>';
                 if(login_no == cmt_user_no) {
@@ -117,13 +117,111 @@ function updateComment(p_no, pc_no) {
 
 
 // 2차
-function modifyComment(pc_no) {
+function modifyComment(p_no, pc_no) {
+    const updateContent = document.getElementById("updateContent").value;
+    console.log(updateContent);
+    let settings = {
+        "url": "http://localhost:8080/p_comment/product/" + p_no + "/" + pc_no + "/update",
+        "method": "POST",
+        "timeout": 0,
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "data": JSON.stringify({
+            "p_no": p_no,
+            "pc_no" : pc_no,
+            "user_no": login_no,
+            "user_nickname": login_nickname,
+            "pc_content" : updateContent
+        }),
+    };
 
+    $.ajax(settings).done(function (result) {
+        var output = '<tr>';
+        const list = result;
+        console.log(result);
+
+        list.forEach(e => {
+            console.log(login_no);
+            const modStr = e.modDate;
+            const modDate = modStr.substring(0,10);
+            const content = e.pc_content;
+            const pc_no = e.pc_no;
+            const cmt_user_no = e.user_no;
+            console.log(cmt_user_no);
+            const cmt_nickname = e.user_nickname;
+
+            output += '<td class="nickname">' + cmt_nickname + '</td>';
+            output += '<td class="date">' + modDate + '</td>'
+            output += '</tr>';
+            output += '<tr claass="content-box">';
+            output += '<td class="content">' + content + '</td>';
+            if(login_no == cmt_user_no) {
+                output += '<td><button onclick="updateComment(' + p_no + ','  + pc_no + ')">수정</button>' +
+                    '<button onclick="deleteComment(' + p_no + ',' +  pc_no + ')">삭제</button></td>' +
+                    '</tr>';
+            } else {
+                output += '</tr>';
+            }
+
+
+            cmtList.innerHTML = output;
+        })
+
+    });
 }
 
 // 취소
-function modCancleComment(pc_no) {
+function modCancleComment(p_no, pc_no) {
 
+    let settings = {
+        "url": "http://localhost:8080/p_comments/product/" + p_no,
+        "method": "POST",
+        "timeout": 0,
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "data": JSON.stringify({
+            "p_no": p_no,
+            "pc_no" : pc_no,
+            "user_no": login_no,
+            "user_nickname": login_nickname,
+        }),
+    };
+
+    $.ajax(settings).done(function (result) {
+        var output = '<tr>';
+        const list = result;
+        console.log(result);
+
+        list.forEach(e => {
+            console.log(login_no);
+            const modStr = e.modDate;
+            const modDate = modStr.substring(0,10);
+            const content = e.pc_content;
+            const pc_no = e.pc_no;
+            const cmt_user_no = e.user_no;
+            console.log(cmt_user_no);
+            const cmt_nickname = e.user_nickname;
+
+            output += '<td class="nickname">' + cmt_nickname + '</td>';
+            output += '<td class="date">' + modDate + '</td>'
+            output += '</tr>';
+            output += '<tr claass="content-box">';
+            output += '<td class="content">' + content + '</td>';
+            if(login_no == cmt_user_no) {
+                output += '<td><button onclick="updateComment(' + p_no + ','  + pc_no + ')">수정</button>' +
+                    '<button onclick="deleteComment(' + p_no + ',' +  pc_no + ')">삭제</button></td>' +
+                    '</tr>';
+            } else {
+                output += '</tr>';
+            }
+
+
+            cmtList.innerHTML = output;
+        })
+
+    });
 }
 // 삭제
 function deleteComment(p_no, pc_no) {
@@ -139,7 +237,7 @@ function deleteComment(p_no, pc_no) {
             "p_no": p_no,
             "pc_no" : pc_no,
             "user_no": login_no,
-            "user_nickname": nickname,
+            "user_nickname": login_nickname,
         }),
     };
 

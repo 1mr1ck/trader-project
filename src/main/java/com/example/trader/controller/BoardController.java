@@ -1,8 +1,10 @@
 package com.example.trader.controller;
 
+import com.example.trader.domain.b_comment.B_comment;
 import com.example.trader.domain.board.Board;
 import com.example.trader.domain.board.BoardDto;
 import com.example.trader.domain.p_comment.P_comment;
+import com.example.trader.service.B_commentService;
 import com.example.trader.service.BoardService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +24,9 @@ public class BoardController {
     @Autowired
     private BoardService service;
 
+    @Autowired
+    private B_commentService b_commentService;
+
 
     //Create
     @PostMapping("/v1/write/board")
@@ -34,6 +39,8 @@ public class BoardController {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("boardDetail");
         modelAndView.addObject("response", getBoard(b_no));
+        modelAndView.addObject("comments", b_commentService.commentsByB_no(b_no));
+
         return modelAndView;
     }
     //getBoard

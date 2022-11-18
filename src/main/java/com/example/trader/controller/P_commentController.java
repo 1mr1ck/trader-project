@@ -36,11 +36,10 @@ public class P_commentController {
 
     // Update
     // 수정
-    @PostMapping("/p_comment/{pc_no}/update")
-    private List<P_comment> update(@PathVariable int pc_no, @RequestBody P_commentDto p_commentDto) {
-        p_commentService.update(pc_no, p_commentDto);
+    @PostMapping("/p_comment/product/{p_no}/{pc_no}/update")
+    private List<P_comment> update(@PathVariable int p_no, @PathVariable int pc_no, @RequestBody P_commentDto p_commentDto) {
 
-        return null;
+        return p_commentService.update(p_no, pc_no, p_commentDto);
     }
 
     // Delete
