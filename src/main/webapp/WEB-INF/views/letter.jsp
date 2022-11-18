@@ -16,7 +16,8 @@
     <table>
         <thead>
         <tr>
-            <th>작성자</th>
+            <th>상대방</th>
+            <th>상품명</th>
             <th>메시지</th>
             <th>작성시간</th>
         </tr>
@@ -24,7 +25,13 @@
         <tbody>
         <c:forEach items="${myLetterList}" var="letter">
             <tr>
-                <td>${letter.user_nickname}</td>
+                <c:if test="${sessionScope.no == letter.user_no}">
+                    <td><a href="/letterWrite/${letter.p_no}/${sessionScope.no}/${letter.other_no}">${letter.other_nickname}</a></td>
+                </c:if>
+                <c:if test="${sessionScope.no != letter.user_no}">
+                    <td><a href="/letterWrite/${letter.p_no}/${letter.user_no}/${letter.other_no}">${letter.user_nickname}</a></td>
+                </c:if>
+                <td>${letter.p_title}</td>
                 <td>${letter.l_content}</td>
                 <c:set var="regDate" value="${(String.valueOf(letter.regDate)).substring(12, 16)}"/>
                 <td>${regDate}</td>
