@@ -1,7 +1,7 @@
 package com.example.trader.controller;
 
-import com.example.trader.domain.b_comment.service.P_commentService;
-import com.example.trader.domain.b_comment.service.ProductService;
+import com.example.trader.service.P_commentService;
+import com.example.trader.service.ProductService;
 import com.example.trader.domain.p_comment.P_comment;
 import com.example.trader.domain.product.Product;
 import com.example.trader.domain.product.ProductDto;
