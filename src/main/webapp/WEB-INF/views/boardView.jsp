@@ -44,7 +44,7 @@
         </tbody>
     </table>
     <input type="button" value="글쓰기" onclick="location.href='/boardCreate'">
-    <input type="button" value="home" onclick="location.href='/boardView'">
+    <input type="button" value="home" onclick="location.href='/'">
 
 
 <%--    <div>--%>

@@ -46,8 +46,6 @@ public class MainController {
         return "userComment";
     }
 
-    @RequestMapping(path = "/board", method = RequestMethod.GET)
-    public String board() {return "board";}
 
     @RequestMapping(path = "/boardCreate", method = RequestMethod.GET)
     public String boardCreate() {return "boardCreate";}
@@ -57,6 +55,9 @@ public class MainController {
 
     @RequestMapping(path = "/boardView")
     public String boardView() {return "boardView";}
+
+    @RequestMapping(path = "/boardUpdate")
+    public String boardUpdate() {return "boardUpdate";}
 
     @RequestMapping("/product")
     public String product() {

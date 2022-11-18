@@ -2,15 +2,14 @@ package com.example.trader.controller;
 
 import com.example.trader.domain.board.Board;
 import com.example.trader.domain.board.BoardDto;
-import com.example.trader.domain.p_comment.P_comment;
 import com.example.trader.service.BoardService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
@@ -54,24 +53,35 @@ public class BoardController {
 
     //getBoardAll
     @GetMapping("/v1/search/boardAll")
-    public List<Board> getBoardAll() {
+    public List<Board> getBoardAll () throws IOException {
         return service.readBoardAll();
     }
 
     //post
     //updateBoard
-    @PostMapping("/v1/update/board")
-    public void updateBoard(@RequestBody BoardDto boardDto){
-        service.updateBoard(boardDto);
+//    @PutMapping("/v1/update/board/")
+//    public void updateBoard(@RequestBody BoardDto boardDto){
+//        service.updateBoard(boardDto);
+//    }
+    @RequestMapping(value="/boardModifyForm")
+    public String boardModifyForm(@RequestParam("b_no") int b_no, Model model) throws Exception {
+
+        Board data = boardService.boardRead(b_no);
+        model.addAttribute("data", data);
+        return "boardModifyForm";
     }
+
 
 
 
     //post
     //deleteBoard
-    @DeleteMapping("/v1/delete/board")
-    public void deleteBoard(@RequestParam int b_no){
+    @GetMapping("/v1/delete/board")
+    public void deleteBoard(int b_no , HttpServletResponse response) throws IOException {
         service.deleteBoard(b_no);
+
+        String sRedirect_uri="/boardView";
+        response.sendRedirect(sRedirect_uri);
     }
 
 

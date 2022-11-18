@@ -46,7 +46,7 @@
     </tbody>
 </table>
 <input type="button" value="글목록" onclick="location.href='/boardView'">
-<input type="button" value="글수정" onclick="location.href='/boardUpdate'">
-<input type="button" value="글삭제" onclick="location.href='/boardDelete'">
+<input type="button" value="글수정" onclick="location.href='/v1/update/board?b_no=${board.b_no}'">
+<input type="button" value="글삭제" onclick="location.href='/v1/delete/board?b_no=${board.b_no}'">
 </body>
 </html>

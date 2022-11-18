@@ -45,6 +45,8 @@ public class BoardService {
         }
     }
 
+
+
     //Delete
     @Transactional
     public void deleteBoard(int b_no) {repository.deleteById(b_no);}
