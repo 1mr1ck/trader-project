@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.sound.sampled.Port;
 import java.util.List;
 
 @RequiredArgsConstructor
@@ -30,6 +31,10 @@ public class ProductService {
             () -> new IllegalArgumentException("상품을 찾지 못했습니다.")
         );
         return product;
+    }
+
+    public  List<Product> readProductUserNo(int no){
+        return repository.findByUserNo(no);
     }
 
     public List<Product> readProductAll() {

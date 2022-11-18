@@ -84,20 +84,31 @@ public class UserController {
     // idCheck
     @PostMapping("/idCheck")
     public String userIdCheck(@RequestParam String id){
-
         String idCheck = "Y";
-
-
-
+        User user = repository.findUserByid(id);
+        if(user == null) {
+            idCheck = "";
+        }
         return idCheck;
     }
 
     @PostMapping("/nicknameCheck")
     public String userNicknameCheck(@RequestParam String nickname){
         String nicknameCheck = "Y";
-
+        User user = repository.findUserNickname(nickname);
+        if(user == null){
+            nicknameCheck = "";
+        }
         return nicknameCheck;
-
     }
 
+    @PostMapping("/emailCheck")
+    public String userEmailCheck(@RequestParam String email){
+        String emailCheck = "Y";
+        User user = repository.findUserEmail(email);
+        if(user == null){
+            emailCheck = "";
+        }
+        return emailCheck;
+    }
 }

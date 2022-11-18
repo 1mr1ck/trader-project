@@ -54,6 +54,12 @@ public class ProductController {
         return modelAndView;
     }
 
+    // getProductUser
+    public List<Product> getProductUser(int no){
+
+        return service.readProductUserNo(no);
+    }
+
     // GetProductAll
     @GetMapping("/v1/search/productAll")
     public List<Product> getProductAll() {
