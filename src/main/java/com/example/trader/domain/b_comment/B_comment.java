@@ -1,8 +1,7 @@
 package com.example.trader.domain.b_comment;
 
-import com.example.trader.service.util.Timestamp;
+import com.example.trader.domain.b_comment.service.util.Timestamp;
 import lombok.*;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

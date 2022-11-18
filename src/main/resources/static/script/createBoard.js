@@ -29,7 +29,7 @@ function createBoard(){
     $.ajax(settings).done(function (response) {
         console.log(response);
         alert("글쓰기 성공");
-        location.href="/";
+        location.href="/boardView";
     });fail(function(error){
         alert("글쓰기 실패");
         console.log(error);

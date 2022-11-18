@@ -1,6 +1,6 @@
 package com.example.trader.domain.board;
 
-import com.example.trader.service.util.Timestamp;
+import com.example.trader.domain.b_comment.service.util.Timestamp;
 import lombok.*;
 
 
@@ -16,4 +16,5 @@ public class BoardDto extends Timestamp {
     private String b_content;
     private boolean notice;
     private String nickname;
+
 }
