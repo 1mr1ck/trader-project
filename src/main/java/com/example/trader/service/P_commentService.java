@@ -42,12 +42,16 @@ public class P_commentService {
     // Update
     // 수정
     @Transactional
-    public void update(int pc_no, P_commentDto p_commentDto) {
+    public List<P_comment> update(int p_no, int pc_no, P_commentDto p_commentDto) {
         P_comment p_comment = p_commentRepository.findByPc_no(pc_no);
 
         if(p_comment != null) {
             p_comment.setB_comment(p_commentDto);
         }
+
+        List<P_comment> p_commentList = p_commentRepository.findByP_no(p_no);
+
+        return p_commentList;
     }
 
     // Delete

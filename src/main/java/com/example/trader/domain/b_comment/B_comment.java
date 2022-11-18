@@ -24,13 +24,11 @@ public class B_comment extends Timestamp {
     private int user_no;
 
     private String user_nickname;
-
     private String bc_content;
 
-    public static B_comment createB_comment(int b_no, B_commentDto b_commentDto) {
+    public static B_comment createB_comment(B_commentDto b_commentDto) {
         B_comment b_comment = new B_comment();
-        b_comment.setBc_no(b_commentDto.getBc_no());
-        b_comment.setB_no(b_no);
+        b_comment.setB_no(b_commentDto.getB_no());
         b_comment.setUser_no(b_commentDto.getUser_no());
         b_comment.setUser_nickname(b_commentDto.getUser_nickname());
         b_comment.setBc_content(b_commentDto.getBc_content());
