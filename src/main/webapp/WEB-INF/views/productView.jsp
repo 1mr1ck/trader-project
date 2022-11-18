@@ -41,6 +41,9 @@
     </tr>
     </tbody>
 </table>
+<form class="wish-box" id="wish-box">
+
+</form>
 <!-- 댓글 -->
 <!-- 댓글 등록 div -->
 <div class="comment-create-box">
@@ -84,5 +87,9 @@
     </button>
 </div>
 <script src="/script/p_comment.js"></script>
+<script src="/script/wish.js"></script>
+<script>
+    window.onload = wishOnload();
+</script>
 </body>
 </html>

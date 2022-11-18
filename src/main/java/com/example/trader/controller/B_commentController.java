@@ -23,7 +23,7 @@ public class B_commentController {
 
     // Read
     // 그 게시글의 댓글 전체 불러오기
-    @GetMapping("/b_comment/board/{b_no}")
+    @PostMapping("/b_comments/board/{b_no}")
     public List<B_comment> commentsByB_no(@PathVariable int b_no) {
         // 결과 응답
         System.out.println(b_no);
@@ -38,14 +38,15 @@ public class B_commentController {
 
 
     // 댓글 수정
-    @PostMapping("/b_comment/{bc_no}/update")
-    public void update(@PathVariable int bc_no, @RequestBody B_commentDto b_commentDto) {
-        b_commentService.update(bc_no, b_commentDto);
+    @PostMapping("/b_comment/board/{b_no}/{bc_no}/update")
+    public List<B_comment> update(@PathVariable int b_no, @PathVariable int bc_no, @RequestBody B_commentDto b_commentDto) {
+        return b_commentService.update(b_no, bc_no, b_commentDto);
     }
 
     // 댓글 삭제
-    @DeleteMapping("/b_comment/{bc_no}/delete")
-    public void delete(@PathVariable int bc_no) {
-        b_commentService.delete(bc_no);
+    @PostMapping("/b_comment/board/{b_no}/{bc_no}/delete")
+    public List<B_comment> delete(@PathVariable int b_no, @PathVariable int bc_no) {
+
+        return b_commentService.delete(b_no, bc_no);
     }
 }
