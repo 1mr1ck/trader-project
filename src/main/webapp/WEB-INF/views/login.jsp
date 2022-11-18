@@ -16,14 +16,16 @@
         <input type="text" name="id" placeholder="id">
         <input type="text" name="password" placeholder="pw">
         <input type="submit" value="로그인">
+        <div id="button_area">
         <div id="naverIdLogin"></div>
+        </div>
     </form>
 </body>
 <script>
     const naverLogin = new naver.LoginWithNaverId(
         {
             clientId: "_eG3Srmo1S4KO2pKeddu",
-            callbackUrl: "http://127.0.0.1:5500",
+            callbackUrl: "http://localhost:8080/",
             loginButton: {color: "green", type: 2, height: 40}
         }
     );
@@ -63,9 +65,8 @@
         const logout=document.getElementById('btn_logout');
         logout.addEventListener('click',(e)=>{
             naverLogin.logout();
-            location.replace("http://127.0.0.1:5500");
+            location.replace("http://localhost:8080/");
         })
     }
-
 </script>
 </html>
