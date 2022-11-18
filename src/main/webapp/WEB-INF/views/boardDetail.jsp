@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
     <title>게시판상세</title>
@@ -41,8 +41,8 @@
     </tbody>
 </table>
 <input type="button" value="글목록" onclick="location.href='/boardView'">
-<input type="button" value="글수정" onclick="location.href='/boardUpdate'">
-<input type="button" value="글삭제" onclick="location.href='/boardDelete'">
+<input type="button" value="글수정" onclick="location.href='/v1/update/board?b_no=${board.b_no}'">
+<input type="button" value="글삭제" onclick="location.href='/v1/delete/board?b_no=${board.b_no}'">
 <!-- 댓글 등록 박스 -->
 <div class="comment-create-box">
     <input type="hidden" value="${board.b_no}" id="b_no">
