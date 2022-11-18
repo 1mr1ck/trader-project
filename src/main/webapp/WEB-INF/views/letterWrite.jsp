@@ -18,21 +18,35 @@
         <tbody class="letterList">
             <c:forEach items="${myLetterChattingList}" var="letter">
                 <tr>
-                    <td>${letter.user_nickname}</td>
+                    <c:if test="${letter.make}">
+                        <td>${letter.user_nickname}</td>
+                    </c:if>
+                    <c:if test="${!letter.make}">
+                        <td>${letter.other_nickname}</td>
+                    </c:if>
                     <td>${letter.l_content}</td>
-                    <c:set var="regDate" value="${(String.valueOf(letter.regDate)).substring(0, 10)} ${(String.valueOf(letter.regDate)).substring(12, 19)}"/>
+                    <c:set var="regDate" value="${(String.valueOf(letter.regDate)).substring(12, 16)}"/>
                     <td>${regDate}</td>
                 </tr>
+                <c:set var="user_no" value="${letter.user_no}"/>
+                <c:set var="user_nickname" value="${letter.user_nickname}"/>
             </c:forEach>
         </tbody>
     </table>
     <form>
+        <input type="hidden" value="${sessionScope.no}" id="login_user" name="login_user">
         <input type="hidden" value="${product.p_no}" id="p_no" name="p_no">
         <input type="hidden" value="${product.p_title}" id="p_title" name="p_title">
         <input type="hidden" value="${product.user_no}" id="other_no" name="other_no">
         <input type="hidden" value="${product.nickname}" id="other_nickname" name="other_nickname">
-        <input type="hidden" value="${sessionScope.no}" id="user_no" name="user_no">
-        <input type="hidden" value="${sessionScope.nickname}" id="user_nickname" name="user_nickname">
+        <c:if test="${product.user_no == sessionScope.no}">
+            <input type="hidden" value="${user_no}" id="user_no" name="user_no">
+            <input type="hidden" value="${user_nickname}" id="user_nickname" name="user_nickname">
+        </c:if>
+        <c:if test="${product.user_no != sessionScope.no}">
+            <input type="hidden" value="${sessionScope.no}" id="user_no" name="user_no">
+            <input type="hidden" value="${sessionScope.nickname}" id="user_nickname" name="user_nickname">
+        </c:if>
         <div>
             <input type="text" id="l_content" name="l_content" onkeypress="inputEnter(event)" required autofocus>
         </div>

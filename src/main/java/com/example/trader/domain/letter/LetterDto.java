@@ -20,4 +20,5 @@ public class LetterDto extends Timestamp {
     private String user_nickname;
     private String other_nickname;
     private String l_content;
+    private boolean make;
 }
