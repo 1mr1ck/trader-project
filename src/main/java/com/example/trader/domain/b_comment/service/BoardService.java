@@ -1,7 +1,9 @@
-package com.example.trader.service;
+package com.example.trader.domain.b_comment.service;
 
 import com.example.trader.domain.board.Board;
 import com.example.trader.domain.board.BoardRepository;
+import com.example.trader.domain.p_comment.P_comment;
+import com.example.trader.domain.p_comment.P_commentDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -39,11 +41,14 @@ public class BoardService {
     //Update
     @Transactional
     public void updateBoard(BoardDto boardDto){
+        System.out.println(boardDto.getB_no());
         Board board = readBoardByB_no(boardDto.getB_no());
         if(board != null){
             board.setBoard(boardDto);
         }
     }
+    /* UPDATE */
+
 
 
 

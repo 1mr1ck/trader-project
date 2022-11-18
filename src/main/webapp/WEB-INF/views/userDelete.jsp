@@ -9,9 +9,9 @@
 <html>
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <title>Title</title>
+    <link rel="stylesheet" href="/css/myPageTemplate.css">
+    <title>Trader</title>
 </head>
-<jsp:include page="header.jsp"></jsp:include>
 <body>
 <%
     HttpSession sessionCheck = request.getSession();
@@ -21,41 +21,23 @@
     String password = (String)sessionCheck.getAttribute("password");
 %>
 
-<nav>
+<header>
+    <jsp:include page="header.jsp"></jsp:include>
+</header>
+<aside>
     <jsp:include page="sidebar.jsp"/>
-</nav>
-    <h1>회원탈퇴</h1>
+</aside>
 <section>
+    <h1>회원탈퇴</h1>
     <form method="post">
         <input type="hidden" id="no" value="<%=no%>">
         <input type="text" id="password" placeholder="pw">
-        <input type="button" onclick="userDelete()">
+        <input type="button" onclick="userDelete()" value="회원탈퇴">
     </form>
 </section>
-<script>
-    function userDelete(){
-        let no = document.getElementById("no").value;
-        var settings = {
-            "url": "userDelete/userDeleteProc",
-            "method": "POST",
-            "timeout": 0,
-            "headers": {
-                "Content-Type": "application/json"
-            },
-            "data": JSON.stringify({
-                "no": no
-            }),
-        };
-
-        $.ajax(settings).done(function (response) {
-            console.log(response);
-        });
-
-        location.href="/myPage";
-    }
-
-
-</script>
+<footer>
+    <jsp:include page="footer.jsp"></jsp:include>
+</footer>
 </body>
-<jsp:include page="footer.jsp"></jsp:include>
+<script src="script/userDeleteScript.js"></script>
 </html>

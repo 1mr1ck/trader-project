@@ -3,7 +3,7 @@ package com.example.trader.controller;
 import com.example.trader.domain.user.User;
 import com.example.trader.domain.user.UserDto;
 import com.example.trader.domain.user.UserRepository;
-import com.example.trader.service.UserService;
+import com.example.trader.domain.b_comment.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -84,20 +84,31 @@ public class UserController {
     // idCheck
     @PostMapping("/idCheck")
     public String userIdCheck(@RequestParam String id){
-
         String idCheck = "Y";
-
-
-
+        User user = repository.findUserByid(id);
+        if(user == null) {
+            idCheck = "";
+        }
         return idCheck;
     }
 
     @PostMapping("/nicknameCheck")
     public String userNicknameCheck(@RequestParam String nickname){
         String nicknameCheck = "Y";
-
+        User user = repository.findUserNickname(nickname);
+        if(user == null){
+            nicknameCheck = "";
+        }
         return nicknameCheck;
-
     }
 
+    @PostMapping("/emailCheck")
+    public String userEmailCheck(@RequestParam String email){
+        String emailCheck = "Y";
+        User user = repository.findUserEmail(email);
+        if(user == null){
+            emailCheck = "";
+        }
+        return emailCheck;
+    }
 }

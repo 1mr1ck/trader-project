@@ -10,83 +10,33 @@
 <html>
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <title>Title</title>
+    <link rel="stylesheet" href="/css/myPageTemplate.css">
+    <title>Trader</title>
 </head>
 <body>
-
-<div>
-    <form method="post">
-        <input type="hidden" id="no" autocomplete="off" value="${sessionScope.no}">
-        <input type="text" id="id" name="id" autocomplete="off" value="${sessionScope.id}" placeholder="id" readonly>
-        <input type="text" id="password" name="password" autocomplete="off" placeholder="pw">
-        <input type="text" id="email" name="email" autocomplete="off" value="${sessionScope.email}" placeholder="email" readonly>
-        <input type="text" id="phone" name="phone" autocomplete="off" value="${sessionScope.phone}" onfocus="this.value=''" onblur="phoneNullCheck('${sessionScope.phone}')" placeholder="phone">
-        <input type="text" id="address" name="address" autocomplete="off" value="${sessionScope.address}" onfocus="this.value=''" onblur="addressNullCheck('${sessionScope.address}')" placeholder="address">
-        <input type="text" id="nickname" name="nickname" autocomplete="off" value="${sessionScope.nickname}" onfocus="this.value=''" onblur="nicknameNullCheck('${sessionScope.nickname}')" placeholder="nickname">
-        <input type="button" value="정보수정" onclick="update()">
-    </form>
-</div>
-<script>
-
-    function nicknameNullCheck(nameCheck){
-        name1 = document.getElementById('nickname').value;
-
-        if(name1 === ''){
-            document.getElementById('nickname').value = nameCheck;
-        }
-    }
-
-    function phoneNullCheck(phoneCheck){
-        phone1 = document.getElementById('phone').value;
-
-        if(phone1 === ''){
-            document.getElementById('phone').value = phoneCheck;
-        }
-    }
-
-    function addressNullCheck(addressCheck){
-        address1 = document.getElementById('address').value;
-
-        if(address1 === ''){
-            document.getElementById('address').value = addressCheck;
-        }
-    }
-
-    function update(){
-
-        let no = document.getElementById("no").value;
-        let id = document.getElementById("id").value;
-        let password = document.getElementById("password").value;
-        let email = document.getElementById("email").value;
-        let phone = document.getElementById("phone").value;
-        let address = document.getElementById("address").value;
-        let nickname = document.getElementById("nickname").value;
-
-
-    var settings = {
-        "url": "userUpdate/UpdateProc",
-        "method": "POST",
-        "timeout": 0,
-        "headers": {
-            "Content-Type": "application/json"
-        },
-        "data": JSON.stringify({
-            "no": no,
-            "id": id,
-            "password": password,
-            "email": email,
-            "phone": phone,
-            "address": address,
-            "nickname": nickname
-        }),
-    };
-
-    $.ajax(settings).done(function (response) {
-        console.log(response);
-    });
-
-        location.href="/myPage";
-    }
-</script>
+<header>
+    <jsp:include page="header.jsp"></jsp:include>
+</header>
+<aside>
+    <jsp:include page="sidebar.jsp"/>
+</aside>
+<section>
+    <div>
+        <form method="post">
+            <input type="hidden" id="no" autocomplete="off" value="${sessionScope.no}">
+            <input type="text" id="id" name="id" autocomplete="off" value="${sessionScope.id}" placeholder="id" readonly>
+            <input type="text" id="password" name="password" autocomplete="off" placeholder="pw">
+            <input type="text" id="email" name="email" autocomplete="off" value="${sessionScope.email}" placeholder="email" readonly>
+            <input type="text" id="phone" name="phone" autocomplete="off" value="${sessionScope.phone}" onfocus="this.value=''" onblur="phoneNullCheck('${sessionScope.phone}')" placeholder="phone">
+            <input type="text" id="address" name="address" autocomplete="off" value="${sessionScope.address}" onfocus="this.value=''" onblur="addressNullCheck('${sessionScope.address}')" placeholder="address">
+            <input type="text" id="nickname" name="nickname" autocomplete="off" value="${sessionScope.nickname}" onfocus="this.value=''" onblur="nicknameNullCheck('${sessionScope.nickname}')" placeholder="nickname">
+            <input type="button" value="정보수정" onclick="update()">
+        </form>
+    </div>
+</section>
+<footer>
+    <jsp:include page="footer.jsp"></jsp:include>
+</footer>
 </body>
+<script src="script/userUpdateScript.js"></script>
 </html>

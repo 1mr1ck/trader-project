@@ -9,64 +9,30 @@
 <html>
 <head>
     <script type="text/javascript" src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.0.js"charset="utf-8"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="/css/login.css">
     <title>Trader login</title>
 </head>
+<jsp:include page="header.jsp"></jsp:include>
 <body>
-    <form method="post" action="login/loginProc">
-        <input type="text" name="id" placeholder="id">
-        <input type="text" name="password" placeholder="pw">
-        <input type="submit" value="로그인">
-        <div id="button_area">
-        <div id="naverIdLogin"></div>
+<div id="container" class="container">
+    <div class="content">
+        <div class="join_wrap">
+            <form method="post" id="join_frm" action="login/loginProc">
+                <div class="join_title">로그인</div>
+                <div class="join_box">
+                    <input type="text" name="id" autocomplete="off" placeholder="아이디">
+                    <div class="password_check">
+                        <input type="password" placeholder="비밀번호" name="password" id="password" autocomplete="off">
+                        <button type="button" id="password_check_btn" class="password_check_btn">비밀번호 보기</button>
+                    </div>
+                    <input type="submit" id="join" class="join_btn" value="로그인">
+                </div>
+            </form>
         </div>
-    </form>
+    </div>
+</div>
 </body>
-<script>
-    const naverLogin = new naver.LoginWithNaverId(
-        {
-            clientId: "_eG3Srmo1S4KO2pKeddu",
-            callbackUrl: "http://localhost:8080/",
-            loginButton: {color: "green", type: 2, height: 40}
-        }
-    );
-
-
-    naverLogin.init();
-    naverLogin.getLoginStatus(function (status) {
-        if (status) {
-            const nickName=naverLogin.user.getNickName();
-            const age=naverLogin.user.getAge();
-            const birthday=naverLogin.user.getBirthday();
-
-            if(nickName===null||nickName===undefined ){
-                alert("별명이 필요합니다. 정보제공을 동의해주세요.");
-                naverLogin.reprompt();
-                return ;
-            }else{
-                setLoginStatus();
-            }
-        }
-    });
-    console.log(naverLogin);
-
-    function setLoginStatus(){
-
-        const message_area=document.getElementById('message');
-        message_area.innerHTML=`
-      <h3> Login 성공 </h3>
-      <div>user Nickname : ${naverLogin.user.nickname}</div>
-      <div>user Age(범위) : ${naverLogin.user.age}</div>
-      <div>user Birthday : ${naverLogin.user.birthday}</div>
-      `;
-
-        const button_area=document.getElementById('button_area');
-        button_area.innerHTML="<button id='btn_logout'>로그아웃</button>";
-
-        const logout=document.getElementById('btn_logout');
-        logout.addEventListener('click',(e)=>{
-            naverLogin.logout();
-            location.replace("http://localhost:8080/");
-        })
-    }
-</script>
+<jsp:include page="footer.jsp"></jsp:include>
+<script src="script/loginScript.js"></script>
 </html>

@@ -41,8 +41,10 @@
     </tbody>
 </table>
 <input type="button" value="글목록" onclick="location.href='/boardView'">
-<input type="button" value="글수정" onclick="location.href='/v1/update/board?b_no=${board.b_no}'">
-<input type="button" value="글삭제" onclick="location.href='/v1/delete/board?b_no=${board.b_no}'">
+<c:if test="${board.user_no == sessionScope.no}">
+    <input type="button" value="글수정" onclick="location.href='/boardUpdate/${board.b_no}'">
+    <input type="button" value="글삭제" onclick="location.href='/v1/delete/board?b_no=${board.b_no}'">
+</c:if>
 <!-- 댓글 등록 박스 -->
 <div class="comment-create-box">
     <input type="hidden" value="${board.b_no}" id="b_no">

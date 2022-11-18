@@ -2,7 +2,7 @@ package com.example.trader.controller;
 
 import com.example.trader.domain.p_comment.P_comment;
 import com.example.trader.domain.p_comment.P_commentDto;
-import com.example.trader.service.P_commentService;
+import com.example.trader.domain.b_comment.service.P_commentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

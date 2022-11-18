@@ -16,9 +16,9 @@
     <h1>${product.p_title}에 쪽지쓰기</h1>
     <table>
         <tbody class="letterList">
-            <c:forEach items="${myLetterList}" var="letter">
+            <c:forEach items="${myLetterChattingList}" var="letter">
                 <tr>
-                    <td>${letter.nickname}</td>
+                    <td>${letter.user_nickname}</td>
                     <td>${letter.l_content}</td>
                     <c:set var="regDate" value="${(String.valueOf(letter.regDate)).substring(0, 10)} ${(String.valueOf(letter.regDate)).substring(12, 19)}"/>
                     <td>${regDate}</td>
@@ -28,8 +28,10 @@
     </table>
     <form>
         <input type="hidden" value="${product.p_no}" id="p_no" name="p_no">
+        <input type="hidden" value="${product.user_no}" id="other_no" name="other_no">
+        <input type="hidden" value="${product.nickname}" id="other_nickname" name="other_nickname">
         <input type="hidden" value="${sessionScope.no}" id="user_no" name="user_no">
-        <input type="hidden" value="${sessionScope.nickname}" id="nickname" name="nickname">
+        <input type="hidden" value="${sessionScope.nickname}" id="user_nickname" name="user_nickname">
         <div>
             <input type="text" id="l_content" name="l_content" onkeypress="inputEnter(event)" required autofocus>
         </div>

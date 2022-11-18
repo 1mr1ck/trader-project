@@ -1,4 +1,4 @@
-package com.example.trader.service;
+package com.example.trader.domain.b_comment.service;
 
 import com.example.trader.domain.letter.Letter;
 import com.example.trader.domain.letter.LetterDto;
@@ -51,8 +51,13 @@ public class LetterService {
         repository.deleteById(l_code);
     }
 
-    // Read By User_no And P_no
-    public List<Letter> readLetterByUser_noAndP_no(int user_no, int p_no) {
-        return repository.findByUser_noAndP_no(user_no, p_no);
+    // Read By P_no And User_no And Other_no
+    public List<Letter> readLetterByP_noAndUser_noAndOther_no(int p_no, int user_no, int other_no) {
+        return repository.findByP_noAndUser_noAndOther_no(p_no, user_no, other_no);
+    }
+
+    // Read P_no By User_no And Other_no
+    public List<Letter> readLetterByUser_no(int user_no) {
+        return repository.findByUser_no(user_no, user_no);
     }
 }
