@@ -32,7 +32,7 @@
                 <th>판매/구매</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody class="userProductTBody">
 
         </tbody>
     </table>
@@ -61,6 +61,7 @@
         let tableBody ='';
         const list = response;
         list.forEach(e => {
+            console.log(response);
             let category = e.category;
             let title = e.p_title;
             let content = e.p_content;
@@ -76,7 +77,7 @@
             tableBody += '</tr>'
         })
 
-        console.log(response);
+
     });
 
 </script>
