@@ -79,8 +79,8 @@
 </table>
 </div>
 <div>
-    <button onclick="window.open('/letterWrite/${product.p_no}/${sessionScope.no}', '쪽지보내기', 'width=500, height=500');">
-        쪽지보내기
+    <button onclick="window.open('/letterWrite/${product.p_no}/${sessionScope.no}/${product.user_no}', '쪽지쓰기', 'width=500, height=500');">
+        쪽지쓰기
     </button>
 </div>
 <script src="/script/p_comment.js"></script>

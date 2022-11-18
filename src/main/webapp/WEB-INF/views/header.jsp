@@ -37,7 +37,7 @@
     </ul>
     <%} else {%>
     <ul class="navbar1_links">
-        <li><a href="letter">쪽지</a></li>
+        <li><a onclick="window.open('myLetter/${sessionScope.no}', '쪽지보내기', 'width=500, height=500');">쪽지함</a></li>
         <li><a href="myPage">마이페이지</a></li>
         <li><a href="logout">로그아웃</a></li>
     </ul>
