@@ -15,5 +15,6 @@ public interface P_commentRepository extends JpaRepository<P_comment, Integer> {
     public P_comment findByPc_no(int pc_no);
 
     @Query(value = "SELECT p FROM P_comment p WHERE p.user_no = :user_no")
-    List<P_comment> findByUser_no(@Param("user_no") int user_no);
+    public List<P_comment> findByUser_no(@Param("user_no") int user_no);
+
 }

@@ -49,19 +49,26 @@ public class B_commentService {
 
     // 댓글 업데이트
     @Transactional
-    public void update(int bc_no, B_commentDto b_commentDto) {
+    public List<B_comment> update(int b_no, int bc_no, B_commentDto b_commentDto) {
         B_comment b_comment = b_commentRepository.findByBc_no(bc_no);
         if(b_comment != null) {
             b_comment.setB_comment(b_commentDto);
         }
+
+        List<B_comment> b_commentList = b_commentRepository.findByB_no(b_no);
+
+        return b_commentList;
     }
 
     // 댓글 삭제
     @Transactional
-    public void delete(int bc_no) {
+    public List<B_comment> delete(int b_no, int bc_no) {
         B_comment b_comment = b_commentRepository.findByBc_no(bc_no);
         if(b_comment != null) {
             b_commentRepository.delete(b_comment);
         }
+
+        List<B_comment> b_commentList = b_commentRepository.findByB_no(b_no);
+        return b_commentList;
     }
 }

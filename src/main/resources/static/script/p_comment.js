@@ -1,6 +1,7 @@
 const cmtList = document.querySelector('.cmt-list');
 const login_no = document.getElementById('no').value;
 const login_nickname = document.getElementById('nickname').value;
+const content_box = document.getElementById('cmt-content');
 // 등록
 function saveComment(p_no) {
     if(login_nickname === "") {
@@ -27,16 +28,13 @@ function saveComment(p_no) {
     $.ajax(settings).done(function (result) {
         var output = '<tr>';
         const list = result;
-        console.log(result);
 
         list.forEach(e => {
-        console.log(login_no);
             const modStr = e.modDate;
             const modDate = modStr.substring(0,10);
             const content = e.pc_content;
             const pc_no = e.pc_no;
             const cmt_user_no = e.user_no;
-            console.log(cmt_user_no);
             const cmt_nickname = e.user_nickname;
 
             output += '<td class="nickname">' + cmt_nickname + '</td>';
@@ -52,7 +50,7 @@ function saveComment(p_no) {
                 output += '</tr>';
             }
 
-
+            content_box.value = "";
             cmtList.innerHTML = output;
         })
 
@@ -80,7 +78,6 @@ function updateComment(p_no, pc_no) {
     }
 
     $.ajax(settings).done(function (result) {
-        console.log(result);
         const list = result;
 
         var output = "";
@@ -119,7 +116,6 @@ function updateComment(p_no, pc_no) {
 // 2차
 function modifyComment(p_no, pc_no) {
     const updateContent = document.getElementById("updateContent").value;
-    console.log(updateContent);
     let settings = {
         "url": "http://localhost:8080/p_comment/product/" + p_no + "/" + pc_no + "/update",
         "method": "POST",
@@ -139,7 +135,6 @@ function modifyComment(p_no, pc_no) {
     $.ajax(settings).done(function (result) {
         var output = '<tr>';
         const list = result;
-        console.log(result);
 
         list.forEach(e => {
             console.log(login_no);
@@ -148,7 +143,6 @@ function modifyComment(p_no, pc_no) {
             const content = e.pc_content;
             const pc_no = e.pc_no;
             const cmt_user_no = e.user_no;
-            console.log(cmt_user_no);
             const cmt_nickname = e.user_nickname;
 
             output += '<td class="nickname">' + cmt_nickname + '</td>';

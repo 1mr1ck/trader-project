@@ -8,7 +8,7 @@ import java.util.List;
 public interface B_commentRepository extends JpaRepository<B_comment, Integer> {
 
     // 그 게시판의 댓글 전체목록
-    @Query(value = "SELECT * FROM b_comment WHERE b_no = ?", nativeQuery = true)
+    @Query(value = "SELECT * FROM b_comment WHERE b_no = ? ORDER BY bc_no DESC", nativeQuery = true)
     public List<B_comment> findByB_no(int b_no);
 
     // 한 유저의 댓글 전체목록

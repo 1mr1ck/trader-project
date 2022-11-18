@@ -38,6 +38,7 @@ public class BoardController {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("boardDetail");
         modelAndView.addObject("response", getBoard(b_no));
+        modelAndView.addObject("comments", b_commentService.commentsByB_no(b_no));
         return modelAndView;
     }
     //getBoard
