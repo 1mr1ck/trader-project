@@ -33,8 +33,8 @@ public class ProductService {
         return product;
     }
 
-    public  List<Product> readProductUserNo(int no){
-        return repository.findByUserNo(no);
+    public  List<Product> findProductUserNo(int user_no){
+        return repository.findByUserNo(user_no);
     }
 
     public List<Product> readProductAll() {
