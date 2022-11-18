@@ -1,6 +1,6 @@
 package com.example.trader.domain.board;
 
-import com.example.trader.service.util.Timestamp;
+import com.example.trader.domain.b_comment.service.util.Timestamp;
 import lombok.*;
 
 import javax.persistence.*;

@@ -3,7 +3,7 @@ package com.example.trader.controller;
 import com.example.trader.domain.user.User;
 import com.example.trader.domain.user.UserDto;
 import com.example.trader.domain.user.UserRepository;
-import com.example.trader.service.UserService;
+import com.example.trader.domain.b_comment.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

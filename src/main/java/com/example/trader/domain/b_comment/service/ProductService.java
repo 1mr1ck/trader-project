@@ -1,4 +1,4 @@
-package com.example.trader.service;
+package com.example.trader.domain.b_comment.service;
 
 import com.example.trader.domain.product.Product;
 import com.example.trader.domain.product.ProductDto;
