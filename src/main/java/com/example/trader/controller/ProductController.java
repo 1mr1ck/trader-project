@@ -1,10 +1,10 @@
 package com.example.trader.controller;
 
+import com.example.trader.domain.b_comment.service.P_commentService;
+import com.example.trader.domain.b_comment.service.ProductService;
 import com.example.trader.domain.p_comment.P_comment;
 import com.example.trader.domain.product.Product;
 import com.example.trader.domain.product.ProductDto;
-import com.example.trader.service.P_commentService;
-import com.example.trader.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -52,6 +52,12 @@ public class ProductController {
         modelAndView.setViewName("product");
         modelAndView.addObject("response", getProductAll());
         return modelAndView;
+    }
+
+    // ProductUserNo
+    @PostMapping("/myPage/productUser")
+    public List<Product> ProductUserNo(@RequestParam int user_no){
+        return service.findProductUserNo(user_no);
     }
 
     // GetProductAll
