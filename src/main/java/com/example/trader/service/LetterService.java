@@ -1,4 +1,4 @@
-package com.example.trader.domain.b_comment.service;
+package com.example.trader.service;
 
 import com.example.trader.domain.letter.Letter;
 import com.example.trader.domain.letter.LetterDto;
@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RequiredArgsConstructor
@@ -56,8 +57,13 @@ public class LetterService {
         return repository.findByP_noAndUser_noAndOther_no(p_no, user_no, other_no);
     }
 
-    // Read P_no By User_no And Other_no
+    // Read Letter By User_no
     public List<Letter> readLetterByUser_no(int user_no) {
-        return repository.findByUser_no(user_no, user_no);
+        List<Integer> l_codeList = repository.findByUser_no(user_no, user_no);
+        List<Letter> letterList = new ArrayList<>();
+        for(int i = 0; i < l_codeList.size(); i++) {
+            letterList.add(readLetterByL_code(l_codeList.get(i)));
+        }
+        return letterList;
     }
 }

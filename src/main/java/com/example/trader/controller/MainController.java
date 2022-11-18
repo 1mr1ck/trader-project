@@ -64,6 +64,11 @@ public class MainController {
         return "product";
     }
 
+    @RequestMapping("/productUpdate")
+    public String productUpdate() {
+        return "productUpdate";
+    }
+
     @RequestMapping("/productCreate")
     public String productCreate() {
         return "productCreate";

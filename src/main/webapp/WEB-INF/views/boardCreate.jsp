@@ -11,13 +11,6 @@
     <title>게시판 작성</title>
 </head>
 <body>
-
-<%
-    HttpSession sessionCheck = request.getSession();
-    String id = (String)sessionCheck.getAttribute("log");
-
-%>
-
 <form class="write">
     <div class="board_wrap">
         <div class="board_title">

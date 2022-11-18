@@ -1,6 +1,6 @@
 package com.example.trader.domain.letter;
 
-import com.example.trader.domain.b_comment.service.util.Timestamp;
+import com.example.trader.service.util.Timestamp;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -21,6 +21,7 @@ public class Letter extends Timestamp {
     @Id
     private int l_code;
     private int p_no;
+    private String p_title;
     private int user_no;
     private int other_no;
     private String user_nickname;
@@ -29,6 +30,7 @@ public class Letter extends Timestamp {
 
     public Letter(LetterDto letterDto) {
         this.p_no = letterDto.getP_no();
+        this.p_title = letterDto.getP_title();
         this.user_no = letterDto.getUser_no();
         this.other_no = letterDto.getOther_no();
         this.user_nickname = letterDto.getUser_nickname();

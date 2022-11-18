@@ -10,6 +10,7 @@ function inputEnter(e) {
 
 function letterWrite() {
     let p_no = $('#p_no').val();
+    let p_title = $('#p_title').val();
     let user_no = $('#user_no').val();
     let user_nickname = $('#user_nickname').val();
     let other_no = $('#other_no').val();
@@ -31,6 +32,7 @@ function letterWrite() {
         },
         "data": JSON.stringify({
             "p_no": p_no,
+            "p_title": p_title,
             "user_no": user_no,
             "user_nickname": user_nickname,
             "other_no": other_no,
