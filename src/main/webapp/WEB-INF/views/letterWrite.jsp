@@ -28,6 +28,7 @@
     </table>
     <form>
         <input type="hidden" value="${product.p_no}" id="p_no" name="p_no">
+        <input type="hidden" value="${product.p_title}" id="p_title" name="p_title">
         <input type="hidden" value="${product.user_no}" id="other_no" name="other_no">
         <input type="hidden" value="${product.nickname}" id="other_nickname" name="other_nickname">
         <input type="hidden" value="${sessionScope.no}" id="user_no" name="user_no">

@@ -14,6 +14,7 @@ public class LetterDto extends Timestamp {
 
     private int l_code;
     private int p_no;
+    private String p_title;
     private int user_no;
     private int other_no;
     private String user_nickname;
