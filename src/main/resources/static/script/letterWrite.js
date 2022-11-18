@@ -1,6 +1,6 @@
 const ltList = document.querySelector('.letterList');
-
 let content = document.getElementById('l_content');
+let login_user = document.getElementById('login_user').value;
 
 function inputEnter(e) {
     const code = e.code;
@@ -16,6 +16,11 @@ function letterWrite() {
     let other_no = $('#other_no').val();
     let other_nickname = $('#other_nickname').val();
     let l_content = $('#l_content').val();
+    let make_code = true;
+    if(login_user !== user_no) {
+        make_code = false;
+    }
+    console.log(make_code);
 
     if(l_content === "") {
         alert("tlqkf?");
@@ -37,7 +42,8 @@ function letterWrite() {
             "user_nickname": user_nickname,
             "other_no": other_no,
             "other_nickname": other_nickname,
-            "l_content": l_content
+            "l_content": l_content,
+            "make": make_code
         }),
     };
 
@@ -59,12 +65,18 @@ function letterWrite() {
             let output = "";
 
             list.forEach(e => {
-                const user_nickname = e.user_nickname;
+                let nickname = "";
+                if(e.make) {
+                    nickname = e.other_nickname;
+                } else {
+                    nickname = e.user_nickname;
+                }
+                console.log(e.make);
                 const l_content = e.l_content;
                 const regStr = e.regDate;
-                const regDate = regStr.substring(0, 10) + " " + regStr.substring(12, 19);
+                const regDate = regStr.substring(12, 16);
 
-                output += '<tr><td>' + user_nickname + '</td><td>' + l_content + '</td><td>' + regDate + '</td></tr>';
+                output += '<tr><td>' + nickname + '</td><td>' + l_content + '</td><td>' + regDate + '</td></tr>';
             });
 
             ltList.innerHTML = output;

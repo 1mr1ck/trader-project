@@ -27,6 +27,7 @@ public class Letter extends Timestamp {
     private String user_nickname;
     private String other_nickname;
     private String l_content;
+    private boolean make;
 
     public Letter(LetterDto letterDto) {
         this.p_no = letterDto.getP_no();
@@ -36,6 +37,7 @@ public class Letter extends Timestamp {
         this.user_nickname = letterDto.getUser_nickname();
         this.other_nickname = letterDto.getOther_nickname();
         this.l_content = letterDto.getL_content();
+        this.make = letterDto.isMake();
     }
 
     // update용 setter
