@@ -13,8 +13,10 @@ import lombok.Setter;
 public class LetterDto extends Timestamp {
 
     private int l_code;
-    private int user_no;
     private int p_no;
-    private String nickname;
+    private int user_no;
+    private int other_no;
+    private String user_nickname;
+    private String other_nickname;
     private String l_content;
 }

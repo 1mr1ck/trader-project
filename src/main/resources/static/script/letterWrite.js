@@ -9,13 +9,15 @@ function inputEnter(e) {
 }
 
 function letterWrite() {
-    let user_no = $('#user_no').val();
     let p_no = $('#p_no').val();
-    let nickname = $('#nickname').val();
+    let user_no = $('#user_no').val();
+    let user_nickname = $('#user_nickname').val();
+    let other_no = $('#other_no').val();
+    let other_nickname = $('#other_nickname').val();
     let l_content = $('#l_content').val();
 
     if(l_content === "") {
-        alert("ㄷㅈ?");
+        alert("tlqkf?");
         return;
     }
 
@@ -28,16 +30,18 @@ function letterWrite() {
             "Content-Type": "application/json"
         },
         "data": JSON.stringify({
-            "user_no": user_no,
             "p_no": p_no,
-            "nickname": nickname,
+            "user_no": user_no,
+            "user_nickname": user_nickname,
+            "other_no": other_no,
+            "other_nickname": other_nickname,
             "l_content": l_content
         }),
     };
 
     let printSettings = {
-        "url": "http://localhost:8080/v1/read/letter/user_no/" + user_no + "/p_no/" + p_no,
-        "method": "GET",
+        "url": "http://localhost:8080/v1/read/letter/" + p_no + "/" + user_no + "/" + other_no,
+        "method": "POST",
         "timeout": 0,
         "headers": {
             "Authorization": "KakaoAK f311a885f3d384727233750637411113",
@@ -53,12 +57,12 @@ function letterWrite() {
             let output = "";
 
             list.forEach(e => {
-                const nickname = e.nickname;
+                const user_nickname = e.user_nickname;
                 const l_content = e.l_content;
                 const regStr = e.regDate;
                 const regDate = regStr.substring(0, 10) + " " + regStr.substring(12, 19);
 
-                output += '<tr><td>' + nickname + '</td><td>' + l_content + '</td><td>' + regDate + '</td></tr>';
+                output += '<tr><td>' + user_nickname + '</td><td>' + l_content + '</td><td>' + regDate + '</td></tr>';
             });
 
             ltList.innerHTML = output;
