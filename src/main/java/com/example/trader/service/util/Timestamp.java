@@ -1,4 +1,4 @@
-package com.example.trader.domain.b_comment.service.util;
+package com.example.trader.service.util;
 
 import lombok.Getter;
 import org.springframework.data.annotation.CreatedDate;

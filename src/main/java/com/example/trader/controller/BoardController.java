@@ -2,8 +2,8 @@ package com.example.trader.controller;
 
 import com.example.trader.domain.board.Board;
 import com.example.trader.domain.board.BoardDto;
-import com.example.trader.domain.b_comment.service.B_commentService;
-import com.example.trader.domain.b_comment.service.BoardService;
+import com.example.trader.service.B_commentService;
+import com.example.trader.service.BoardService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
