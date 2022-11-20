@@ -13,7 +13,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <link rel="stylesheet" href="/css/myPageTemplate.css">
 </head>
-<body>
+<body onload="content();">
 <header>
     <jsp:include page="header.jsp"></jsp:include>
 </header>
@@ -21,7 +21,9 @@
 <jsp:include page="sidebar.jsp"/>
 </aside>
 <section>
-    <input type="hidden" value="${sessionScope.no}" id="no" name="no">
+    <form method="post">
+        <input type="hidden" value="${sessionScope.no}" id="user_no" name="user_no">
+    </form>
     <table>
         <thead>
             <tr>
@@ -33,7 +35,6 @@
             </tr>
         </thead>
         <tbody class="userProductTBody">
-
         </tbody>
     </table>
 </section>
@@ -41,44 +42,5 @@
     <jsp:include page="footer.jsp"></jsp:include>
 </footer>
 </body>
-<script>
-
-    let no = document.getElementById('no').value;
-
-    var settings = {
-        "url": "/myPage/productUser",
-        "method": "POST",
-        "timeout": 0,
-        "headers": {
-            "Content-Type": "application/json"
-        },
-        "data": JSON.stringify({
-            "user_no": no
-        }),
-    };
-
-    $.ajax(settings).done(function (response) {
-        let tableBody ='';
-        const list = response;
-        list.forEach(e => {
-            console.log(response);
-            let category = e.category;
-            let title = e.p_title;
-            let content = e.p_content;
-            let check = e.p_check;
-            let type = e.p_type;
-
-            tableBody += '<tr>'
-            tableBody += '<td>' + category + '</td>'
-            tableBody += '<td>' + title + '</td>'
-            tableBody += '<td>' + content + '</td>'
-            tableBody += '<td>' + check + '</td>'
-            tableBody += '<td>' + type + '</td>'
-            tableBody += '</tr>'
-        })
-
-
-    });
-
-</script>
+<script src="script/userProductScript.js"></script>
 </html>

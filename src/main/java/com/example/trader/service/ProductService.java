@@ -34,6 +34,7 @@ public class ProductService {
     }
 
     public  List<Product> findProductUserNo(int user_no){
+        System.out.println(user_no);
         return repository.findByUserNo(user_no);
     }
 
