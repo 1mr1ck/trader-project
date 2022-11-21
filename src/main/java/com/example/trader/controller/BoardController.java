@@ -41,6 +41,13 @@ public class BoardController {
         modelAndView.addObject("comments", b_commentService.commentsByB_no(b_no));
         return modelAndView;
     }
+
+    // 1user userNo board
+    @PostMapping("/myPage/boardUser")
+    public List<Board> BoardUserNo(@RequestParam String user_no){
+        int no = Integer.parseInt(user_no);
+        return service.findBoardUserNo(no);
+    }
    // update
     @GetMapping("/boardUpdate/{b_no}")
     public ModelAndView SearchTotalPageviews2(@PathVariable int b_no) throws IOException {

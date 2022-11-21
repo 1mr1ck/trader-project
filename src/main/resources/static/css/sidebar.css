@@ -4,14 +4,14 @@
     padding: 0;
 }
 nav{
-    width: 400px;
+    width: 250px;
     box-sizing: border-box;
     position: fixed;
 }
 .menu {
     display:block;
     overflow: hidden;
-    width: 300px;
+    width: 250px;
     background-color: #ffc9f6;
     color: #fff;
     transition: all 0.5s ease;

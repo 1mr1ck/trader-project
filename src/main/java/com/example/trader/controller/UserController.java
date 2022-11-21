@@ -61,7 +61,7 @@ public class UserController {
     public String logout(HttpServletRequest request, HttpServletResponse response) throws IOException {
         HttpSession session = request.getSession();
 
-        session.removeAttribute("log");
+        session.invalidate();
         String sRedirect_uri="/";
         response.sendRedirect(sRedirect_uri);
         return "logout";
@@ -77,8 +77,11 @@ public class UserController {
 
     // delete
     @PostMapping("/userDelete/userDeleteProc")
-    public void userDelete(@RequestBody UserDto userDto){
+    public void userDelete(@RequestBody UserDto userDto, HttpServletResponse response) throws IOException {
+
         service.deleteUser(userDto.getNo());
+        String sRedirect_uri="/";
+        response.sendRedirect(sRedirect_uri);
     }
 
     // idCheck
