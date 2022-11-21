@@ -40,7 +40,7 @@
     </style>
 </head>
 <jsp:include page="header.jsp"></jsp:include>
-<body>
+<body onload="productSearch()">
     <h1>상품목록</h1>
     <div>
         <form>

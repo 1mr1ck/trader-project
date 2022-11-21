@@ -30,9 +30,9 @@
     </div>
     <ul class="navbar1_manu">
       <li><a href="/">홈</a></li>
-      <li><a href="/product">중고장터</a></li>
+      <li><a href="/productSearch">중고장터</a></li>
       <li><a href="/boardView">커뮤니티</a></li>
-      <li><a href="#"></a>어디일카</li>
+      <li><a href="/productCreate">중고물품등록</a></li>
     </ul>
     <%if(id == null){%>
     <ul class="navbar1_links">
