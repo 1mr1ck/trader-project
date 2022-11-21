@@ -22,7 +22,7 @@ function my_product() {
     $.ajax(settings).done(function (response) {
         let output ='';
         output += '<div class="out">';
-        output += '<div class="p_checkButton"><button onclick="setP_check(`전체`)">전체</button></div>';
+        output += '<div class="p_checkButton" onclick="setP_check(`전체`)">전체</div>';
         output += '<div class="p_checkButton"><button onclick="setP_check(`진행중`)">진행중</button></div>';
         output += '<div class="p_checkButton"><button onclick="setP_check(`예약중`)">예약중</button></div>';
         output += '<div class="p_checkButton"><button onclick="setP_check(`거래완`)">거래완료</button></div>';
@@ -76,7 +76,6 @@ function my_product() {
         output += '</div>';
 
         box.innerHTML = output;
-        init();
     });
 }
 
