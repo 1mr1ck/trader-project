@@ -42,6 +42,7 @@ public class Product extends Timestamp {
         this.p_type = productDto.getP_type();
         this.nickname = productDto.getNickname();
         this.price = productDto.getPrice();
+        System.out.println(price);
     }
 
     // update용 setter
