@@ -10,6 +10,7 @@
 <head>
     <title>상품등록</title>
 </head>
+<jsp:include page="header.jsp"></jsp:include>
 <body>
     <h1>상품등록</h1>
     <form>
@@ -60,4 +61,5 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="script/productCreate.js"></script>
 </body>
+<jsp:include page="footer.jsp"></jsp:include>
 </html>

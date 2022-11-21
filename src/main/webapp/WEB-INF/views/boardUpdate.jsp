@@ -12,6 +12,7 @@
     <title>게시판상세</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 </head>
+<jsp:include page="header.jsp"></jsp:include>
 <body>
 <button onclick="location.href='/'" style="cursor: pointer">home</button>
 <table>
@@ -47,4 +48,5 @@
 <script src="/script/boardUpdate.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 </body>
+<jsp:include page="footer.jsp"></jsp:include>
 </html>
