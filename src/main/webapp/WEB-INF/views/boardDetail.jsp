@@ -26,9 +26,9 @@
                 </div>
                 <div class="info">
                     <dl>
-                        <dt>아이디</dt>
+                        <dt>닉네임</dt>
                         <dd><input type="hidden"value="${board.user_no}" readonly></dd>
-                        <dd><input type="text"  id="id" value="${sessionScope.nickname}" readonly></dd>
+                        <dd><input type="text"  id="id" value="${board.nickname}" readonly></dd>
                     </dl>
                     <dl>
                         <dt>작성일자</dt>
