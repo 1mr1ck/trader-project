@@ -25,6 +25,11 @@
     <div class="wrap">
         <div class="out">
             <div class="in">
+                <button onclick="productPrint()">진행중</button>
+                <button onclick="productPrint()">예약중</button>
+                <button onclick="productPrint()">거래완료</button>
+                <button onclick="productPrint()">팝니다</button>
+                <button onclick="productPrint()">삽니다</button>
                 <form method="post">
                     <input type="hidden" value="${sessionScope.no}" id="user_no" name="user_no">
                 </form>
