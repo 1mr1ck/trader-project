@@ -67,10 +67,16 @@ public class ProductController {
         return service.readProductAll();
     }
 
-    // GetProductByCategoryAndP_type
+    // GetProductByCategoryAndP_typeAndKeyword
     @GetMapping("/v1/search/product/category/{category}/p_type/{p_type}/keyword/{keyword}")
-    public List<Product> getProductByCategoryAndP_type(@PathVariable String category, @PathVariable String p_type, @PathVariable String keyword) {
+    public List<Product> getProductByCategoryAndP_typeAndKeyword(@PathVariable String category, @PathVariable String p_type, @PathVariable String keyword) {
         return service.searchProductByCategoryAndP_typeAndKeyword(category, p_type, keyword);
+    }
+
+    // GetProductByUser_noAndP_typeAndKeyword
+    @GetMapping("/v1/search/product/user_no/{user_no}/p_type/{p_type}/keyword/{keyword}")
+    public List<Product> getProductByUser_noAndP_typeAndKeyword(@PathVariable int user_no, @PathVariable String p_type, @PathVariable String keyword) {
+        return service.searchProductByUser_noAndP_typeAndKeyword(user_no, p_type, keyword);
     }
 
     // UpdateProduct
@@ -93,9 +99,9 @@ public class ProductController {
     }
 
     // DeleteProduct
-    @DeleteMapping("/v1/delete/product")
-    public void deleteProduct(@RequestParam int p_no) {
-        service.deleteProduct(p_no);
+    @PostMapping("/v1/delete/product")
+    public List<Product> deleteProduct(@RequestParam int p_no, @RequestParam int user_no) {
+        return service.deleteProduct(p_no, user_no);
     }
 
 }

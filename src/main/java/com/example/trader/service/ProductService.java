@@ -58,8 +58,9 @@ public class ProductService {
 
     // Delete
     @Transactional
-    public void deleteProduct(int p_no) {
+    public List<Product> deleteProduct(int p_no, int user_no) {
         repository.deleteById(p_no);
+        return repository.findByUserNo(user_no);
     }
 
     // Search By Category And P_type And Keyword
@@ -75,5 +76,16 @@ public class ProductService {
         p_type = "%" + p_type + "%";
         keyword = "%" + keyword + "%";
         return repository.findByCategoryAndP_typeAndKeyword(category, p_type, keyword);
+    }
+
+    @Transactional
+    public List<Product> searchProductByUser_noAndP_typeAndKeyword(int user_no, String p_type, String keyword) {
+        if(p_type.equals("전체"))
+            p_type = "";
+        if(keyword.equals("전체"))
+            keyword = "";
+        p_type = "%" + p_type + "%";
+        keyword = "%" + keyword + "%";
+        return repository.findByUser_noAndP_typeAndKeyword(user_no, p_type, keyword);
     }
 }
