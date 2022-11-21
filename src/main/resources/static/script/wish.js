@@ -1,4 +1,6 @@
 const product_no = document.getElementById('p_no').value;
+const product_title = document.getElementById('p_title').value;
+console.log(product_title);
 let log_no = document.getElementById('no').value;
 if(log_no === "") {
     log_no = 0;
@@ -53,6 +55,7 @@ function wishGo(p_no, user_no) {
         "data": JSON.stringify({
             "p_no" : p_no,
             "user_no": user_no,
+            "p_title" : product_title
         }),
     }
 

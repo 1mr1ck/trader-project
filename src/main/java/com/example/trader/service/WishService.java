@@ -33,4 +33,8 @@ public class WishService {
     public List<Wish> readWishByP_no(int p_no) {
         return wishRepository.readWishByP_no(p_no);
     }
+
+    public List<Wish> readWishByUser_no(int user_no) {
+        return wishRepository.readWishByUser_no(user_no);
+    }
 }

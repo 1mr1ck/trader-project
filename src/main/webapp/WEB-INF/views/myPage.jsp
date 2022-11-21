@@ -22,7 +22,7 @@
 <section>
     <div class="wrap" id="wrap">
         <form method="post">
-            <input type="hidden" id="no" autocomplete="off" value="${sessionScope.no}">
+            <input type="hidden" id="user_no" autocomplete="off" value="${sessionScope.no}">
             <input type="text" id="id" name="id" autocomplete="off" value="${sessionScope.id}" placeholder="id" readonly>
             <input type="text" id="password" name="password" autocomplete="off" placeholder="pw">
             <input type="text" id="email" name="email" autocomplete="off" value="${sessionScope.email}" placeholder="email" readonly>

@@ -29,7 +29,7 @@ public class P_commentController {
     }
 
     // 한 유저의 목록 조회
-    @GetMapping("/p_comment/user/{user_no}")
+    @PostMapping("/p_comment/user/{user_no}")
     private List<P_comment> commentsByUser_no(@PathVariable int user_no) {
         return p_commentService.commentsByUser_no(user_no);
     }

@@ -28,6 +28,7 @@
     </thead>
     <tbody>
     <c:set var="product" value="${response}"/>
+    <input type="hidden" id="p_title" value="${product.p_title}">
     <tr>
         <td>${product.img_url}</td>
         <td>${product.p_title}</td>
@@ -35,9 +36,9 @@
         <td>${product.p_type}</td>
         <td>${product.nickname}</td>
         <c:set var="regDate" value="${(String.valueOf(product.regDate)).substring(0, 10)}"/>
-        <td>${regDate}</td>
+        <td id="reg_date">${regDate}</td>
         <c:set var="modDate" value="${(String.valueOf(product.modDate)).substring(0, 10)}"/>
-        <td>${modDate}</td>
+        <td id="mod_date">${modDate}</td>
     </tr>
     </tbody>
 </table>

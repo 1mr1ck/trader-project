@@ -28,6 +28,12 @@ public class WishController {
         return wishService.readWish(p_no, user_no);
     }
 
+    // 한 유저의 좋아요 목록 다 가져오기
+    @PostMapping("/wish/{user_no}")
+    public List<Wish> readWishByUserNo(@PathVariable int user_no) {
+        return wishService.readWishByUser_no(user_no);
+    }
+
     // 게시글의 위시목록 가져오기
     @PostMapping("/product/{p_no}/wish")
     public List<Wish> readWishByP_no(@PathVariable int p_no) {
