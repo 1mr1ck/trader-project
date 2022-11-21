@@ -1,50 +1,56 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: User
-  Date: 2022-11-16
-  Time: 오후 12:24
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
-    <title>게시판상세</title>
+    <title>Title</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="/css/board.css">
 </head>
 <body>
-<button onclick="location.href='/'" style="cursor: pointer">home</button>
-<table>
-    <thead>
-    <tr>
-        <th>제목</th>
-        <th>내용</th>
-        <th>유저번호</th>
-        <th>작성자</th>
-        <th>작성날짜</th>
-        <th>수정날짜</th>
-    </tr>
-    </thead>
-    <tbody>
-    <c:set var="board" value="${response}"/>
-    <input type="hidden" value="${board.b_no}" class="boardNo" id="boardNo" name="boardNo">
-    <tr>
-        <td>${board.b_title}</td>
-        <td>${board.b_content}</td>
-        <td>${board.user_no}</td>
-        <td>${sessionScope.nickname}</td>
-        <c:set var="regDate" value="${(String.valueOf(board.regDate)).substring(0, 10)}"/>
-        <td>${regDate}</td>
-        <c:set var="modDate" value="${(String.valueOf(board.modDate)).substring(0, 10)}"/>
-        <td>${modDate}</td>
-    </tr>
-    </tbody>
-</table>
-<input type="button" value="글목록" onclick="location.href='/boardView'">
-<c:if test="${board.user_no == sessionScope.no}">
-    <input type="button" value="글수정" onclick="location.href='/boardUpdate/${board.b_no}'">
-    <input type="button" value="글삭제" onclick="location.href='/v1/delete/board?b_no=${board.b_no}'">
-</c:if>
+<form class="write" method="post" >
+    <div class="board_wrap">
+        <div class="board_title">
+            <strong>커뮤니티</strong>
+            <p>회원님의 아름다움을 알고 싶습니다.</p>
+        </div>
+        <c:set var="board" value="${response}"/>
+        <input type="hidden" value="${board.b_no}" class="boardNo" id="boardNo" name="boardNo">
+        <div class="board_write_wrap" >
+            <div class="board_write">
+                <div class="title">
+                    <dl>
+                        <dt>제목</dt>
+                        <dd><input type="text"  value="${board.b_title}" id="title" name="title" readonly></dd>
+                    </dl>
+                </div>
+                <div class="info">
+                    <dl>
+                        <dt>아이디</dt>
+                        <dd><input type="hidden"value="${board.user_no}" readonly></dd>
+                        <dd><input type="text"  id="id" value="${sessionScope.nickname}" readonly></dd>
+                    </dl>
+                    <dl>
+                        <dt>작성일자</dt>
+                        <c:set var="regDate" value="${(String.valueOf(board.regDate)).substring(0, 10)}"/>
+                        <dd><input type="text"  style="border: none; outline :none" value="${regDate}" >
+<%--                            <input type="hidden" name="no" value="">--%>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="cont">
+                    <input type="text" class="text" value="${board.b_content}" id="content" name="content" readonly>
+                </div>
+            </div>
+            <div class="bt_wrap">
+                <input type="button" value="글목록" onclick="location.href='/boardView'">
+                <c:if test="${board.user_no == sessionScope.no}">
+                    <input type="button" value="글수정" onclick="location.href='/boardUpdate/${board.b_no}'">
+                    <input type="button" value="글삭제" onclick="location.href='/v1/delete/board?b_no=${board.b_no}'">
+                </c:if>
+            </div>
+        </div>
+    </div>
+</form>
 <!-- 댓글 등록 박스 -->
 <div class="comment-create-box">
     <input type="hidden" value="${board.b_no}" id="b_no">
@@ -81,5 +87,6 @@
     </tbody>
 </table>
 <script src="/script/b_comment.js"></script>
+
 </body>
 </html>
