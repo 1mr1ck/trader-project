@@ -1,11 +1,14 @@
 const login_no = document.getElementById('user_no').value;
 const box = document.getElementById('wrap');
 
+let p_type = document.getElementById('p_type').value;
+let p_check = document.getElementById('p_check').value;
+
 // 상품 게시글
 function my_product() {
 
     var settings = {
-        "url": "/myPage/productUser?user_no=" + login_no,
+        "url": "http://localhost:8080/v1/search/product/user_no/" + login_no + "/p_type/" + p_type + "/p_check/" + p_check,
         "method": "POST",
         "timeout": 0,
         "headers": {
@@ -76,13 +79,13 @@ function my_product() {
     });
 }
 
-function setP_check(c) {
-    p_check = c;
+function setP_check(check) {
+    p_check = check;
     my_product();
 }
 
-function setP_type(t) {
-    p_type = t;
+function setP_type(type) {
+    p_type = type;
     my_product();
 }
 
