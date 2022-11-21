@@ -1,11 +1,14 @@
 const login_no = document.getElementById('user_no').value;
 const box = document.getElementById('wrap');
 
+let p_type = document.getElementById('p_type').value;
+let p_check = document.getElementById('p_check').value;
+
 // 상품 게시글
 function my_product() {
 
     var settings = {
-        "url": "/myPage/productUser?user_no=" + login_no,
+        "url": "/v1/search/product/user_no/" + login_no + "/p_type/" + p_type + "/p_check/" + p_check,
         "method": "POST",
         "timeout": 0,
         "headers": {
@@ -19,6 +22,13 @@ function my_product() {
     $.ajax(settings).done(function (response) {
         let output ='';
         output += '<div class="out">';
+        output += '<div><button onclick="setP_check(`전체`)">전체</button>';
+        output += '<button onclick="setP_check(`진행중`)">진행중</button>';
+        output += '<button onclick="setP_check(`예약중`)">예약중</button>';
+        output += '<button onclick="setP_check(`거래완`)">거래완료</button></div>';
+        output += '<div><button onclick="setP_type(`전체`)">전체</button>';
+        output += '<button onclick="setP_type(`삽니다`)">삽니다</button>';
+        output += '<button onclick="setP_type(`팝니다`)">팝니다</button></div>';
         output += '<div class="in">';
         output += '<form method="POST">'
         output += '<input type="hidden" value="' + login_no + '" id="user_no" name="user_no">'
@@ -46,10 +56,12 @@ function my_product() {
             let content = e.p_content;
             let check = e.p_check;
             let type = e.p_type;
+            if(check === '거래완')
+                check += '료';
 
             output += '<tr>'
             output += '<td>' + category + '</td>'
-            output += '<td>' + title + '</td>'
+            output += '<td onclick="location.href=`/productView/' + p_no + '`" style="cursor: pointer">' + title + '</td>'
             output += '<td>' + content + '</td>'
             output += '<td>' + check + '</td>'
             output += '<td>' + type + '</td>'
@@ -67,6 +79,16 @@ function my_product() {
     });
 }
 
+function setP_check(c) {
+    p_check = c;
+    my_product();
+}
+
+function setP_type(t) {
+    p_type = t;
+    my_product();
+}
+
 // 상품 게시글 삭제
 function productDelete(p_no, user_no) {
     var settings = {
@@ -82,53 +104,7 @@ function productDelete(p_no, user_no) {
 
 
     $.ajax(settings).done(function (response) {
-        let output ='';
-        output += '<div class="out">';
-        output += '<div class="in">';
-        output += '<form method="POST">'
-        output += '<input type="hidden" value="' + login_no + '" id="user_no" name="user_no">'
-        output += '</form>';
-        output += '<table class="type04">';
-        output += '<thead>';
-        output += '<tr>';
-        output += '<th class="category">카테고리</th>';
-        output += '<th class="title">제목</th>';
-        output += '<th class="content">내용</th>';
-        output += '<th class="check">진행상태</th>';
-        output += '<th class="type">판매/구매</th>';
-        output += '<th class="type">수정/삭제</th>';
-        output += '</tr>';
-        output += '</thead>';
-        output += '<tbody>';
-
-        const list = response;
-        list.forEach(e => {
-            console.log(response);
-            let p_no = e.p_no;
-            let user_no = e.user_no;
-            let category = e.category;
-            let title = e.p_title;
-            let content = e.p_content;
-            let check = e.p_check;
-            let type = e.p_type;
-
-            output += '<tr>'
-            output += '<td>' + category + '</td>'
-            output += '<td>' + title + '</td>'
-            output += '<td>' + content + '</td>'
-            output += '<td>' + check + '</td>'
-            output += '<td>' + type + '</td>'
-            output += '<td><button onclick="location.href=`productUpdate/' + p_no + '`">수정</button>'
-            output += '<button onclick="productDelete(' + p_no + ',' + user_no +')">삭제</button></td>'
-            output += '</tr>'
-
-        })
-        output += '</tbody>';
-        output += '</table>';
-        output += '</div>';
-        output += '</div>';
-
-        box.innerHTML = output;
+        my_product();
     });
 }
 

@@ -22,6 +22,8 @@
         <input type="checkbox" id="expand-menu" name="expand-menu">
         <ul>
           <li><a href="#" onclick="my_product()" class="item"><div>거래내역</div></a></li>
+          <input type="hidden" id="p_type" name="p_type" value="전체">
+          <input type="hidden" id="p_check" name="p_check" value="전체">
           <li><a href="#" onclick="my_board()" class="item"><div>나의 게시글</div></a></li>
           <li><a href="#" onclick="my_boardCmt()" class="item"><div>나의 커뮤니티 댓글</div></a></li>
           <li><a href="#" onclick="my_productCmt()" class="item"><div>나의 중고장터 댓글</div></a></li>

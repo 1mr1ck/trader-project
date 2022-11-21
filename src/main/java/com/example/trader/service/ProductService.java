@@ -79,13 +79,13 @@ public class ProductService {
     }
 
     @Transactional
-    public List<Product> searchProductByUser_noAndP_typeAndKeyword(int user_no, String p_type, String keyword) {
+    public List<Product> searchProductByUser_noAndP_typeAndP_check(int user_no, String p_type, String p_check) {
         if(p_type.equals("전체"))
             p_type = "";
-        if(keyword.equals("전체"))
-            keyword = "";
+        if(p_check.equals("전체"))
+            p_check = "";
         p_type = "%" + p_type + "%";
-        keyword = "%" + keyword + "%";
-        return repository.findByUser_noAndP_typeAndKeyword(user_no, p_type, keyword);
+        p_check = "%" + p_check + "%";
+        return repository.findByUser_noAndP_typeAndP_check(user_no, p_type, p_check);
     }
 }
