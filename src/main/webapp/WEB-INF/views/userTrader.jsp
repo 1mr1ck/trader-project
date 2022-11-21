@@ -36,6 +36,7 @@
                         <th class="content">내용</th>
                         <th class="check">진행 확인</th>
                         <th class="type">판매/구매</th>
+                        <th class="type">수정/삭제</th>
                     </tr>
                     </thead>
                     <tbody class="userProductTBody">

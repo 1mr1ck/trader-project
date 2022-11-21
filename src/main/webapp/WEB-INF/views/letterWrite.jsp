@@ -78,11 +78,14 @@
                 <input type="button" onclick="updateP_check()" value="submit" style="cursor: pointer">
             </c:if>
             <c:if test="${product.user_no != sessionScope.no}">
-                <input type="text" value="${product.p_check}" readonly>
+                <select disabled>
+                    <option value="${product.p_check}" selected>${product.p_check}</option>
+                </select>
             </c:if>
         </form>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="/script/letterWrite.js"></script>
+    <script src="/script/productUpdateP_check.js"></script>
 </body>
 </html>

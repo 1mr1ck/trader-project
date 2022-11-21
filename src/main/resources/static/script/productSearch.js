@@ -49,7 +49,7 @@ function productSearch() {
 
             $('.container').append(
                 `<tr>
-					<td>${img_url}</td>
+					<td><img src="${img_url}"></td>
 					<td><a href="productView/${p_no}">${p_title}</a></td>
 					<td>${category}</td>
 					<td>${p_type}</td>

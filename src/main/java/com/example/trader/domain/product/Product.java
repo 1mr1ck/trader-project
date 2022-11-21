@@ -44,16 +44,15 @@ public class Product extends Timestamp {
 
     // update용 setter
     public void setProduct(ProductDto productDto) {
-        this.other_no = productDto.getOther_no();
         this.p_title = productDto.getP_title();
         this.p_content = productDto.getP_content();
         this.category = productDto.getCategory();
-        this.p_check = productDto.getP_check();
         this.img_url = productDto.getImg_url();
     }
 
     // update p_check용 setter
     public void setProductP_check(ProductDto productDto) {
+        this.other_no = productDto.getOther_no();
         this.p_check = productDto.getP_check();
     }
 }

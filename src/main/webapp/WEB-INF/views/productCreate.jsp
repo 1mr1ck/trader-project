@@ -8,10 +8,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>게시글작성</title>
+    <title>상품등록</title>
 </head>
 <body>
-    <h1>게시글작성</h1>
+    <h1>상품등록</h1>
     <form>
         <div>
             <input type="text" id="nickname" name="nickname" value="${sessionScope.nickname}" readonly>

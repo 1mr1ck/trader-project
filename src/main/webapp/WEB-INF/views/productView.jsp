@@ -29,7 +29,7 @@
     <tbody>
     <c:set var="product" value="${response}"/>
     <tr>
-        <td>${product.img_url}</td>
+        <td><img src="${product.img_url}"></td>
         <td>${product.p_title}</td>
         <td>${product.category}</td>
         <td>${product.p_type}</td>
@@ -42,12 +42,7 @@
     </tbody>
 </table>
 <form class="wish-box" id="wish-box">
-
 </form>
-<c:if test="${product.user_no == sessionScope.no}">
-    <input type="button" value="글수정" onclick="location.href='/productUpdate/${product.p_no}'">
-    <input type="button" value="글삭제" onclick="location.href='/${product.p_no}'">
-</c:if>
 <!-- 댓글 -->
 <!-- 댓글 등록 div -->
 <div class="comment-create-box">
