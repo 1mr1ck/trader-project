@@ -10,6 +10,7 @@
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <link rel="stylesheet" href="/css/myPageTemplate.css">
+    <link rel="stylesheet" href="/css/myPageTable.css">
     <title>Trader myPage</title>
 </head>
 <header>
@@ -19,7 +20,7 @@
     <jsp:include page="sidebar.jsp"/>
 </aside>
 <section>
-    <div>
+    <div class="wrap" id="wrap">
         <form method="post">
             <input type="hidden" id="no" autocomplete="off" value="${sessionScope.no}">
             <input type="text" id="id" name="id" autocomplete="off" value="${sessionScope.id}" placeholder="id" readonly>
@@ -37,4 +38,5 @@
 </footer>
 </body>
 <script src="script/userUpdateScript.js"></script>
+<script src="script/myPage.js"></script>
 </html>

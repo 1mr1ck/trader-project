@@ -22,7 +22,7 @@
     <li><a href="userBoard" class="item"><div>나의 게시글</div></a></li>
     <li><a href="#" onclick="my_boardCmt()" class="item"><div>나의 댓글</div></a></li>
     <li><a href="user_wish" class="item"><div>좋아요</div></a></li>
-    <li><a href="userUpdate" class="item"><div>정보수정</div></a></li>
+    <li><a href="#" onclick="modifyMyInfo()" class="item"><div>정보수정</div></a></li>
     <li><a href="userDelete" class="item"><div>회원탈퇴</div></a></li>
   </ul>
 </div>
