@@ -28,6 +28,8 @@
         <li><a href="#">홈</a></li>
         <li><a href="#">중고거래</a></li>
         <li><a href="#" >쪽지?</a></li>
+          <li><a href="#" >쪽지?</a></li>
+          <li><a href="#" >쪽지?</a></li>
       </ul>
     </nav>
 </body>
