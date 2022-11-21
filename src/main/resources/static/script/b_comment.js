@@ -232,7 +232,6 @@ function deleteComment(b_no, bc_no) {
         if(list.length === 0) {
             cmtList.innerHTML = output;
         } else {
-            output = '<tr>';
             list.forEach(e => {
                 const modStr = e.modDate;
                 const modDate = modStr.substring(0,10);
@@ -241,6 +240,7 @@ function deleteComment(b_no, bc_no) {
                 const user_nickname = e.user_nickname;
                 const cmt_user_no = e.user_no;
 
+                output = '<tr>';
                 output += '<td class="nickname">' + user_nickname + '</td>';
                 output += '<td class="data">' + modDate + '</td>';
                 output += '</tr>';
