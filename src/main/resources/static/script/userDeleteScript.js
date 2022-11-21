@@ -27,6 +27,7 @@ $(document).ready(function(){
     });
 });
 
+
 function userDelete(){
     let no = document.getElementById("no").value;
     let pwCk = document.getElementById("pwCk").value;

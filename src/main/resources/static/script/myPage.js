@@ -28,18 +28,35 @@ function modifyMyInfo() {
         const address = loginUser.address;
         const nickname = loginUser.nickname;
 
-        output += '<form method="POST">';
+        output += '<div id="container" class="container">';
+        output += '<div class="content">';
+        output += '<div class="join_wrap">';
+        output += '<form id="join_frm">';
+        output += '<div class="join_box">';
+        output += '<div class="join_title">정보수정</div>';
         output += '<input type="hidden" id="no" autocomplete="off" value="' + no + '">';
         output += '<input type="text" id="id" name="id" autocomplete="off" value="' + id + '" placeholder="id" readonly>';
-        output += '<input type="text" id="password" name="password" autocomplete="off" placeholder="password">';
+        output += '<div class="password_check">';
+        output += '<input type="password" id="password" name="password" autocomplete="off" placeholder="password">';
+        output += '<button type="button" id="password_check_btn" class="password_check_btn">비밀번호 보기</button>';
+        output += '</div>';
         output += '<input type="text" id="email" name="email" autocomplete="off" value="' + email + '" placeholder="email" readonly>';
         output += '<input type="text" id="phone" name="phone" autocomplete="off" value="' + phone + '" onfocus="this.value=``" onblur="phoneNullCheck(' + phone + ')" placeholder="phone">';
-        output += '<input type="text" id="address" name="address" autocomplete="off" value="' + address + '" onfocus="this.value=``" onblur="phoneNullCheck(' + address + ')" placeholder="address">';
-        output += '<input type="text" id="nickname" name="nickname" autocomplete="off" value="' + nickname + '" onfocus="this.value=``" onblur="phoneNullCheck(' + nickname + ')" placeholder="address">';
-        output += '<input type="button" value="정보수정" onclick="update()">';
-        output += '</form>'
+        output += '<input type="text" id="address" name="address" autocomplete="off" value="' + address + '" onfocus="this.value=``" onblur="addressNullCheck(' + address + ')" placeholder="address">';
+        output += '<input type="hidden" name="nicknameCheckExisting" id="nicknameCheckExisting" value="nickname">'
+        output += '<input type="text" id="nickname" name="nickname" autocomplete="off" value="' + nickname + '" onfocus="this.value=``" onblur="nicknameNullCheck(' + nickname + ')" placeholder="address">';
+        output += '</div>';
+        output += '<button type="button" id="join" class="join_btn">정보 수정</button>';
+        output += '</form>';
+        output += '</div>';
+        output += '</div>';
+        output += '</div>';
+        output += '<script src="script/updateTest.js"></script>';
+
 
         box.innerHTML = output;
+
+
     })
 }
 
