@@ -22,6 +22,43 @@ function addressNullCheck(addressCheck){
     }
 }
 
+function autoHypenPhone(str){
+    str = str.replace(/[^0-9]/g, '');
+    var tmp = '';
+    if( str.length < 4){
+        return str;
+    }else if(str.length < 7){
+        tmp += str.substr(0, 3);
+        tmp += '-';
+        tmp += str.substr(3);
+        return tmp;
+    }else if(str.length < 11){
+        tmp += str.substr(0, 3);
+        tmp += '-';
+        tmp += str.substr(3, 3);
+        tmp += '-';
+        tmp += str.substr(6);
+        return tmp;
+    }else{
+        tmp += str.substr(0, 3);
+        tmp += '-';
+        tmp += str.substr(3, 4);
+        tmp += '-';
+        tmp += str.substr(7);
+        return tmp;
+    }
+    return str;
+}
+
+let cellPhone = document.getElementById('phone');
+cellPhone.onkeyup = function(event){
+    event = event || window.event;
+    let _val = this.value.trim();
+    this.value = autoHypenPhone(_val);
+    console.log(this.value.length);
+    console.log(this.value);
+}
+
 $(document).ready(function(){
 
     // Click event of the showPassword button
@@ -113,11 +150,19 @@ function update(){
 
     let no = document.getElementById("no").value;
     let id = document.getElementById("id").value;
-    let password = document.getElementById("password").value;
+    let passwordChange = document.getElementById("password").value;
+    let passwordExisting = document.getElementById("passwordCheckExisting").value
     let email = document.getElementById("email").value;
     let phone = document.getElementById("phone").value;
     let address = document.getElementById("address").value;
     let nickname = document.getElementById("nickname").value;
+    let password = '';
+
+    if(passwordChange === ''){
+        password = passwordExisting;
+    } else {
+        password = passwordChange;
+    }
 
 
     var settings = {
@@ -152,7 +197,12 @@ $(function() {
     $('#join').click(function(){
 
         if($('#password3').val() == ""){
-            alert("비밀번호를 입력해주세요.");
+            alert("기존 비밀번호를 입력해주세요.");
+            return false;
+        }
+
+        if($('#passwordCheckExisting').val() !== $('#password3').val()){
+            alert("기존 비밀번호를 확인해주세요.")
             return false;
         }
 
@@ -166,38 +216,40 @@ $(function() {
                 return false;
             }
         }
-
-        if($('#password').val() != $('#password_ck').val()){
-            alert("비밀번호가 일치하지 않습니다.");
-            return false;
+        if($('#password').val() !== ''){
+            if($('#password').val() != $('#password2').val()){
+                alert("변경할 비밀번호와 비밀번호 확인이 일치하지 않습니다.");
+                return false;
+            }
         }
-
 
         update();
     });
 
-    if($('#nicknameCheckExisting').val() !== $('#nickname').val()){
-        $('#nickname').focusout(function(){
+        $('#nickname').focusout(function () {
             var nickname = $('#nickname').val();
 
             $.ajax({
-                type : "POST",
-                url : "/nicknameCheck",
-                data : {nickname : nickname},
-                success: function(data){
-                    if(data == "Y"){
-                        $('#nickname_ck').removeClass("dpn");
-                        document.getElementById('nicknameCheck').value = "Y"
-                    }else{
+                type: "POST",
+                url: "/nicknameCheck",
+                data: {nickname: nickname},
+                success: function (data) {
+                    if($('#nicknameCheckExisting').val() !== $('#nickname').val()) {
+                        if (data == "Y") {
+                            $('#nickname_ck').removeClass("dpn");
+                            document.getElementById('nicknameCheck').value = "Y"
+                        } else {
+                            $('#nickname_ck').addClass("dpn");
+                            document.getElementById('nicknameCheck').value = "N"
+                        }
+                    } else {
                         $('#nickname_ck').addClass("dpn");
                         document.getElementById('nicknameCheck').value = "N"
                     }
                 },
-                error: function(data){
+                error: function (data) {
                 }
             });
         });
-    }
-
 
 });
