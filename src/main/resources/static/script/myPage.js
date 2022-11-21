@@ -1,6 +1,9 @@
 const login_no = document.getElementById('user_no').value;
 const box = document.getElementById('wrap');
 
+let p_type = document.getElementById('p_type').value;
+let p_check = document.getElementById('p_check').value;
+
 // 상품 게시글
 function my_product() {
 
