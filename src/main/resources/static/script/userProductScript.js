@@ -19,6 +19,7 @@ function content(){
         const list = response;
         list.forEach(e => {
             console.log(response);
+            let p_no = e.p_no;
             let category = e.category;
             let title = e.p_title;
             let content = e.p_content;
@@ -31,6 +32,7 @@ function content(){
             tableBody += '<td>' + content + '</td>'
             tableBody += '<td>' + check + '</td>'
             tableBody += '<td>' + type + '</td>'
+            tableBody += '<td><button onclick="location.href=`productUpdate/' + p_no + '`">수정</button><button onclick="">삭제</button></td>'
             tableBody += '</tr>'
 
             userTbody.innerHTML = tableBody;

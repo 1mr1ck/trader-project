@@ -30,7 +30,7 @@ public class ProductController {
     }
 
     @GetMapping("/productView/{p_no}")
-    public ModelAndView SearchTotalPageviews(@PathVariable int p_no) throws IOException {
+    public ModelAndView SearchTotalPageviews1(@PathVariable int p_no) throws IOException {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("productView");
         modelAndView.addObject("response", getProduct(p_no));
@@ -77,6 +77,14 @@ public class ProductController {
     @PostMapping("/v1/update/product")
     public void updateProduct(@RequestBody ProductDto productDto) {
         service.updateProduct(productDto);
+    }
+
+    @GetMapping("/productUpdate/{p_no}")
+    public ModelAndView SearchTotalPageviews2(@PathVariable int p_no) throws IOException {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("productUpdate");
+        modelAndView.addObject("response", getProduct(p_no));
+        return modelAndView;
     }
 
     @PostMapping("/v1/update/product/p_check")
