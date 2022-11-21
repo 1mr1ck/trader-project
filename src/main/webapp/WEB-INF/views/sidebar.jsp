@@ -26,7 +26,7 @@
           <li><a href="#" onclick="my_boardCmt()" class="item"><div>나의 커뮤니티 댓글</div></a></li>
           <li><a href="#" onclick="my_productCmt()" class="item"><div>나의 중고장터 댓글</div></a></li>
           <li><a href="#" onclick="my_wish()" class="item"><div>좋아요</div></a></li>
-          <li><a href="#" onclick="modifyMyInfo()" class="item"><div>정보수정</div></a></li>
+          <li><a href="userUpdate" class="item"><div>정보수정</div></a></li>
           <li><a href="userDelete" class="item"><div>회원탈퇴</div></a></li>
         </ul>
       </div>
