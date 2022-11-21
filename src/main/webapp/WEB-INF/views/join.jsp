@@ -22,7 +22,7 @@
                 <div class="join_title">회원가입</div>
                 <div class="join_box">
                     <input type="hidden" name="idCheck" id="idCheck">
-                    <input type="text" placeholder="아이디" name="id" id="id" autocomplete="off" style="margin: 0;">
+                    <input type="text" placeholder="아이디" name="id" id="id" autocomplete="off" onKeyup="this.value=this.value.replace(/[^0-9A-Za-z]/g,'');" style="margin: 0;">
                     <span id="id_ck" class="dpn" id="dpn">이미 사용중인 아이디입니다.</span>
 
                     <input type="hidden" name="nicknameCheck" id="nicknameCheck">

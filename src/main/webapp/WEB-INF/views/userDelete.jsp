@@ -10,17 +10,10 @@
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <link rel="stylesheet" href="/css/myPageTemplate.css">
+    <link rel="stylesheet" href="/css/login.css">
     <title>Trader</title>
 </head>
 <body>
-<%
-    HttpSession sessionCheck = request.getSession();
-    String id = (String)sessionCheck.getAttribute("log");
-    int no = (Integer)sessionCheck.getAttribute("no");
-    String nickname = (String)sessionCheck.getAttribute("nickname");
-    String password = (String)sessionCheck.getAttribute("password");
-%>
-
 <header>
     <jsp:include page="header.jsp"></jsp:include>
 </header>
@@ -28,12 +21,25 @@
     <jsp:include page="sidebar.jsp"/>
 </aside>
 <section>
-    <h1>회원탈퇴</h1>
-    <form method="post">
-        <input type="hidden" id="no" value="<%=no%>">
-        <input type="text" id="password" placeholder="pw">
-        <input type="button" onclick="userDelete()" value="회원탈퇴">
-    </form>
+    <div id="container" class="container">
+        <div class="content">
+            <div class="join_wrap">
+                <form method="post" id="join_frm" action="login/loginProc">
+                    <input type="hidden" id="no" value="${sessionScope.no}">
+                    <div class="join_title">회원탈퇴</div>
+                    <div class="deleteText">회원탈퇴 확인을 위해 비밀번호를 입력해주세요</div>
+                    <div class="join_box">
+                        <div class="password_check">
+                            <input type="hidden" placeholder="비밀번호" value="${sessionScope.password}" id="pwCk" name="pwCk">
+                            <input type="password" placeholder="비밀번호" name="password" id="password" autocomplete="off">
+                            <button type="button" id="password_check_btn" class="password_check_btn">비밀번호 보기</button>
+                        </div>
+                        <input type="button" id="join" class="join_btn" onclick="userDelete()" value="회원 탈퇴">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </section>
 <footer>
     <jsp:include page="footer.jsp"></jsp:include>
