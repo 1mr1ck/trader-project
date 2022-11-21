@@ -46,9 +46,11 @@ public class MainController {
         return "userComment";
     }
 
-
     @RequestMapping(path = "/boardCreate", method = RequestMethod.GET)
     public String boardCreate() {return "boardCreate";}
+
+    @RequestMapping(path = "/manu3", method = RequestMethod.GET)
+    public String manu3() {return "manu3";}
 
     @RequestMapping(path = "/boardDetail")
     public String boardDetail() {return "boardDetail";}

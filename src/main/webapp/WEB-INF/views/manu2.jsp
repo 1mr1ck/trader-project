@@ -10,6 +10,67 @@
 <head>
     <title>이미지 넘김</title>
   <style>
+    h1,
+    h2,
+    h3,
+    h4 {
+      margin-top: 0;
+      margin-bottom: 1.5rem;
+      color: black;
+      line-height: 1.2;
+    }
+
+    h1 {
+      font-size: 2.9rem;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+    }
+
+    h3 {
+      font-size: 0.9rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+
+    /* ====== Commons ====== */
+    * {
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      text-decoration: none;
+      list-style: none;
+    }
+
+    @media all and (max-width: 992px) {
+      * {
+        font-size: 90%;
+      }
+    }
+
+    body {
+      min-height: 100%;
+      background-color: #ffffff;
+      overflow-x: hidden;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    }
+
+    body button {
+      font-weight: bold;
+      font-size: 1rem;
+      background-color: #00000000;
+      border: none;
+    }
+
+    body input {
+      border: none;
+      outline: none;
+    }
+
     input[type="radio"]{
       display: none;
     }
@@ -18,9 +79,8 @@
       height: 600px;
       display: none;
     }
-    .photo{
-      width: 100%;
-      height: 600px;
+    .con1{
+      background: #e6f3e6;
     }
     .btn{
       padding: 10px;
@@ -52,8 +112,22 @@
     input[id="tab03"]:checked~.btn > label[for="tab03"]{
       background: red;
     }
+
+    .home-main .background-beige {
+      background-color: #fbf7f2;
+    }
+
+    .home-main .background-green {
+      background-color: #e6f3e6;
+    }
+
+    .home-main__item {
+      width: 100%;
+      height: 780px;
+    }
+
     .home-main__item .item-box {
-      position: relative;
+      /*position: relative;*/
       gap: 20px;
       max-width: 1024px;
       height: 100%;
@@ -219,17 +293,17 @@
         <div class="item-box top--box">
           <article class="item-box__text">
             <h1>공손하게 <br/>주거니받거니 <br/>공주마켓</h1>
-            <p>중고 거래부터 동네 정보까지, 이웃과 함께해요.</p>
-            <p>가깝고 따뜻한 당신의 근처를 만들어요.</p>
+            <p>중고 거래를 공손하게, 이웃과 함께해요.</p>
+            <p>가깝고 따뜻한 당신의 친구를 만들어요.</p>
           </article>
           <div class="item-box__img top--img">
             <img
-                    src="css/phono-image-1.png"
+                    src="/css/assets/web/phono-image-1.png"
                     alt="phone-image-1"
                     class="desktop"
             />
             <img
-                    src="css/phono-image-1.png"
+                    src="/css/assets/mobile/phone_image_1.png"
                     alt="phone-image-1"
                     class="mobile"
             />
@@ -238,10 +312,31 @@
       </div>
     </div>
     <div class="conbox con2">
+      <div class="home-main__item background-beige">
+        <div class="item-box top--box">
+          <article class="item-box__text">
+            <h1>공손하게 <br/>주거나받거나 <br/>공주마켓</h1>
+            <p>중고 거래를 공손하게, 이웃과 함께해요.</p>
+            <p>가깝고 따뜻한 당신의 친구를 만들어요.</p>
+          </article>
+          <div class="item-box__img top--img">
+            <img
+                    src="/css/assets/web/phono-image-1.png"
+                    alt="phone-image-1"
+                    class="desktop"
+            />
+            <img
+                    src="/css/assets/mobile/phone_image_1.png"
+                    alt="phone-image-1"
+                    class="mobile"
+            />
+          </div>
+        </div>
+      </div>
     </div>
     <div class="conbox con3">
+       <h3>여긴 뭐로하지?</h3>
     </div>
-
     <div class="btn">
       <label for="tab01"></label>
       <label for="tab02"></label>
