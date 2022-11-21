@@ -114,4 +114,10 @@ public class UserController {
         }
         return emailCheck;
     }
+
+    // 한명의 회원정보 읽기
+    @PostMapping("/user/{user_no}")
+    public User readUserByNo(@PathVariable int user_no) {
+        return service.readUserById(user_no);
+    }
 }
