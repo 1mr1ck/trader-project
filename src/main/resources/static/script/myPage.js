@@ -82,53 +82,7 @@ function productDelete(p_no, user_no) {
 
 
     $.ajax(settings).done(function (response) {
-        let output ='';
-        output += '<div class="out">';
-        output += '<div class="in">';
-        output += '<form method="POST">'
-        output += '<input type="hidden" value="' + login_no + '" id="user_no" name="user_no">'
-        output += '</form>';
-        output += '<table class="type04">';
-        output += '<thead>';
-        output += '<tr>';
-        output += '<th class="category">카테고리</th>';
-        output += '<th class="title">제목</th>';
-        output += '<th class="content">내용</th>';
-        output += '<th class="check">진행상태</th>';
-        output += '<th class="type">판매/구매</th>';
-        output += '<th class="type">수정/삭제</th>';
-        output += '</tr>';
-        output += '</thead>';
-        output += '<tbody>';
-
-        const list = response;
-        list.forEach(e => {
-            console.log(response);
-            let p_no = e.p_no;
-            let user_no = e.user_no;
-            let category = e.category;
-            let title = e.p_title;
-            let content = e.p_content;
-            let check = e.p_check;
-            let type = e.p_type;
-
-            output += '<tr>'
-            output += '<td>' + category + '</td>'
-            output += '<td>' + title + '</td>'
-            output += '<td>' + content + '</td>'
-            output += '<td>' + check + '</td>'
-            output += '<td>' + type + '</td>'
-            output += '<td><button onclick="location.href=`productUpdate/' + p_no + '`">수정</button>'
-            output += '<button onclick="productDelete(' + p_no + ',' + user_no +')">삭제</button></td>'
-            output += '</tr>'
-
-        })
-        output += '</tbody>';
-        output += '</table>';
-        output += '</div>';
-        output += '</div>';
-
-        box.innerHTML = output;
+       my_product();
     });
 }
 
