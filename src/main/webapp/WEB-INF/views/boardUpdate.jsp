@@ -1,50 +1,58 @@
 <%--
   Created by IntelliJ IDEA.
-  User: User
-  Date: 2022-11-16
-  Time: 오후 12:24
+  User: ADMIN
+  Date: 2022-11-21
+  Time: 오후 6:21
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
-    <title>게시판상세</title>
+    <title>Title</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="/css/board.css">
 </head>
 <body>
-<button onclick="location.href='/'" style="cursor: pointer">home</button>
-<table>
-    <thead>
-    <tr>
-        <th>제목</th>
-        <th>내용</th>
-        <th>유저번호</th>
-        <th>작성자</th>
-<%--        <th>작성날짜</th>--%>
-<%--        <th>수정날짜</th>--%>
-    </tr>
-    </thead>
-    <tbody>
-    <c:set var="board" value="${response}"/>
-    <input type="hidden" value="${board.b_no}" class="boardNo" id="b_no" name="b_no">
-    <tr>
-        <td><input type="text"  id="b_title" value="${board.b_title}" placeholder="제목을 입력해주세요." name="b_title" required></td>
-        <td><input type="text"  id="b_content" value="${board.b_content}" placeholder="내용을 입력해주세요." name="b_content" required></td>
-        <td><input type="text"  id="user_no" value="${board.user_no}" name="user_no" required></td>
-        <td><input type="text"  id="nickname" value="${sessionScope.nickname}" name="nickname" required></td>
-<%--        <c:set var="regDate" value="${(String.valueOf(board.regDate)).substring(0, 10)}"/>--%>
-<%--        <td>${regDate}</td>--%>
-<%--        <c:set var="modDate" value="${(String.valueOf(board.modDate)).substring(0, 10)}"/>--%>
-<%--        <td>${modDate}</td>--%>
-    </tr>
-    </tbody>
-</table>
-<c:if test="${board.user_no == sessionScope.no}">
-    <input type="button" value="글목록" onclick="location.href='/boardView'">
-    <input type="button" value="submit" onclick="boardUpdate()">
-</c:if>
+<form class="write">
+    <div class="board_wrap">
+        <div class="board_title">
+            <strong>커뮤니티</strong>
+            <p>회원님의 진심을 알고 싶습니다.</p>
+        </div>
+        <div class="board_write_wrap">
+            <c:set var="board" value="${response}"/>
+            <input type="hidden" value="${board.b_no}" class="boardNo" id="b_no" name="b_no">
+            <div class="board_write">
+                <div class="title">
+                    <dl>
+                        <dt>제목</dt>
+                        <dd><input type="text"  id="b_title" placeholder="제목을 입력해주세요." value="${board.b_title}" name="b_title" required></dd>
+                    </dl>
+                </div>
+                <div class="info">
+                    <dl>
+                        <dt>닉네임</dt>
+                        <dd><input type="text" id="nickname" name="nickname" value="${sessionScope.nickname}" readonly></dd>
+                    </dl>
+
+                </div>
+                <div class="cont">
+                    <input type="text" placeholder="내용을 입력해주세요." value="${board.b_content}" id="b_content" class="text" name="b_content" required>
+                    <input type="hidden" name="user_no" value="${board.user_no}">
+                </div>
+            </div>
+            <div class="bt_wrap">
+                <c:if test="${board.user_no == sessionScope.no}">
+                    <input type="button" value="글목록" onclick="location.href='/boardView'">
+                    <input type="button" value="글수정" onclick="boardUpdate()">
+                </c:if>
+            </div>
+        </div>
+    </div>
+</form>
 <script src="/script/boardUpdate.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
 </body>
 </html>

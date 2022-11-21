@@ -45,8 +45,8 @@
                 </select>
 <%--                <input type="button" onclick="location.href='boardForm'" value="돌아가기">--%>
 
-                <input type="button" value="submit" onclick="createBoard()">
-                <input type="button" value="home" onclick="location.href='/boardView'">
+                <input type="button" value="글쓰기" onclick="createBoard()">
+<%--                <input type="button" value="home" onclick="location.href='/boardView'">--%>
             </div>
         </div>
     </div>
