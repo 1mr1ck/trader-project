@@ -8,10 +8,6 @@
     border-right: solid 1px #dadada;
 }
 
-.clicked {
-    border: solid 3px black;
-}
-
 nav{
     width: 250px;
     box-sizing: border-box;
