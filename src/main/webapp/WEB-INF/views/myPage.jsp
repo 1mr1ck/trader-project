@@ -11,6 +11,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <link rel="stylesheet" href="/css/myPageTemplate.css">
     <link rel="stylesheet" href="/css/myPageTable.css">
+    <link rel="stylesheet" href="/css/join.css">
     <title>Trader myPage</title>
 </head>
 <header>
@@ -37,6 +38,6 @@
     <jsp:include page="footer.jsp"></jsp:include>
 </footer>
 </body>
-<script src="script/userUpdateScript.js"></script>
 <script src="script/myPage.js"></script>
+<script src="script/userUpdateScript.js"></script>
 </html>

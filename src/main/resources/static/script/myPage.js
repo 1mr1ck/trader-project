@@ -1,7 +1,6 @@
 const login_no = document.getElementById('user_no').value;
 const box = document.getElementById('wrap');
-
-// 회원정보수정 틀
+// 회원정보수정
 function modifyMyInfo() {
 
     var output = "";
@@ -30,7 +29,7 @@ function modifyMyInfo() {
         const nickname = loginUser.nickname;
 
         output += '<form method="POST">';
-        output += '<input type="hidden" id="user_no" autocomplete="off" value="' + no + '">';
+        output += '<input type="hidden" id="no" autocomplete="off" value="' + no + '">';
         output += '<input type="text" id="id" name="id" autocomplete="off" value="' + id + '" placeholder="id" readonly>';
         output += '<input type="text" id="password" name="password" autocomplete="off" placeholder="password">';
         output += '<input type="text" id="email" name="email" autocomplete="off" value="' + email + '" placeholder="email" readonly>';

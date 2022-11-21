@@ -29,7 +29,6 @@
                     <div class="join_title">정보수정</div>
                     <div class="join_box">
                         <input type="hidden" id="no" autocomplete="off" value="${sessionScope.no}">
-                        <input type="hidden" name="idCheck" id="idCheck">
                         <input type="text" placeholder="아이디" name="id" id="id" autocomplete="off" value="${sessionScope.id}" readonly onKeyup="this.value=this.value.replace(/[^0-9A-Za-z]/g,'');" style="margin: 0;">
 
                         <input type="hidden" name="nicknameCheck" id="nicknameCheck">
