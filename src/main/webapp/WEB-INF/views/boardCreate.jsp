@@ -9,13 +9,14 @@
 <html>
 <head>
     <title>게시판 작성</title>
+    <link rel="stylesheet" href="/css/boardWrite.css">
 </head>
 <body>
 <form class="write">
     <div class="board_wrap">
         <div class="board_title">
             <strong>커뮤니티</strong>
-            <p>회원님의 진심을 알고 싶습니다.</p>
+            <p>회원님의 아름다움을 표현해주세요.</p>
         </div>
         <div class="board_write_wrap" >
             <div class="board_write">

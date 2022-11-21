@@ -94,4 +94,8 @@ public class MainController {
         return "letterWrite";
     }
 
+    @RequestMapping("/manu")
+    public String manu() {
+        return "manu";
+    }
 }
