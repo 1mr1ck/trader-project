@@ -7,6 +7,11 @@
     height: 800px;
     border-right: solid 1px #dadada;
 }
+
+.clicked {
+    background-color: #666;
+}
+
 nav{
     width: 250px;
     box-sizing: border-box;

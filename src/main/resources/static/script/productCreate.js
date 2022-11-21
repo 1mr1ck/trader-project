@@ -9,6 +9,7 @@ function productCreate() {
     let img_url = $('#img_url').val();
     let p_type = $('#p_type').val();
     let nickname = $('#nickname').val();
+    let price = $('#price').val();
 
     let settings = {
         "url": "http://localhost:8080/v1/write/product",
@@ -27,7 +28,8 @@ function productCreate() {
             "p_check": p_check,
             "img_url": img_url,
             "p_type": p_type,
-            "nickname": nickname
+            "nickname": nickname,
+            "price": price
         }),
     };
 

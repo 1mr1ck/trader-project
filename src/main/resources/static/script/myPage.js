@@ -22,13 +22,13 @@ function my_product() {
     $.ajax(settings).done(function (response) {
         let output ='';
         output += '<div class="out">';
-        output += '<div><button onclick="setP_check(`전체`)">전체</button>';
-        output += '<button onclick="setP_check(`진행중`)">진행중</button>';
-        output += '<button onclick="setP_check(`예약중`)">예약중</button>';
-        output += '<button onclick="setP_check(`거래완`)">거래완료</button></div>';
-        output += '<div><button onclick="setP_type(`전체`)">전체</button>';
-        output += '<button onclick="setP_type(`삽니다`)">삽니다</button>';
-        output += '<button onclick="setP_type(`팝니다`)">팝니다</button></div>';
+        output += '<div class="p_checkButton"><button onclick="setP_check(`전체`)">전체</button></div>';
+        output += '<div class="p_checkButton"><button onclick="setP_check(`진행중`)">진행중</button></div>';
+        output += '<div class="p_checkButton"><button onclick="setP_check(`예약중`)">예약중</button></div>';
+        output += '<div class="p_checkButton"><button onclick="setP_check(`거래완`)">거래완료</button></div>';
+        output += '<div><button onclick="setP_type(`전체`)" class="p_typeButton">전체</button>';
+        output += '<button onclick="setP_type(`삽니다`)" class="p_typeButton">삽니다</button>';
+        output += '<button onclick="setP_type(`팝니다`)" class="p_typeButton">팝니다</button></div>';
         output += '<div class="in">';
         output += '<form method="POST">'
         output += '<input type="hidden" value="' + login_no + '" id="user_no" name="user_no">'
@@ -76,6 +76,7 @@ function my_product() {
         output += '</div>';
 
         box.innerHTML = output;
+        init();
     });
 }
 
@@ -89,6 +90,25 @@ function setP_type(type) {
     my_product();
 }
 
+let p_checkButton = document.getElementsByClassName("p_checkButton");
+
+function handleClick(event) {
+    if (event.target.classList[1] === "clicked") {
+        event.target.classList.remove("clicked");
+    } else {
+        for (let i = 0; i < p_checkButton.length; i++)
+            p_checkButton[i].classList.remove("clicked");
+        event.target.classList.add("clicked");
+    }
+}
+
+function init() {
+    for (let i = 0; i < p_checkButton.length; i++)
+        p_checkButton[i].addEventListener("click", handleClick);
+}
+
+init();
+
 // 상품 게시글 삭제
 function productDelete(p_no, user_no) {
     var settings = {
@@ -100,8 +120,6 @@ function productDelete(p_no, user_no) {
             "Content-Type": "application/json"
         },
     };
-
-
 
     $.ajax(settings).done(function (response) {
         my_product();
