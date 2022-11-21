@@ -53,3 +53,7 @@
     font-weight: bold;
     margin-top: 20px;
 }
+
+.clicked {
+    border: solid 3px black;
+}

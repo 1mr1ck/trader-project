@@ -9,7 +9,7 @@
 }
 
 .clicked {
-    background-color: #666;
+    border: solid 3px black;
 }
 
 nav{
