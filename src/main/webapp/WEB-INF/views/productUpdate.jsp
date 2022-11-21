@@ -25,6 +25,9 @@
             <input type="text" id="p_content" name="p_content" value="${product.p_content}" required>
         </div>
         <div>
+            <input type="text" id="price" name="price" value="${product.price}" required>
+        </div>
+        <div>
             <select id="category" name="category" required>
                 <option value="${product.category}" selected>===${product.category}===</option>
                 <option value="전체">전체</option>

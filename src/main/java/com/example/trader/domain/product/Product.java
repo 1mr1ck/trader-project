@@ -29,6 +29,7 @@ public class Product extends Timestamp {
     private String img_url;
     private String p_type;
     private String nickname;
+    private int price;
 
     public Product(ProductDto productDto) {
         this.user_no = productDto.getUser_no();
@@ -40,6 +41,7 @@ public class Product extends Timestamp {
         this.img_url = productDto.getImg_url();
         this.p_type = productDto.getP_type();
         this.nickname = productDto.getNickname();
+        this.price = productDto.getPrice();
     }
 
     // update용 setter
@@ -48,6 +50,7 @@ public class Product extends Timestamp {
         this.p_content = productDto.getP_content();
         this.category = productDto.getCategory();
         this.img_url = productDto.getImg_url();
+        this.price = productDto.getPrice();
     }
 
     // update p_check용 setter

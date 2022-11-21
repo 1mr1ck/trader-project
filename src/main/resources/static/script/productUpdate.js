@@ -5,6 +5,7 @@ function productUpdate() {
     let p_content = $('#p_content').val();
     let category = $('#category').val();
     let img_url = $('#img_url').val();
+    let price = $('#price').val();
 
     var settings = {
         "url": "http://localhost:8080/v1/update/product",
@@ -19,7 +20,8 @@ function productUpdate() {
             "p_title": p_title,
             "p_content": p_content,
             "category": category,
-            "img_url": img_url
+            "img_url": img_url,
+            "price": price
         }),
     };
 

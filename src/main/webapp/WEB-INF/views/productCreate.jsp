@@ -23,6 +23,9 @@
             <input type="text" id="p_content" name="p_content" placeholder="p_content" required>
         </div>
         <div>
+            <input type="text" id="price" name="price" placeholder="price" required>
+        </div>
+        <div>
             <select id="category" name="category" required>
                 <option value="전체">전체</option>
                 <option value="전자기기">전자기기</option>
