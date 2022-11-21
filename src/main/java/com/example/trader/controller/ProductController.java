@@ -79,6 +79,11 @@ public class ProductController {
         service.updateProduct(productDto);
     }
 
+    @PostMapping("/v1/update/product/p_check")
+    public void updateProductP_check(@RequestBody ProductDto productDto) {
+        service.updateProductP_check(productDto);
+    }
+
     // DeleteProduct
     @DeleteMapping("/v1/delete/product")
     public void deleteProduct(@RequestParam int p_no) {
