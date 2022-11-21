@@ -23,7 +23,10 @@
 <header class="header1">
     <div class="navbar_logo">
 <%--      <a href="/"></a>--%>
-    <img src="css/princess.png" href="/">
+        <div class="logoImg">
+            <img src="css/princess.png" href="/" style="height: 80px">
+        </div>
+
     </div>
     <ul class="navbar1_manu">
       <li><a href="/">홈</a></li>
