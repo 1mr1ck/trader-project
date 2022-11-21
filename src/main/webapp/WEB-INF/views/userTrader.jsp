@@ -9,34 +9,41 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
-    <title>Trader</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <link rel="stylesheet" href="/css/myPageTemplate.css">
+    <link rel="stylesheet" href="/css/myPageTable.css">
+    <title>Trader</title>
 </head>
 <body onload="content();">
 <header>
     <jsp:include page="header.jsp"></jsp:include>
 </header>
 <aside>
-<jsp:include page="sidebar.jsp"/>
+    <jsp:include page="sidebar.jsp"/>
 </aside>
 <section>
-    <form method="post">
-        <input type="hidden" value="${sessionScope.no}" id="user_no" name="user_no">
-    </form>
-    <table>
-        <thead>
-            <tr>
-                <th>카테고리</th>
-                <th>제목</th>
-                <th>내용</th>
-                <th>진행 확인</th>
-                <th>판매/구매</th>
-            </tr>
-        </thead>
-        <tbody class="userProductTBody">
-        </tbody>
-    </table>
+    <div class="wrap">
+        <div class="out">
+            <div class="in">
+                <form method="post">
+                    <input type="hidden" value="${sessionScope.no}" id="user_no" name="user_no">
+                </form>
+                <table class="type04">
+                    <thead>
+                    <tr>
+                        <th class="category">카테고리</th>
+                        <th class="title">제목</th>
+                        <th class="content">내용</th>
+                        <th class="check">진행 확인</th>
+                        <th class="type">판매/구매</th>
+                    </tr>
+                    </thead>
+                    <tbody class="userProductTBody">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 </section>
 <footer>
     <jsp:include page="footer.jsp"></jsp:include>

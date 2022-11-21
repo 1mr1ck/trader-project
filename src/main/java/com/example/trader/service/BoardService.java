@@ -38,6 +38,11 @@ public class BoardService {
         return repository.findAll();
     }
 
+    // 1user userNo board
+    public  List<Board> findBoardUserNo(int user_no){
+        return repository.findBoardByUserNo(user_no);
+    }
+
     //Update
     @Transactional
     public void updateBoard(BoardDto boardDto){

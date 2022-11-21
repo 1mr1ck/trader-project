@@ -57,7 +57,6 @@ public class ProductController {
     // ProductUserNo
     @PostMapping("/myPage/productUser")
     public List<Product> ProductUserNo(@RequestParam String user_no){
-        System.out.println(user_no);
         int no = Integer.parseInt(user_no);
         return service.findProductUserNo(no);
     }
