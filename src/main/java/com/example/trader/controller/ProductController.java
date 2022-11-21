@@ -73,10 +73,10 @@ public class ProductController {
         return service.searchProductByCategoryAndP_typeAndKeyword(category, p_type, keyword);
     }
 
-    // GetProductByUser_noAndP_typeAndKeyword
-    @GetMapping("/v1/search/product/user_no/{user_no}/p_type/{p_type}/keyword/{keyword}")
-    public List<Product> getProductByUser_noAndP_typeAndKeyword(@PathVariable int user_no, @PathVariable String p_type, @PathVariable String keyword) {
-        return service.searchProductByUser_noAndP_typeAndKeyword(user_no, p_type, keyword);
+    // GetProductByUser_noAndP_typeAndP_check
+    @PostMapping("/v1/search/product/user_no/{user_no}/p_type/{p_type}/p_check/{p_check}")
+    public List<Product> getProductByUser_noAndP_typeAndKeyword(@PathVariable int user_no, @PathVariable String p_type, @PathVariable String p_check) {
+        return service.searchProductByUser_noAndP_typeAndP_check(user_no, p_type, p_check);
     }
 
     // UpdateProduct

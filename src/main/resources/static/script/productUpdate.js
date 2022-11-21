@@ -25,6 +25,6 @@ function productUpdate() {
 
     $.ajax(settings).done(function (response) {
         console.log(response);
-        location.href="/";
+        location.href="/productView/" + p_no;
     });
 }

@@ -19,6 +19,13 @@ function my_product() {
     $.ajax(settings).done(function (response) {
         let output ='';
         output += '<div class="out">';
+        output += '<div><button onclick="setP_check(`전체`)">전체</button>';
+        output += '<button onclick="setP_check(`진행중`)">진행중</button>';
+        output += '<button onclick="setP_check(`예약중`)">예약중</button>';
+        output += '<button onclick="setP_check(`거래완`)">거래완료</button></div>';
+        output += '<div><button onclick="setP_type(`전체`)">전체</button>';
+        output += '<button onclick="setP_type(`삽니다`)">삽니다</button>';
+        output += '<button onclick="setP_type(`팝니다`)">팝니다</button></div>';
         output += '<div class="in">';
         output += '<form method="POST">'
         output += '<input type="hidden" value="' + login_no + '" id="user_no" name="user_no">'
@@ -46,10 +53,12 @@ function my_product() {
             let content = e.p_content;
             let check = e.p_check;
             let type = e.p_type;
+            if(check === '거래완')
+                check += '료';
 
             output += '<tr>'
             output += '<td>' + category + '</td>'
-            output += '<td>' + title + '</td>'
+            output += '<td onclick="location.href=`/productView/' + p_no + '`" style="cursor: pointer">' + title + '</td>'
             output += '<td>' + content + '</td>'
             output += '<td>' + check + '</td>'
             output += '<td>' + type + '</td>'
@@ -67,6 +76,16 @@ function my_product() {
     });
 }
 
+function setP_check(c) {
+    p_check = c;
+    my_product();
+}
+
+function setP_type(t) {
+    p_type = t;
+    my_product();
+}
+
 // 상품 게시글 삭제
 function productDelete(p_no, user_no) {
     var settings = {
@@ -82,7 +101,7 @@ function productDelete(p_no, user_no) {
 
 
     $.ajax(settings).done(function (response) {
-       my_product();
+        my_product();
     });
 }
 
