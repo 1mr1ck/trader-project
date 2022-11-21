@@ -24,7 +24,7 @@
     <div class="navbar_logo">
 <%--      <a href="/"></a>--%>
         <div class="logoImg">
-            <img src="css/princess.png" href="/" style="height: 80px">
+            <img src="css/princess.png" href="/" style="height: 78px">
         </div>
 
     </div>

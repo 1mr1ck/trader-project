@@ -9,6 +9,35 @@
 <html>
 <head>
     <title>상품목록</title>
+    <style>
+        table {
+            text-align: center;
+            vertical-align: middle;
+            border-collapse: separate;
+            border-spacing: 1px;
+            line-height: 1.5;
+            border-top: 1px solid #ccc;
+            margin: 20px 10px;
+            width: 95%;
+        }
+
+        table.type04 th {
+            vertical-align: middle;
+            padding: 10px;
+            font-weight: bold;
+            vertical-align: top;
+            border-bottom: 1px solid #ccc;
+            background-color: #ffc9f6;
+            color: #fff;
+        }
+
+        table.type04 td {
+            vertical-align: middle;
+            padding: 10px;
+            vertical-align: top;
+            border-bottom: 1px solid #ccc;
+        }
+    </style>
 </head>
 <jsp:include page="header.jsp"></jsp:include>
 <body>
@@ -43,7 +72,7 @@
     </div>
     <hr>
     <div>
-        <table>
+        <table class="type04">
             <thead class="title">
             </thead>
             <tbody class="container">
