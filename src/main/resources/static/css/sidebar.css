@@ -71,10 +71,13 @@ nav{
 .menu label::before{ content: '\e5d2'; }
 .menu li:nth-child(1) a::before{ content: '\f02e'; }
 .menu li:nth-child(2) a::before{ content: '\e8d3'; }
-.menu li:nth-child(3) a::before{ content: '\e881'; }
-.menu li:nth-child(4) a::before{ content: '\e87d'; }
-.menu li:nth-child(5) a::before{ content: '\e8b8'; }
-.menu li:nth-child(6) a::before{ content: '\e84e'; }
+.menu li:nth-child(3) a::before{ content: '\e8d3'; }
+.menu li:nth-child(4) a::before{ content: '\e8d3'; }
+.menu li:nth-child(5) a::before{ content: '\e0bf'; }
+.menu li:nth-child(6) a::before{ content: '\e0bf'; }
+.menu li:nth-child(7) a::before{ content: '\e87d'; }
+.menu li:nth-child(8) a::before{ content: '\e853'; }
+.menu li:nth-child(9) a::before{ content: '\e14b'; }
 
 @media screen and (max-width:1023px) {
 
