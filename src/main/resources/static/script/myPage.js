@@ -1,46 +1,135 @@
 const login_no = document.getElementById('user_no').value;
 const box = document.getElementById('wrap');
-// 회원정보수정
-function modifyMyInfo() {
 
-    var output = "";
+// 상품 게시글
+function my_product() {
 
-    let settings = {
-        "url" : "http://localhost:8080/user/" + login_no,
-        "method" : "POST",
-        "timeout" : 0,
-        "headers" : {
-            "Content-Type" : "application/json"
+    var settings = {
+        "url": "/myPage/productUser?user_no=" + login_no,
+        "method": "POST",
+        "timeout": 0,
+        "headers": {
+            "Content-Type": "application/json"
         },
-        "data" : JSON.stringify({
-            "no" : login_no
-        })
+        "data": JSON.stringify({
+            "user_no": login_no
+        }),
     };
 
-    $.ajax(settings).done(function(result) {
-        const loginUser = result;
+    $.ajax(settings).done(function (response) {
+        let output ='';
+        output += '<div class="out">';
+        output += '<div class="in">';
+        output += '<form method="POST">'
+        output += '<input type="hidden" value="' + login_no + '" id="user_no" name="user_no">'
+        output += '</form>';
+        output += '<table class="type04">';
+        output += '<thead>';
+        output += '<tr>';
+        output += '<th class="category">카테고리</th>';
+        output += '<th class="title">제목</th>';
+        output += '<th class="content">내용</th>';
+        output += '<th class="check">진행상태</th>';
+        output += '<th class="type">판매/구매</th>';
+        output += '<th class="type">수정/삭제</th>';
+        output += '</tr>';
+        output += '</thead>';
+        output += '<tbody>';
 
-        const no = loginUser.no;
-        const id = loginUser.id;
-        const password = loginUser.password;
-        const email = loginUser.email;
-        const phone = loginUser.phone;
-        const address = loginUser.address;
-        const nickname = loginUser.nickname;
+        const list = response;
+        list.forEach(e => {
+            console.log(response);
+            let p_no = e.p_no;
+            let user_no = e.user_no;
+            let category = e.category;
+            let title = e.p_title;
+            let content = e.p_content;
+            let check = e.p_check;
+            let type = e.p_type;
 
-        output += '<form method="POST">';
-        output += '<input type="hidden" id="no" autocomplete="off" value="' + no + '">';
-        output += '<input type="text" id="id" name="id" autocomplete="off" value="' + id + '" placeholder="id" readonly>';
-        output += '<input type="text" id="password" name="password" autocomplete="off" placeholder="password">';
-        output += '<input type="text" id="email" name="email" autocomplete="off" value="' + email + '" placeholder="email" readonly>';
-        output += '<input type="text" id="phone" name="phone" autocomplete="off" value="' + phone + '" onfocus="this.value=``" onblur="phoneNullCheck(' + phone + ')" placeholder="phone">';
-        output += '<input type="text" id="address" name="address" autocomplete="off" value="' + address + '" onfocus="this.value=``" onblur="phoneNullCheck(' + address + ')" placeholder="address">';
-        output += '<input type="text" id="nickname" name="nickname" autocomplete="off" value="' + nickname + '" onfocus="this.value=``" onblur="phoneNullCheck(' + nickname + ')" placeholder="address">';
-        output += '<input type="button" value="정보수정" onclick="update()">';
-        output += '</form>'
+            output += '<tr>'
+            output += '<td>' + category + '</td>'
+            output += '<td>' + title + '</td>'
+            output += '<td>' + content + '</td>'
+            output += '<td>' + check + '</td>'
+            output += '<td>' + type + '</td>'
+            output += '<td><button onclick="location.href=`productUpdate/' + p_no + '`">수정</button>'
+            output += '<button onclick="productDelete(' + p_no + ',' + user_no +')">삭제</button></td>'
+            output += '</tr>'
+
+        })
+        output += '</tbody>';
+        output += '</table>';
+        output += '</div>';
+        output += '</div>';
 
         box.innerHTML = output;
-    })
+    });
+}
+
+// 상품 게시글 삭제
+function productDelete(p_no, user_no) {
+    var settings = {
+        "url": "http://localhost:8080/v1/delete/product?p_no=" + p_no + "&user_no=" + user_no,
+        "method": "POST",
+        "timeout": 0,
+        "headers": {
+            "Authorization": "KakaoAK f311a885f3d384727233750637411113",
+            "Content-Type": "application/json"
+        },
+    };
+
+
+
+    $.ajax(settings).done(function (response) {
+        let output ='';
+        output += '<div class="out">';
+        output += '<div class="in">';
+        output += '<form method="POST">'
+        output += '<input type="hidden" value="' + login_no + '" id="user_no" name="user_no">'
+        output += '</form>';
+        output += '<table class="type04">';
+        output += '<thead>';
+        output += '<tr>';
+        output += '<th class="category">카테고리</th>';
+        output += '<th class="title">제목</th>';
+        output += '<th class="content">내용</th>';
+        output += '<th class="check">진행상태</th>';
+        output += '<th class="type">판매/구매</th>';
+        output += '<th class="type">수정/삭제</th>';
+        output += '</tr>';
+        output += '</thead>';
+        output += '<tbody>';
+
+        const list = response;
+        list.forEach(e => {
+            console.log(response);
+            let p_no = e.p_no;
+            let user_no = e.user_no;
+            let category = e.category;
+            let title = e.p_title;
+            let content = e.p_content;
+            let check = e.p_check;
+            let type = e.p_type;
+
+            output += '<tr>'
+            output += '<td>' + category + '</td>'
+            output += '<td>' + title + '</td>'
+            output += '<td>' + content + '</td>'
+            output += '<td>' + check + '</td>'
+            output += '<td>' + type + '</td>'
+            output += '<td><button onclick="location.href=`productUpdate/' + p_no + '`">수정</button>'
+            output += '<button onclick="productDelete(' + p_no + ',' + user_no +')">삭제</button></td>'
+            output += '</tr>'
+
+        })
+        output += '</tbody>';
+        output += '</table>';
+        output += '</div>';
+        output += '</div>';
+
+        box.innerHTML = output;
+    });
 }
 
 // 보드 글

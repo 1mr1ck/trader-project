@@ -41,7 +41,7 @@ public class WishController {
     }
 
     // 삭제
-    @DeleteMapping("/product/wish/{w_no}/delete")
+    @PostMapping("/product/wish/{w_no}/delete")
     public void deleteWish(@PathVariable int w_no) {
         wishService.delete(w_no);
     }

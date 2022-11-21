@@ -5,7 +5,7 @@ let log_no = document.getElementById('no').value;
 if(log_no === "") {
     log_no = 0;
 }
-const wishbox = document.getElementById('wish-box');
+const wish_box = document.getElementById('wish-box');
 
 // 처음에 페이지 이동할 때 onload
 function wishOnload() {
@@ -35,7 +35,7 @@ function wishOnload() {
             output += '<input type="hidden" value="' + w_no + '" name="w_no" id="w_no">';
         }
 
-        wishbox.innerHTML = output;
+        wish_box.innerHTML = output;
     })
 }
 
@@ -67,7 +67,7 @@ function wishGo(p_no, user_no) {
         output += '<button onclick="wishCancel(' + wish_no + ')"><img src="/img/wish.png"></button>';
         output += '<input type="hidden" value="' + wish_no + '" name="w_no" id="w_no">';
 
-        wishbox.innerHTML = output;
+        wish_box.innerHTML = output;
     })
 }
 
@@ -75,7 +75,7 @@ function wishCancel(w_no) {
 
     let settings = {
         "url": "http://localhost:8080/product/wish/" + w_no + "/delete",
-        "method": "DELETE",
+        "method": "POST",
         "timeout": 0,
         "headers": {
             "Content-Type": "application/json"
@@ -90,7 +90,7 @@ function wishCancel(w_no) {
 
         output += '<button onclick="wishGo(' + product_no + ',' + log_no + ')"><img src="/img/Nowish.png"></button>';
 
-        wishbox.innerHTML = output;
+        wish_box.innerHTML = output;
     })
 }
 

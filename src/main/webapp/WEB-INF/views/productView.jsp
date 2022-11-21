@@ -12,7 +12,7 @@
     <title>Title</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 </head>
-<body>
+<body onload="wishOnload()">
 <button onclick="location.href='/'" style="cursor: pointer">home</button>
 <table>
     <thead>
@@ -89,8 +89,5 @@
 <script src="/script/p_comment.js"></script>
 <script src="/script/wish.js"></script>
 <script src="/script/productUpdateP_check.js"></script>
-<script>
-    window.onload = wishOnload();
-</script>
 </body>
 </html>
