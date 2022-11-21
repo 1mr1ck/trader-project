@@ -31,7 +31,7 @@ public class B_commentController {
     }
 
     // 하나의 유저의 댓글 전체 불러오기
-    @GetMapping("/b_comment/user/{user_no}")
+    @PostMapping("/b_comment/user/{user_no}")
     public List<B_comment> commentsByUser_no(@PathVariable int user_no) {
         return b_commentService.commentsByUser_no(user_no);
     }

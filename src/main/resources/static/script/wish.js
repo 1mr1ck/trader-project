@@ -38,6 +38,10 @@ function wishOnload() {
 }
 
 function wishGo(p_no, user_no) {
+    if(log_no == 0) {
+        alert("로그인을 해주세요");
+        return;
+    }
 
     let settings = {
         "url": "http://localhost:8080/product/wish/" + p_no + "/" + user_no,
