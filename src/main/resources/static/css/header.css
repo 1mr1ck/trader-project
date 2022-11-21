@@ -3,6 +3,21 @@ body{
     margin: 0;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+a{
+    text-decoration-line: none;
+}
+
+.header1 a:visited{
+    color: #ffc9f6;
+}
+.header1 a:link{
+    color: #ffc9f6;
+}
+
+.header1 a{
+    color: #ffc9f6;
+}
+
 img{
     text-decoration: none;
     color: #ffc9f6;
@@ -16,7 +31,7 @@ img{
     justify-content: space-between;
     align-items: center;
     background-color: #fff;
-    padding: 8px 12px;
+    border-bottom: solid 1px #dadada;
 }
 .navbar1_logo{
     font-size: 24px;
@@ -30,11 +45,6 @@ img{
 }
 .navbar1_manu li{
     padding: 8px 12px;
-}
-.navbar1_manu li:hover{
-    background-color: #ffc9f6;
-    color : #fff;
-    border-radius: 4px;
 }
 
 .navbar1_links{

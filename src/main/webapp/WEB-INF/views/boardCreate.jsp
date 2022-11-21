@@ -11,6 +11,7 @@
     <title>게시판 작성</title>
     <link rel="stylesheet" href="/css/boardWrite.css">
 </head>
+<jsp:include page="header.jsp"></jsp:include>
 <body>
 <form class="write">
     <div class="board_wrap">
@@ -54,4 +55,5 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="script/createBoard.js"></script>
 </body>
+<jsp:include page="footer.jsp"></jsp:include>
 </html>

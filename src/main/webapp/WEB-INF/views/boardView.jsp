@@ -8,7 +8,6 @@
 </head>
 <jsp:include page="header.jsp"></jsp:include>
 <body>
-
 <div id="wrap">
 
     <form action="/board/search" method="GET">
@@ -56,4 +55,5 @@
 <%--    </div>--%>
 </div>
 </body>
+<jsp:include page="footer.jsp"></jsp:include>
 </html>

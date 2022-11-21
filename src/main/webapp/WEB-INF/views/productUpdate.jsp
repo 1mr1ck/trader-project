@@ -11,6 +11,7 @@
 <head>
     <title>상품수정</title>
 </head>
+<jsp:include page="header.jsp"></jsp:include>
     <body>
     <h1>상품수정</h1>
     <c:set var="product" value="${response}"/>
@@ -69,4 +70,5 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="/script/productUpdate.js"></script>
 </body>
+<jsp:include page="footer.jsp"></jsp:include>
 </html>

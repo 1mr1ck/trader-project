@@ -11,6 +11,7 @@
 <head>
     <title>상품</title>
 </head>
+<jsp:include page="header.jsp"></jsp:include>
 <body>
     <button onclick="location.href='productCreate'" style="cursor: pointer">상품등록</button>
     <button onclick="location.href='productSearch'" style="cursor: pointer">상품목록</button>
@@ -44,4 +45,5 @@
         </tbody>
     </table>
 </body>
+<jsp:include page="footer.jsp"></jsp:include>
 </html>

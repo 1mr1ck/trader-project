@@ -10,6 +10,7 @@
 <head>
     <title>상품목록</title>
 </head>
+<jsp:include page="header.jsp"></jsp:include>
 <body>
     <h1>상품목록</h1>
     <div>
@@ -52,4 +53,5 @@
     <script src="script/productSearch.js"></script>
 
 </body>
+<jsp:include page="footer.jsp"></jsp:include>
 </html>

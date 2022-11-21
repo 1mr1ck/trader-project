@@ -6,6 +6,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <link rel="stylesheet" href="/css/board.css">
 </head>
+<jsp:include page="header.jsp"></jsp:include>
 <body>
 <form class="write" method="post" >
     <div class="board_wrap">
@@ -89,4 +90,5 @@
 <script src="/script/b_comment.js"></script>
 
 </body>
+<jsp:include page="footer.jsp"></jsp:include>
 </html>
