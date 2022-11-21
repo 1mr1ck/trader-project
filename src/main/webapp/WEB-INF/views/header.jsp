@@ -22,7 +22,8 @@
 %>
 <header class="header1">
     <div class="navbar_logo">
-      <a href="/">공주마켓</a>
+<%--      <a href="/"></a>--%>
+    <img src="css/princess.png" href="/">
     </div>
     <ul class="navbar1_manu">
       <li><a href="/">홈</a></li>
@@ -42,7 +43,7 @@
         <li><a href="logout">로그아웃</a></li>
     </ul>
     <%}%>
-    <a href="#" class="navbar1_manubtn">메뉴</a>
+    <a href="header.jsp" class="navbar1_manubtn">메뉴</a>
 </header>
 </body>
 </html>
