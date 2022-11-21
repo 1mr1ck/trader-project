@@ -55,6 +55,33 @@
             <input type="button" onclick="location.href='/'" value="home" style="cursor: pointer">
         </div>
     </form>
+    <div>
+        <form>
+            <c:if test="${product.user_no == sessionScope.no}">
+                <select id="p_check" name="p_check" required>
+                    <c:if test="${product.p_check.equals('진행중')}">
+                        <option value="진행중" selected>진행중</option>
+                        <option value="예약중">예약중</option>
+                        <option value="거래완">거래완료</option>
+                    </c:if>
+                    <c:if test="${product.p_check.equals('예약중')}">
+                        <option value="진행중">진행중</option>
+                        <option value="예약중" selected>예약중</option>
+                        <option value="거래완">거래완료</option>
+                    </c:if>
+                    <c:if test="${product.p_check.equals('거래완')}">
+                        <option value="진행중">진행중</option>
+                        <option value="예약중">예약중</option>
+                        <option value="거래완" selected>거래완료</option>
+                    </c:if>
+                </select>
+                <input type="button" onclick="updateP_check()" value="submit" style="cursor: pointer">
+            </c:if>
+            <c:if test="${product.user_no != sessionScope.no}">
+                <input type="text" value="${product.p_check}" readonly>
+            </c:if>
+        </form>
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="/script/letterWrite.js"></script>
 </body>

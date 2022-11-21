@@ -92,6 +92,7 @@
 </div>
 <script src="/script/p_comment.js"></script>
 <script src="/script/wish.js"></script>
+<script src="/script/productUpdateP_check.js"></script>
 <script>
     window.onload = wishOnload();
 </script>

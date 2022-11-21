@@ -51,4 +51,9 @@ public class Product extends Timestamp {
         this.p_check = productDto.getP_check();
         this.img_url = productDto.getImg_url();
     }
+
+    // update p_check용 setter
+    public void setProductP_check(ProductDto productDto) {
+        this.p_check = productDto.getP_check();
+    }
 }

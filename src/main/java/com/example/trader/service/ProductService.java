@@ -49,6 +49,13 @@ public class ProductService {
             product.setProduct(productDto);
     }
 
+    @Transactional
+    public void updateProductP_check(ProductDto productDto) {
+        Product product = readProductByP_no(productDto.getP_no());
+        if(product != null)
+            product.setProductP_check(productDto);
+    }
+
     // Delete
     @Transactional
     public void deleteProduct(int p_no) {
