@@ -88,9 +88,7 @@ function wishCancel(w_no) {
     $.ajax(settings).done(e=> {
         var output = "";
 
-        output += '<button onclick="wishGo' +
-            '(' + product_no + ',' + log_no + ')">' +
-            '<img src="/img/Nowish.png" style="width: 100px; height: 100px;"></button>';
+        output += '<button onclick="wishGo' + '(' + product_no + ',' + log_no + ')">' + '<img src="/img/Nowish.png" style="width: 100px; height: 100px;"></button>';
 
         wish_box.innerHTML = output;
     })
