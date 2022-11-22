@@ -23,7 +23,7 @@ function letterWrite() {
     console.log(make_code);
 
     if(l_content === "") {
-        alert("tlqkf?");
+        alert("입력!");
         return;
     }
 
