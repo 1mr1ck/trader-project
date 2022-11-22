@@ -1,7 +1,7 @@
 const cmtList = document.querySelector('.cmt-list');
 const login_no = document.getElementById('no').value;
 const login_nickname = document.getElementById('nickname').value;
-const content_box = document.getElementById('cmt-content');
+const content_box = document.getElementById('createCmtContent');
 
 // 생성
 function saveComment(b_no) {

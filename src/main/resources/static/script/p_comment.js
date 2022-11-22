@@ -1,7 +1,7 @@
 const cmtList = document.querySelector('.cmt-list');
 const login_no = document.getElementById('no').value;
 const login_nickname = document.getElementById('nickname').value;
-const content_box = document.getElementById('cmt-content');
+const content_box = document.getElementById('createCmtContent');
 // 등록
 function saveComment(p_no) {
     if(login_nickname === "") {
