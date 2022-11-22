@@ -72,9 +72,9 @@
       height: 600px;
       display: none;
     }
-    .con1{
-      background: #e6f3e6;
-    }
+    /*.con1{*/
+    /*  background: #e6f3e6;*/
+    /*}*/
     .btn{
       padding: 10px;
       text-align: center;
@@ -150,7 +150,10 @@
     .home-main__item .item-box__button button:hover {
       background-color: #e2e5e7;
     }
-
+    .chat{
+      width: 400px;
+      height: 500px;
+    }
     @media all and (max-width: 992px) {
       .home-main__item .item-box__button {
         display: -webkit-box;
@@ -239,12 +242,12 @@
     }
 
     .home-main__item .top--img .desktop {
-      width: 100%;
+      width: 70%;
       position: absolute;
       right: -5%;
       bottom: 0;
-      max-width: 800px;
-      margin-bottom: 190px;
+      max-width: 600px;
+      margin-bottom: 250px;
       margin-right: 200px;
     }
 
@@ -275,6 +278,7 @@
         padding-top: 50px;
       }
     }
+
   </style>
 </head>
 <body>
@@ -293,13 +297,13 @@
           </article>
           <div class="item-box__img top--img">
             <img
-                    src="/css/assets/web/phono-image-1.png"
-                    alt="phone-image-1"
+                    src="img/2.gif"
+                    alt="2"
                     class="desktop"
             />
             <img
-                    src="/css/assets/mobile/phone_image_1.png"
-                    alt="phone-image-1"
+                    src="img/2.gif"
+                    alt="2"
                     class="mobile"
             />
           </div>
@@ -330,7 +334,13 @@
       </div>
     </div>
     <div class="conbox con3">
-       <h3>여긴 뭐로하지?</h3>
+    <img class="chat" src="/img/666.gif">
+      <img class="chat" src="/img/1.gif">
+      <img class="chat" src="/img/3.gif">
+      <img class="chat" src="/img/4.gif">
+      <img class="chat" src="/img/5.gif">
+      <img class="chat" src="/img/7.gif">
+
     </div>
     <div class="btn">
       <label for="tab01"></label>
