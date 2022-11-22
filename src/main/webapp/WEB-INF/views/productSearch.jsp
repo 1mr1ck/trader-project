@@ -8,6 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <link rel="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
     <title>상품목록</title>
     <style>
         table {
@@ -36,6 +37,36 @@
             padding: 10px;
             vertical-align: top;
             border-bottom: 1px solid #ccc;
+        }
+
+        select {
+            margin: 10px;
+            width: 120px; /* 원하는 너비설정 */
+            padding: .8em .5em; /* 여백으로 높이 설정 */
+            font-family: inherit;  /* 폰트 상속 */
+            background: url(https://farm1.staticflickr.com/379/19928272501_4ef877c265_t.jpg) no-repeat 95% 50%; /* 네이티브 화살표 대체 */
+            border: 1px solid #ffc9f6;
+            border-radius: 0px; /* iOS 둥근모서리 제거 */
+            -webkit-appearance: none; /* 네이티브 외형 감추기 */
+            -moz-appearance: none;
+            appearance: none;
+        }
+
+        input {
+            width: 350px; height: 40px; border: 1px solid #ffc9f6;padding: 17px; border-radius: 5px; margin-top: 20px;
+        }
+
+        input[type=button] {
+            padding : 0;
+            background-color: #ffc9f6;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            width: 60px;
+            height: 40px;
+            font-size: 10pt;
+            margin-top: 10px;
+            cursor: pointer;
         }
     </style>
 </head>
