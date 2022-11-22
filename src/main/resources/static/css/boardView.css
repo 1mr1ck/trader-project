@@ -11,7 +11,8 @@ h1{
     color: #333333;
     font-weight: 400;
     text-align: center;
-    margin-bottom: 80px;
+    margin-top: 30px;
+    margin-bottom: 50px;
 }
 
 .board-table {
@@ -34,18 +35,28 @@ h1{
 .board-table th {
     text-align: center;
 }
+.boardBtn{
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}
+.search{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
 
 input{
+    padding: 0;
     text-align: center;
-    height: 30px;
-    width: 40px;
-    background-color: #ffc9f6;
-    color: #fff;
+    width: 250px;
+    height: 40px;
+    background-color: #fff;
+    color: #ffc9f6;
     cursor: pointer;
-    font-size: 15px;
     min-width: 80px;
-    border: none;
-    border-radius: 20px;
+    border: solid 1px #ffc9f6;
+    border-radius: 5px;
 }
 
 .board-table .th-num {
@@ -78,4 +89,19 @@ input{
 
 .board-table tbody th p{
     display: none;
+}
+
+input[type=button] {
+    padding : 0;
+    background-color: #ffc9f6;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    width: 60px;
+    height: 40px;
+    cursor: pointer;
+}
+
+input::placeholder{
+    color: #ffc9f6;
 }

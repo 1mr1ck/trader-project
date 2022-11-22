@@ -11,12 +11,16 @@
 <div id="wrap">
     <div class="out">
         <div class="in">
+            <h1>커뮤니티</h1>
             <form action="/board/search" method="GET">
-                <div class="search">
-                    <input name="keyword" type="text" placeholder="검색어를 입력해주세요">
+                <div class="boardBtn">
+                    <div class="writeBtn">
+                        <c:if test="${sessionScope.id != null}">
+                            <input type="button" value="글쓰기" onclick="location.href='/boardCreate'">
+                        </c:if>
+                    </div>
                 </div>
             </form>
-            <h1>커뮤니티</h1>
             <table class="board-table">
                 <thead>
                 <tr>
@@ -38,9 +42,11 @@
                 </c:forEach>
                 </tbody>
             </table>
-            <c:if test="${sessionScope.id != null}">
-                <input type="button" value="글쓰기" onclick="location.href='/boardCreate'">
-            </c:if>
+            <div class="search">
+                <div class="searchBtn">
+                    <input name="keyword" type="text" placeholder="검색어를 입력해주세요">
+                </div>
+            </div>
         </div>
     </div>
 </div>
