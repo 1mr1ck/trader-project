@@ -31,7 +31,7 @@ function productSearch() {
 				<th>작성자</th>
 				<th>판매/구매</th>
 				<th>가격</th>
-				<th>작성날짜</th>
+				<th>작성/수정날짜</th>
 			</tr>`
         );
 
@@ -42,10 +42,10 @@ function productSearch() {
             const category = e.category;
             const p_type = e.p_type;
             const nickname = e.nickname;
-            const regStr = e.regDate;
-            const p_regDate = regStr.substring(0, 10);
-            // const modStr = e.modDate;
-            // const p_modDate = modStr.substring(0, 10);
+            // const regStr = e.regDate;
+            // const p_regDate = regStr.substring(0, 10);
+            const modStr = e.modDate;
+            const p_modDate = modStr.substring(0, 10);
             const priceStr = e.price;
             const price = priceStr.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 
@@ -57,7 +57,7 @@ function productSearch() {
 					<td>${nickname}</td>
 					<td>${p_type}</td>
 					<td>${price}원</td>
-					<td>${p_regDate}</td>
+					<td>${p_modDate}</td>
 				</tr>`
             );
         });

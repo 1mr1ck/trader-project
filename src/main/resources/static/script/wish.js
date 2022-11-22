@@ -29,9 +29,9 @@ function wishOnload() {
         const w_no = wish_img.w_no;
 
         if(wish_img === "") {
-            output += '<button onclick="wishGo(' + product_no + ',' + log_no + ')"><img src="/img/Nowish.png" style="width: 100px; height: 100px; background-color: transparent;"></button>';
+            output += '<button onclick="wishGo(' + product_no + ',' + log_no + ')" style="background-color: transparent;"><img src="/img/Nowish.png" style="width: 100px; height: 100px;"></button>';
         } else {
-            output += '<button onclick="wishCancel(' + w_no + ')"><img src="/img/wish.png" style="width: 100px; height: 100px; background-color: transparent;"></button>';
+            output += '<button onclick="wishCancel(' + w_no + ')" style="background-color: transparent;"><img src="/img/wish.png" style="width: 100px; height: 100px;"></button>';
             output += '<input type="hidden" value="' + w_no + '" name="w_no" id="w_no">';
         }
 
@@ -64,7 +64,7 @@ function wishGo(p_no, user_no) {
 
         var output = "";
 
-        output += '<button onclick="wishCancel(' + wish_no + ')"><img src="/img/wish.png" style="width: 100px; height: 100px; background-color: transparent;"></button>';
+        output += '<button onclick="wishCancel(' + wish_no + ')" style="background-color: transparent;"><img src="/img/wish.png" style="width: 100px; height: 100px;"></button>';
         output += '<input type="hidden" value="' + wish_no + '" name="w_no" id="w_no">';
 
         wish_box.innerHTML = output;
@@ -88,7 +88,7 @@ function wishCancel(w_no) {
     $.ajax(settings).done(e=> {
         var output = "";
 
-        output += '<button onclick="wishGo' + '(' + product_no + ',' + log_no + ')">' + '<img src="/img/Nowish.png" style="width: 100px; height: 100px; background-color: transparent;"></button>';
+        output += '<button onclick="wishGo' + '(' + product_no + ',' + log_no + ')" style="background-color: transparent;">' + '<img src="/img/Nowish.png" style="width: 100px; height: 100px;"></button>';
 
         wish_box.innerHTML = output;
     })

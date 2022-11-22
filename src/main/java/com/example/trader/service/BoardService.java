@@ -35,7 +35,7 @@ public class BoardService {
     }
 
     public List<Board> readBoardAll() {
-        return repository.findAll();
+        return repository.findAll_DESC();
     }
 
     // 1user userNo board

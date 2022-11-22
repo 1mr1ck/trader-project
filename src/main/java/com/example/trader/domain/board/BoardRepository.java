@@ -13,6 +13,9 @@ public interface BoardRepository extends JpaRepository<Board, Integer> {
 
     @Query(value = "SELECT * FROM board WHERE user_no=?", nativeQuery = true)
     public List<Board> findBoardByUserNo(int no);
+
+    @Query(value = "SELECT * FROM board ORDER BY mod_date DESC", nativeQuery = true)
+    public List<Board> findAll_DESC();
     
 }
 

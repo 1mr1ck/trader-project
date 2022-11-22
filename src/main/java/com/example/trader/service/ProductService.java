@@ -38,7 +38,7 @@ public class ProductService {
     }
 
     public List<Product> readProductAll() {
-        return repository.findAll();
+        return repository.findAll_DESC();
     }
 
     // Update
