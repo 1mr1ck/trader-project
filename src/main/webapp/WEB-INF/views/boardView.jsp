@@ -10,11 +10,11 @@
 <body>
 <div id="wrap">
 
-    <form action="/board/search" method="GET">
-        <div class="search">
-            <input name="keyword" type="text" placeholder="검색어를 입력해주세요">
-        </div>
-    </form>
+<%--    <form action="/board/search" method="GET">--%>
+<%--        <div class="search">--%>
+<%--            <input name="keyword" type="text" placeholder="검색어를 입력해주세요">--%>
+<%--        </div>--%>
+<%--    </form>--%>
     <h1>커뮤니티</h1>
     <table class="board-table">
         <thead>
