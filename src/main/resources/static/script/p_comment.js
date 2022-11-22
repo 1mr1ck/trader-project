@@ -8,7 +8,7 @@ function saveComment(p_no) {
         alert("로그인을 해주세요.");
         return;
     }
-    const pc_content = document.getElementById('cmt-content').value;
+    const pc_content = document.getElementById('createCmtContent').value;
 
     let settings = {
         "url": "http://localhost:8080/p_comment/product/" + p_no,

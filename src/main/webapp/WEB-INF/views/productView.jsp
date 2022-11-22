@@ -43,8 +43,8 @@
     <input type="hidden" value="${product.p_no}" id="p_no">
     <input type="hidden" value="${sessionScope.no}" id="no">
     <input type="hidden" value="${sessionScope.nickname}" id="nickname">
-    <textarea id="cmt-content" class="cmt-content" placeholder="댓글 내용을 입력하세요."></textarea>
-    <input type="button" onclick="saveComment(${product.p_no})" value="등록" style="cursor: pointer">
+    <textarea id="createCmtContent" class="createCmtContent" placeholder="댓글 내용을 입력하세요."></textarea>
+    <button type="cmt-btn" onclick="saveComment(${product.p_no})" style="cursor: pointer">등록</button>
 </div>
 <!-- 댓글 목록 -->
 <table border="1">
@@ -53,16 +53,16 @@
         <input type="hidden" value="${comment.user_no}" id="comment-user_no">
         <input type="hidden" value="${comment.pc_no}" id="pc_no">
         <tr>
-            <td class="nickname">${comment.user_nickname}</td>
+            <td class="cmt_nickname">${comment.user_nickname}</td>
             <c:if test="${comment.modDate == null}">
-                <td class="date">${(String.valueOf(comment.regDate)).substring(0, 10)}</td>
+                <td class="cmt_date">${(String.valueOf(comment.regDate)).substring(0, 10)}</td>
             </c:if>
             <c:if test="${comment.modDate != null}">
-                <td class="date">${(String.valueOf(comment.modDate)).substring(0, 10)}</td>
+                <td class="cmt_date">${(String.valueOf(comment.modDate)).substring(0, 10)}</td>
             </c:if>
         </tr>
         <tr class="content-box">
-            <td class="content">${comment.pc_content}</td>
+            <td class="cmt_content">${comment.pc_content}</td>
             <c:if test="${comment.user_no == sessionScope.no}">
                 <td>
                     <button onclick="updateComment(${product.p_no}, ${comment.pc_no})">수정</button>

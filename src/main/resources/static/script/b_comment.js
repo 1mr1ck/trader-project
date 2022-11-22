@@ -9,7 +9,7 @@ function saveComment(b_no) {
         alert("로그인을 해주세요.");
         return;
     }
-    const bc_content = document.getElementById('cmt-content').value;
+    const bc_content = document.getElementById('createCmtContent').value;
 
     let settings = {
         "url": "http://localhost:8080/b_comment/board/" + b_no,
