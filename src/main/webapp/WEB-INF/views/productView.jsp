@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: User
-  Date: 2022-11-16
-  Time: 오후 12:24
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
@@ -83,9 +76,11 @@
 </table>
 </div>
 <div>
-    <button onclick="window.open('/letterWrite/${product.p_no}/${sessionScope.no}/${product.user_no}', '쪽지쓰기', 'width=500, height=500');">
-        쪽지쓰기
-    </button>
+    <c:if test="${sessionScope.id != null}">
+        <button onclick="window.open('/letterWrite/${product.p_no}/${sessionScope.no}/${product.user_no}', '쪽지쓰기', 'width=500, height=500');">
+            쪽지쓰기
+        </button>
+    </c:if>
 </div>
 <script src="/script/p_comment.js"></script>
 <script src="/script/wish.js"></script>
