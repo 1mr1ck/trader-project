@@ -3,21 +3,21 @@
     padding: 0;
 }
 
-.board_wrap {
+.product_wrap {
     width: 1000px;
     margin: 100px auto;
     font-size: 10px;
 }
 
-.board_title {
+.product_title {
     margin-bottom: 30px;
 }
 
-.board_title strong {
+.product_title strong {
     font-size: 3rem;
 }
 
-.board_title p {
+.product_title p {
     margin-top: 5px;
     font-size: 1.4rem;
 }
@@ -28,7 +28,7 @@
     font-size: 0;
 }
 
-.bt_wrap input {
+.bt_wrap .buttons {
     height: 52px;
     width: 90px;
     background-color: #ffc9f6;
@@ -45,61 +45,74 @@
     margin-left: 0;
 }
 
-.board_write {
+.product_write {
     border-top: 2px solid #000;
 }
 
-.board_write .title, .board_write .info {
+.product_write .title, .product_write .info {
     padding: 15px;
 }
 
-.board_write .info {
+.product_write .info .title {
     border-top: 1px dashed #ddd;
     border-bottom: 1px solid #000;
     font-size: 0;
 }
+.price {
+    margin-bottom: 30px;
+}
 
-.board_write .title dl {
+.price strong {
+    font-size: 3rem;
+}
+
+.price p {
+    margin-top: 5px;
+    font-size: 1.4rem;
+}
+
+
+.product_write .title dl {
     font-size: 0;
 }
 
-.board_write .info dl {
+.product_write .info dl {
     display: inline-block;
     width: 50%;
     vertical-align: middle;
 }
 
-.board_write .title dt, .board_write .title dd, .board_write .info dt,
-.board_write .info dd {
+.product_write .title dt, .product_write .title dd, .product_write .info dt,
+.product_write .info dd {
     display: inline-block;
     vertical-align: middle;
     font-size: 1.4rem;
 }
 
-.board_write .title dt, .board_write .info dt {
+.product_write .title dt, .product_write .info dt {
     width: 100px;
 }
 
-.board_write .title dd {
+.product_write .title dd {
     width: calc(100% - 100px);
 }
 
-.board_write .title input, .board_write .info input[type="text"]
+.product_write .title input, .product_write .info input[type="text"]
 {
     padding: 10px;
     box-sizing: border-box;
     resize: vertical;
 }
 
-.board_write .title input[type="text"] {
+.product_write .title input[type="text"] {
     width: 80%;
 }
 
-.board_write .cont {
+.product_write .cont {
     border-bottom: 1px solid #000;
 }
 
-.board_write .cont input {
+.product_write .cont input {
     border-bottom: 1px solid #000;
     display: block;
     width: 100%;
@@ -111,26 +124,26 @@
 }
 
 @media ( max-width : 1000px) {
-    .board_wrap {
+    .product_wrap {
         width: 100%;
         min-width: 320px;
         padding: 0 30px;
         box-sizing: border-box;
     }
-    .board_write .info dl {
+    .product_write .info dl {
         width: 49%;
     }
-    .board_write .info dl:first-child {
+    .product_write .info dl:first-child {
         margin-right: 2%;
     }
-    .board_write .title dt, .board_write .info dt {
+    .product_write .title dt, .product_write .info dt {
         display: none;
     }
-    .board_write .title dd, .board_write .info dd {
+    .product_write .title dd, .product_write .info dd {
         width: 100%;
     }
-    .board_write .title input[type="text"], .board_write .info input[type="text"],
-    .board_write .info input[type="password"] {
+    .product_write .title input[type="text"], .product_write .info input[type="text"],
+    .product_write .info input[type="password"] {
         width: 100%;
     }
 

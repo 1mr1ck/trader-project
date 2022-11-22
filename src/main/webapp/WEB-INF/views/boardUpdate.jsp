@@ -11,8 +11,8 @@
 <form class="write">
     <div class="board_wrap">
         <div class="board_title">
-            <strong>커뮤니티</strong>
-            <p>회원님의 진심을 알고 싶습니다.</p>
+            <strong>커뮤니티(수정)</strong>
+            <p>회원님의 아름다움을 알고 싶습니다.</p>
         </div>
         <div class="board_write_wrap">
             <c:set var="board" value="${response}"/>
