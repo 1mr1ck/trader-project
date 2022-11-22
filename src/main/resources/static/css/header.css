@@ -36,6 +36,8 @@ img{
 .navbar1_logo{
     font-size: 24px;
     color: #ffc9f6;
+    width: 250px;
+    height: 80px;
 }
 .navbar1_manu{
     display: flex;

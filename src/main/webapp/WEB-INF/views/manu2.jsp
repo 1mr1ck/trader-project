@@ -242,13 +242,13 @@
     }
 
     .home-main__item .top--img .desktop {
-      width: 70%;
-      position: absolute;
+      width: 300px;
+      position: fixed;
       right: -5%;
       bottom: 0;
       max-width: 600px;
-      margin-bottom: 250px;
-      margin-right: 200px;
+      margin-bottom: 10%;
+      margin-right: 70%;
     }
 
     .home-main__item .top--img .mobile {
@@ -297,12 +297,12 @@
           </article>
           <div class="item-box__img top--img">
             <img
-                    src="img/2.gif"
-                    alt="2"
+                    src="img/8.gif"
+                    alt="img/8.gif"
                     class="desktop"
             />
             <img
-                    src="img/2.gif"
+                    src="img/7.gif"
                     alt="2"
                     class="mobile"
             />
