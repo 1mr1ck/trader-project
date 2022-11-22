@@ -28,10 +28,10 @@ function productSearch() {
 				<th>이미지</th>
 				<th>제목</th>
 				<th>카테고리</th>
-				<th>판매/구매</th>
 				<th>작성자</th>
+				<th>판매/구매</th>
+				<th>가격</th>
 				<th>작성날짜</th>
-				<th>수정날짜</th>
 			</tr>`
         );
 
@@ -44,18 +44,20 @@ function productSearch() {
             const nickname = e.nickname;
             const regStr = e.regDate;
             const p_regDate = regStr.substring(0, 10);
-            const modStr = e.modDate;
-            const p_modDate = modStr.substring(0, 10);
+            // const modStr = e.modDate;
+            // const p_modDate = modStr.substring(0, 10);
+            const priceStr = e.price;
+            const price = priceStr.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 
             $('.container').append(
                 `<tr>
 					<td><img src="${img_url}" style="width: 100px; height: 100px;"></td>
 					<td><a href="productView/${p_no}">${p_title}</a></td>
 					<td>${category}</td>
-					<td>${p_type}</td>
 					<td>${nickname}</td>
+					<td>${p_type}</td>
+					<td>${price}원</td>
 					<td>${p_regDate}</td>
-					<td>${p_modDate}</td>
 				</tr>`
             );
         });

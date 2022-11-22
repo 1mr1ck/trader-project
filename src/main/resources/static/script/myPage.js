@@ -38,6 +38,7 @@ function my_product() {
         output += '<th class="category">카테고리</th>';
         output += '<th class="title">제목</th>';
         output += '<th class="content">내용</th>';
+        output += '<th class="price">가격</th>';
         output += '<th class="check">진행상태</th>';
         output += '<th class="type">판매/구매</th>';
         output += '<th class="type">수정/삭제</th>';
@@ -53,6 +54,8 @@ function my_product() {
             let category = e.category;
             let title = e.p_title;
             let content = e.p_content;
+            let priceStr = e.price;
+            let price = priceStr.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
             let check = e.p_check;
             let type = e.p_type;
             if(check === '거래완')
@@ -62,6 +65,7 @@ function my_product() {
             output += '<td>' + category + '</td>'
             output += '<td onclick="location.href=`/productView/' + p_no + '`" style="cursor: pointer">' + title + '</td>'
             output += '<td>' + content + '</td>'
+            output += '<td>' + price + '원</td>'
             output += '<td>' + check + '</td>'
             output += '<td>' + type + '</td>'
             output += '<td><button onclick="location.href=`productUpdate/' + p_no + '`">수정</button>'
