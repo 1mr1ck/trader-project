@@ -125,7 +125,8 @@ function my_board() {
         let output ='<div class="out">';
         output += '<div class="in">';
         output += '<form method="POST">'
-        output += '<input type="hidden" value="' + login_no + '" id="user_no" name="user_no">'
+        output += '<input type="hidden" value="'
+            + login_no + '" id="user_no" name="user_no">'
         output += '</form>';
         output += '<table class="type04">';
         output += '<thead>';
@@ -212,7 +213,8 @@ function my_boardCmt() {
 
             output += '<tr>';
             output += '<td>' + b_no + '</td>';
-            output += '<td onclick="location.href=`/boardDetail/' + b_no + '`" style="cursor: pointer">' + bc_content + '</td>';
+            output += '<td onclick="location.href=`/boardDetail/'
+                + b_no + '`" style="cursor: pointer">' + bc_content + '</td>';
             output += '<td>' + regDate + '</td>';
             output += '<td>' + modDate + '</td>';
             output += '</tr>';

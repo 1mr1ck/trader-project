@@ -12,7 +12,7 @@
 <header class="header1">
     <div class="navbar_logo">
         <div class="logoImg">
-            <img src="/css/princess.png" href="/" style="height: 78px">
+            <a href="/"><img src="/css/princess.png" style="height: 78px"></a>
         </div>
 
     </div>

@@ -7,7 +7,6 @@
 </head>
 <jsp:include page="header.jsp"></jsp:include>
 <body onload="wishOnload()">
-<button onclick="location.href='/'" style="cursor: pointer">home</button>
 <table>
     <thead>
     <tr>

@@ -34,16 +34,19 @@
                 </div>
             </div>
             <div class="bt_wrap">
-                <select id="notice" name="notice" required>
-                    <c:if test="${sessionScope.id == admin}">
-                    <option value="공지">공지</option>
-                    </c:if>
-                    <option value="그냥 글쓰기">그냥 글쓰기</option>
-                </select>
-<%--                <input type="button" onclick="location.href='boardForm'" value="돌아가기">--%>
+                <c:if test="${sessionScope.no == 1}">
+                    <select id="notice" name="notice" required>
+                        <option value="공지">공지</option>
+                        <option value="그냥 글쓰기">그냥 글쓰기</option>
+                    </select>
+                </c:if>
+                <c:if test="${sessionScope.no != 1}">
+                    <select id="notice" name="notice" required>
+                        <option value="그냥 글쓰기">그냥 글쓰기</option>
+                    </select>
+                </c:if>
 
                 <input type="button" value="글쓰기" onclick="createBoard()">
-<%--                <input type="button" value="home" onclick="location.href='/boardView'">--%>
             </div>
         </div>
     </div>

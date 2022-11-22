@@ -166,17 +166,15 @@ function modifyComment(p_no, pc_no) {
 function modCancleComment(p_no, pc_no) {
 
     let settings = {
-        "url": "http://localhost:8080/p_comments/product/" + p_no,
+        "url": "http://localhost:8080/p_comments" +
+            "/product/" + p_no,
         "method": "POST",
         "timeout": 0,
         "headers": {
             "Content-Type": "application/json"
         },
         "data": JSON.stringify({
-            "p_no": p_no,
-            "pc_no" : pc_no,
-            "user_no": login_no,
-            "user_nickname": login_nickname,
+            "p_no": p_no
         }),
     };
 

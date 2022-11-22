@@ -29,7 +29,9 @@ function wishOnload() {
         const w_no = wish_img.w_no;
 
         if(wish_img === "") {
-            output += '<button onclick="wishGo(' + product_no + ',' + log_no + ')"><img src="/img/Nowish.png"></button>';
+            output += '<button onclick="wishGo' +
+                '(' + product_no + ',' + log_no + ')">' +
+                '<img src="/img/Nowish.png"></button>';
         } else {
             output += '<button onclick="wishCancel(' + w_no + ')"><img src="/img/wish.png"></button>';
             output += '<input type="hidden" value="' + w_no + '" name="w_no" id="w_no">';
@@ -74,7 +76,8 @@ function wishGo(p_no, user_no) {
 function wishCancel(w_no) {
 
     let settings = {
-        "url": "http://localhost:8080/product/wish/" + w_no + "/delete",
+        "url": "http://localhost:8080/" +
+            "product/wish/" + w_no + "/delete",
         "method": "POST",
         "timeout": 0,
         "headers": {
@@ -88,7 +91,9 @@ function wishCancel(w_no) {
     $.ajax(settings).done(e=> {
         var output = "";
 
-        output += '<button onclick="wishGo(' + product_no + ',' + log_no + ')"><img src="/img/Nowish.png"></button>';
+        output += '<button onclick="wishGo' +
+            '(' + product_no + ',' + log_no + ')">' +
+            '<img src="/img/Nowish.png"></button>';
 
         wish_box.innerHTML = output;
     })
