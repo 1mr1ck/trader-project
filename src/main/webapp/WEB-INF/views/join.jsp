@@ -46,7 +46,7 @@
                         <span id="email_ck" class="dpn">이미 사용중인 이메일입니다.</span>
                     </div>
                     <input type="text" placeholder="인증번호 입력" id="email_auth_key" autocomplete="off">
-                    <input type="text" name="phone" id="phone" placeholder="핸드폰번호" maxlength="13" autocomplete="off">
+                    <input type="text" name="phone" id="phone" placeholder="핸드폰번호 - 없이 번호만 작성해주세요" maxlength="13" onKeyup="this.value=this.value.replace(/[^0-9]/g,'');" autocomplete="off">
                     <input type="text" name="address" id="address" placeholder="주소" autocomplete="off">
                 </div>
                 <button type="button" id="join" class="join_btn">가입하기</button>

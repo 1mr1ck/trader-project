@@ -2,6 +2,10 @@
     margin: 0;
     padding: 0;
 }
+.out{
+    padding-left: 100px;
+    padding-right: 100px;
+}
 h1{
     font-size: 50px ;
     color: #333333;
@@ -40,7 +44,6 @@ input{
     cursor: pointer;
     font-size: 15px;
     min-width: 80px;
-    margin-left: 1400px;
     border: none;
     border-radius: 20px;
 }

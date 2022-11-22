@@ -26,7 +26,7 @@
         <div id="container" class="container">
             <div class="content">
                 <div class="join_wrap">
-                    <form method="post" id="join_frm" action="login/loginProc">
+                    <form method="post" id="join_frm">
                         <input type="hidden" id="no" value="${sessionScope.no}">
                         <input type="hidden" id="user_no" value="${sessionScope.no}">
                         <div class="join_title">회원탈퇴</div>
@@ -53,5 +53,4 @@
 </footer>
 </body>
 <script src="script/userDeleteScript.js"></script>
-<script src="script/myPage.js"></script>
 </html>
