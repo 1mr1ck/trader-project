@@ -52,10 +52,6 @@ public class BoardService {
             board.setBoard(boardDto);
         }
     }
-    /* UPDATE */
-
-
-
 
     //Delete
     @Transactional

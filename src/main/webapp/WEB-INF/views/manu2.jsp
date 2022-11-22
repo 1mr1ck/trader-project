@@ -244,6 +244,8 @@
       right: -5%;
       bottom: 0;
       max-width: 800px;
+      margin-bottom: 190px;
+      margin-right: 200px;
     }
 
     .home-main__item .top--img .mobile {
