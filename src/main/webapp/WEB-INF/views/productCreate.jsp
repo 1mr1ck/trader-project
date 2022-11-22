@@ -34,8 +34,8 @@
                 </div>
                 <div class="title">
                     <dl>
-                        <dt>상품</dt>
-                        <dd><input type="text"  id="price" placeholder="상품을 입력해주세요." name="price" required></dd>
+                        <dt>가격</dt>
+                        <dd><input type="text"  id="price" placeholder="가격을 입력해주세요." name="price" required></dd>
                     </dl>
                 </div>
                 <div class="title">
