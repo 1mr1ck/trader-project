@@ -1,11 +1,5 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: ADMIN
-  Date: 2022-11-15
-  Time: 오후 6:07
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
     <title>게시판 작성</title>
@@ -41,7 +35,9 @@
             </div>
             <div class="bt_wrap">
                 <select id="notice" name="notice" required>
+                    <c:if test="${sessionScope.id == admin}">
                     <option value="공지">공지</option>
+                    </c:if>
                     <option value="그냥 글쓰기">그냥 글쓰기</option>
                 </select>
 <%--                <input type="button" onclick="location.href='boardForm'" value="돌아가기">--%>

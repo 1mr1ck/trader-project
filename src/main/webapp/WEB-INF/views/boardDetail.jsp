@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>Title</title>
@@ -8,7 +8,7 @@
 </head>
 <jsp:include page="header.jsp"></jsp:include>
 <body>
-<form class="write" method="post" >
+<form class="write" method="post">
     <div class="board_wrap">
         <div class="board_title">
             <strong>커뮤니티</strong>
@@ -16,26 +16,24 @@
         </div>
         <c:set var="board" value="${response}"/>
         <input type="hidden" value="${board.b_no}" class="boardNo" id="boardNo" name="boardNo">
-        <div class="board_write_wrap" >
+        <div class="board_write_wrap">
             <div class="board_write">
                 <div class="title">
                     <dl>
                         <dt>제목</dt>
-                        <dd><input type="text"  value="${board.b_title}" id="title" name="title" readonly></dd>
+                        <dd><input type="text" value="${board.b_title}" id="title" name="title" readonly></dd>
                     </dl>
                 </div>
                 <div class="info">
                     <dl>
                         <dt>닉네임</dt>
-                        <dd><input type="hidden"value="${board.user_no}" readonly></dd>
-                        <dd><input type="text"  id="id" value="${board.nickname}" readonly></dd>
+                        <dd><input type="hidden" value="${board.user_no}" readonly></dd>
+                        <dd><input type="text" id="id" value="${board.nickname}" readonly></dd>
                     </dl>
                     <dl>
                         <dt>작성일자</dt>
                         <c:set var="regDate" value="${(String.valueOf(board.regDate)).substring(0, 10)}"/>
-                        <dd><input type="text"  style="border: none; outline :none" value="${regDate}" >
-<%--                            <input type="hidden" name="no" value="">--%>
-                        </dd>
+                        <dd><input type="text" style="border: none; outline :none" value="${regDate}"></dd>
                     </dl>
                 </div>
                 <div class="cont">

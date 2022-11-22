@@ -70,10 +70,7 @@ function updateComment(p_no, pc_no) {
             "Content-Type" : "application/json"
         },
         "data" : JSON.stringify({
-            "p_no" : p_no,
-            "pc_no" : pc_no,
-            "user_no" : login_no,
-            "user_nickname" : login_nickname
+            "p_no" : p_no
         })
     }
 
