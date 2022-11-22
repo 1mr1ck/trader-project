@@ -23,7 +23,7 @@
     <c:set var="product" value="${response}"/>
     <input type="hidden" id="p_title" value="${product.p_title}">
     <tr>
-        <td><img src="${product.img_url}"></td>
+        <td><img src="${product.img_url}"style="width: 400px; height: 400px;"></td>
         <td>${product.p_title}</td>
         <td>${product.category}</td>
         <td>${product.p_type}</td>
