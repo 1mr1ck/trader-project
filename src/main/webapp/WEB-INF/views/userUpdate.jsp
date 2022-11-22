@@ -60,9 +60,9 @@
                                    value="${sessionScope.nickname}" onfocus="this.value=''" onblur="nicknameNullCheck('${sessionScope.nickname}')" autocomplete="off">
                             <span id="nickname_ck" class="dpn">이미 사용중인 닉네임입니다.</span>
 
-                            <input type="text" name="phone" id="phone" placeholder="핸드폰번호" value="${sessionScope.phone}"
-                                   onfocus="this.value=''" onblur="phoneNullCheck('${sessionScope.phone}')"autocomplete="off">
-                            <input type="text" name="address" id="address" maxlength="13" placeholder="주소"
+                            <input type="text" name="phone" id="phone" placeholder="핸드폰번호 - 없이 번호만 작성해주세요" value="${sessionScope.phone}"
+                                   onfocus="this.value=''" onblur="phoneNullCheck('${sessionScope.phone}')" maxlength="13" onKeyup="this.value=this.value.replace(/[^0-9]/g,'');" autocomplete="off">
+                            <input type="text" name="address" id="address" placeholder="주소"
                                    value="${sessionScope.address}" onfocus="this.value=''" onblur="addressNullCheck('${sessionScope.address}')"autocomplete="off">
                         </div>
                         <button type="button" id="join" class="join_btn">정보 수정</button>
