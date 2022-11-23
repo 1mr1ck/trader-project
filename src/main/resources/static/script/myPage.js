@@ -21,13 +21,35 @@ function my_product() {
     $.ajax(settings).done(function (response) {
         let output ='';
         output += '<div class="out">';
-        output += '<button onclick="setP_check(`전체`)">전체</button>';
-        output += '<button onclick="setP_check(`진행중`)">진행중</button>';
-        output += '<button onclick="setP_check(`예약중`)">예약중</button>';
-        output += '<button onclick="setP_check(`거래완`)">거래완료</button>';
-        output += '<div><button onclick="setP_type(`전체`)" class="p_typeButton">전체</button>';
-        output += '<button onclick="setP_type(`삽니다`)" class="p_typeButton">삽니다</button>';
-        output += '<button onclick="setP_type(`팝니다`)" class="p_typeButton">팝니다</button></div>';
+        if(p_check === '전체')
+            output += '<button onclick="setP_check(`전체`)" style="background-color: #ffc9f6">전체</button>';
+        else
+            output += '<button onclick="setP_check(`전체`)" style="background-color: #fff">전체</button>';
+        if(p_check === '진행중')
+            output += '<button onclick="setP_check(`진행중`)" style="background-color: #ffc9f6">진행중</button>';
+        else
+            output += '<button onclick="setP_check(`진행중`)" style="background-color: #fff">진행중</button>';
+        if(p_check === '예약중')
+            output += '<button onclick="setP_check(`예약중`)" style="background-color: #ffc9f6">예약중</button>';
+        else
+            output += '<button onclick="setP_check(`예약중`)" style="background-color: #fff">예약중</button>';
+        if(p_check === '거래완')
+            output += '<button onclick="setP_check(`거래완`)" style="background-color: #ffc9f6">거래완료</button>';
+        else
+            output += '<button onclick="setP_check(`거래완`)" style="background-color: #fff">거래완료</button>';
+
+        if(p_type === '전체')
+            output += '<div><button onclick="setP_type(`전체`)" style="background-color: #ffc9f6">전체</button>';
+        else
+            output += '<div><button onclick="setP_type(`전체`)" style="background-color: #fff">전체</button>';
+        if(p_type === '삽니다')
+            output += '<button onclick="setP_type(`삽니다`)" style="background-color: #ffc9f6">삽니다</button>';
+        else
+            output += '<button onclick="setP_type(`삽니다`)" style="background-color: #fff">삽니다</button>';
+        if(p_type === '팝니다')
+            output += '<button onclick="setP_type(`팝니다`)" style="background-color: #ffc9f6">팝니다</button></div>';
+        else
+            output += '<button onclick="setP_type(`팝니다`)" style="background-color: #fff">팝니다</button></div>';
         output += '<div class="in">';
         output += '<form method="POST">'
         output += '<input type="hidden" value="' + login_no + '" id="user_no" name="user_no">'

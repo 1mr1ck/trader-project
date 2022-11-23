@@ -13,7 +13,7 @@
 </head>
 <jsp:include page="header.jsp"></jsp:include>
 <body>
-<form class="create">
+<form class="create" method="post" enctype="multipart/form-data" id="imageForm">
     <div class="product_wrap">
         <div class="product_title">
             <strong>상품등록</strong>
@@ -35,13 +35,13 @@
                 <div class="title">
                     <dl>
                         <dt>가격</dt>
-                        <dd><input type="text"  id="price" placeholder="가격을 입력해주세요." name="price" required></dd>
+                        <dd><input type="text"  id="price" placeholder="가격을 입력해주세요." name="price" onkeyup="inputNumberFormat(this)" required></dd>
                     </dl>
                 </div>
                 <div class="title">
                     <dl>
-                        <dt>이미지등록</dt>
-                        <dd><input type="text" id="img_url" name="img_url" placeholder="img_url" required></dd>
+                        <dt>이미지</dt>
+                        <dd><input type="file" id="input_img" accept="image/*"></dd>
                         <input type="hidden" id="user_no" name="user_no" value="${sessionScope.no}">
                     </dl>
                 </div>
