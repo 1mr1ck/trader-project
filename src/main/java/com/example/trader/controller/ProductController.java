@@ -7,6 +7,10 @@ import com.example.trader.service.P_commentService;
 import com.example.trader.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -60,6 +64,23 @@ public class ProductController {
         int no = Integer.parseInt(user_no);
         return service.findProductUserNo(no);
     }
+
+    // 페이징 처리 메소드
+    @PostMapping("/search/product/user_no/{user_no}/p_type/{p_type}/p_check/{p_check}")
+    public Page<Product> findByUserNo_page1(@PathVariable int user_no, @PathVariable String p_type, @PathVariable String p_check, @PageableDefault(size=2, sort="mod_date", direction = Sort.Direction.DESC) Pageable pageable) {
+        return service.findByUserNo(user_no, p_type, p_check, pageable);
+    }
+
+    // 선택한 페이지 리스트
+    @PostMapping("/search/product/user_no/{user_no}/p_type/{p_type}/p_check/{p_check}/pageNum/{pageNum}")
+    public Page<Product> findByUserNo_pageX(@PathVariable int user_no, @PathVariable String p_type, @PathVariable String p_check, @PageableDefault(size=2, sort="mod_date", direction = Sort.Direction.DESC) Pageable pageable, @PathVariable int pageNum) {
+
+        return service.findByUserNo(user_no, p_type, p_check, pageable.withPage(pageNum));
+    }
+
+
+
+
 
     // GetProductAll
     @GetMapping("/v1/search/productAll")

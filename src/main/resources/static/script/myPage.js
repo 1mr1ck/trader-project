@@ -7,18 +7,16 @@ let p_check = document.getElementById('p_check').value;
 // 상품 게시글
 function my_product() {
     var settings = {
-        "url": "http://localhost:8080/v1/search/product/user_no/" + login_no + "/p_type/" + p_type + "/p_check/" + p_check,
+        "url": "http://localhost:8080/search/product/user_no/" + login_no + "/p_type/" + p_type + "/p_check/" + p_check,
         "method": "POST",
         "timeout": 0,
         "headers": {
             "Content-Type": "application/json"
-        },
-        "data": JSON.stringify({
-            "user_no": login_no
-        }),
+        }
     };
 
     $.ajax(settings).done(function (response) {
+        console.log(response);
         let output ='';
         output += '<div class="out">';
         output += '<button onclick="setP_check(`전체`)">전체</button>';
@@ -46,9 +44,12 @@ function my_product() {
         output += '</thead>';
         output += '<tbody>';
 
-        const list = response;
+        const list = response.content;
+        const size = response.pageable;
+        const totalEle = response.totalElements;
+        const totalPages = response.totalPages;
+
         list.forEach(e => {
-            console.log(response);
             let p_no = e.p_no;
             let user_no = e.user_no;
             let category = e.category;
@@ -76,6 +77,123 @@ function my_product() {
         output += '</tbody>';
         output += '</table>';
         output += '</div>';
+        if(totalPages < 10) {
+            for (let i = 0; i < totalPages; i++) {
+                if (i == 0) {
+                    output += '<button onclick=x_page(' + i + ') style="background-color: #ffc9f6">' + (i + 1) + '</button>'
+                } else {
+                    output += '<button onclick=x_page(' + i + ') style="background-color: #ffffff">' + (i + 1) + '</button>'
+                }
+            }
+        } else {
+            for (let i = 0; i < 10; i++) {
+                if (i == 0) {
+                    output += '<button onclick=x_page(' + i + ') style="background-color: #ffc9f6">' + (i + 1) + '</button>'
+                } else {
+                    output += '<button onclick=x_page(' + i + ') style="background-color: #ffffff">' + (i + 1) + '</button>'
+                }
+            }
+        }
+        output += '</div>';
+
+        box.innerHTML = output;
+    });
+}
+
+// x 페이지 게시글
+function x_page(pageNum) {
+    console.log(pageNum);
+    var settings = {
+        "url": "http://localhost:8080/search/product/user_no/" + login_no + "/p_type/" + p_type + "/p_check/" + p_check + "/pageNum/" + pageNum,
+        "method": "POST",
+        "timeout": 0,
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "data": JSON.stringify({
+            "user_no": login_no,
+        })
+    };
+
+    $.ajax(settings).done(function (response) {
+        console.log("페이지넘버 : " + pageNum, response)
+        let output ='';
+        output += '<div class="out">';
+        output += '<button onclick="setP_check(`전체`)">전체</button>';
+        output += '<button onclick="setP_check(`진행중`)">진행중</button>';
+        output += '<button onclick="setP_check(`예약중`)">예약중</button>';
+        output += '<button onclick="setP_check(`거래완`)">거래완료</button>';
+        output += '<div><button onclick="setP_type(`전체`)" class="p_typeButton">전체</button>';
+        output += '<button onclick="setP_type(`삽니다`)" class="p_typeButton">삽니다</button>';
+        output += '<button onclick="setP_type(`팝니다`)" class="p_typeButton">팝니다</button></div>';
+        output += '<div class="in">';
+        output += '<form method="POST">'
+        output += '<input type="hidden" value="' + login_no + '" id="user_no" name="user_no">'
+        output += '</form>';
+        output += '<table class="type04">';
+        output += '<thead>';
+        output += '<tr>';
+        output += '<th class="category">카테고리</th>';
+        output += '<th class="title">제목</th>';
+        output += '<th class="content">내용</th>';
+        output += '<th class="price">가격</th>';
+        output += '<th class="check">진행상태</th>';
+        output += '<th class="type">판매/구매</th>';
+        output += '<th class="type">수정/삭제</th>';
+        output += '</tr>';
+        output += '</thead>';
+        output += '<tbody>';
+
+        const list = response.content;
+        const size = response.pageable;
+        const totalEle = response.totalElements;
+        const totalPages = response.totalPages;
+
+        list.forEach(e => {
+            let p_no = e.p_no;
+            let user_no = e.user_no;
+            let category = e.category;
+            let title = e.p_title;
+            let content = e.p_content;
+            let priceStr = e.price;
+            let price = priceStr.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+            let check = e.p_check;
+            let type = e.p_type;
+            if(check === '거래완')
+                check += '료';
+
+            output += '<tr>'
+            output += '<td>' + category + '</td>'
+            output += '<td onclick="location.href=`/productView/' + p_no + '`" style="cursor: pointer">' + title + '</td>'
+            output += '<td>' + content + '</td>'
+            output += '<td>' + price + '원</td>'
+            output += '<td>' + check + '</td>'
+            output += '<td>' + type + '</td>'
+            output += '<td><button onclick="location.href=`productUpdate/' + p_no + '`">수정</button>'
+            output += '<button onclick="productDelete(' + p_no + ',' + user_no +')">삭제</button></td>'
+            output += '</tr>'
+
+        })
+        output += '</tbody>';
+        output += '</table>';
+        output += '</div>';
+        if(totalPages-pageNum < 10) {
+            for (let i = 0; i < totalPages; i++) {
+                if (i == pageNum) {
+                    output += '<button onclick=x_page(' + i + ') style="background-color: #ffc9f6">' + (i + 1) + '</button>'
+                } else {
+                    output += '<button onclick=x_page(' + i + ') style="background-color: #ffffff">' + (i + 1) + '</button>'
+                }
+            }
+        } else {
+            for (let i = pageNum; i < pageNum+10; i++) {
+                if (i == pageNum) {
+                    output += '<button onclick=x_page(' + i + ') style="background-color: #ffc9f6">' + (i + 1) + '</button>'
+                } else {
+                    output += '<button onclick=x_page(' + i + ') style="background-color: #ffffff">' + (i + 1) + '</button>'
+                }
+            }
+        }
         output += '</div>';
 
         box.innerHTML = output;

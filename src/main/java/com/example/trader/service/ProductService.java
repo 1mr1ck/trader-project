@@ -5,6 +5,8 @@ import com.example.trader.domain.product.ProductDto;
 import com.example.trader.domain.product.ProductRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -35,6 +37,16 @@ public class ProductService {
 
     public  List<Product> findProductUserNo(int user_no){
         return repository.findByUserNo(user_no);
+    }
+
+    public Page<Product> findByUserNo(int user_no, String p_type, String p_check, Pageable pageable) {
+        if(p_type.equals("전체"))
+            p_type = "";
+        if(p_check.equals("전체"))
+            p_check = "";
+        p_type = "%" + p_type + "%";
+        p_check = "%" + p_check + "%";
+        return repository.pageingFindByUserNo(user_no, p_type, p_check, pageable);
     }
 
     public List<Product> readProductAll() {
