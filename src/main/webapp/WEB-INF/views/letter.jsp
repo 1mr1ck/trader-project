@@ -3,6 +3,7 @@
 <html>
 <head>
     <title>쪽지함</title>
+    <link rel="stylesheet" href="/css/letter.css">
 </head>
 <body>
     <h1>쪽지함</h1>

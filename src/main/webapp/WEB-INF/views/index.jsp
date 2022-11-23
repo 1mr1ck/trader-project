@@ -6,7 +6,7 @@
 </head>
 <jsp:include page="header.jsp"></jsp:include>
 <body>
-<jsp:include page="manu2.jsp"></jsp:include>
+<jsp:include page="manu3.jsp"></jsp:include>
 </body>
 <jsp:include page="footer.jsp"></jsp:include>
 </html>

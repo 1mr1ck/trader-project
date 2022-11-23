@@ -39,7 +39,7 @@
             <div class="bt_wrap">
                 <c:if test="${board.user_no == sessionScope.no}">
                     <input type="button" value="글목록" onclick="location.href='/boardView'">
-                    <input type="button" value="글수정" onclick="boardUpdate()">
+                    <input type="button" value="글수정" id="update">
                 </c:if>
             </div>
         </div>

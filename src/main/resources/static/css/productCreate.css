@@ -28,7 +28,7 @@
     font-size: 0;
 }
 
-.bt_wrap .buttons {
+.bt_wrap input {
     height: 52px;
     width: 90px;
     background-color: #ffc9f6;
@@ -37,7 +37,6 @@
     font-size: 20px;
     min-width: 80px;
     margin-left: 10px;
-    border: 1px solid #000;
     border-radius: 2px;
 }
 
@@ -90,11 +89,11 @@
 }
 
 .product_write .title dt, .product_write .info dt {
-    width: 100px;
+    width: 120px;
 }
 
 .product_write .title dd {
-    width: calc(100% - 100px);
+    width: calc(100% - 120px);
 }
 
 .product_write .title input, .product_write .info input[type="text"]
@@ -109,6 +108,7 @@
 }
 
 .product_write .cont {
+    border-top:1px solid #000;
     border-bottom: 1px solid #000;
 }
 
@@ -147,4 +147,17 @@
         width: 100%;
     }
 
+}
+
+select {
+    margin: 10px;
+    width: 120px; /* 원하는 너비설정 */
+    padding: .8em .5em; /* 여백으로 높이 설정 */
+    font-family: inherit;  /* 폰트 상속 */
+    background: url(https://farm1.staticflickr.com/379/19928272501_4ef877c265_t.jpg) no-repeat 95% 50%; /* 네이티브 화살표 대체 */
+    border: 1px solid #000000;
+    border-radius: 0px; /* iOS 둥근모서리 제거 */
+    -webkit-appearance: none; /* 네이티브 외형 감추기 */
+    -moz-appearance: none;
+    appearance: none;
 }
