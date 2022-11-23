@@ -31,6 +31,21 @@ function boardUpdate () {
         alert("글수정 실패");
         console.log(error);
     })
-
-
 }
+
+$(function() {
+
+    $('#update').click(function(){
+
+        if($('#b_title').val() == ""){
+            alert("제목을 입력해주세요.");
+            return false;
+        }
+
+        if($('#b_content').val() == ""){
+            alert("내용을 입력해주세요.");
+            return false;
+        }
+        boardUpdate();
+    });
+});

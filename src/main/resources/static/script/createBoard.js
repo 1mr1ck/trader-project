@@ -27,6 +27,7 @@ function createBoard(){
     };
 
     $.ajax(settings).done(function (response) {
+
         console.log(response);
         alert("글쓰기 성공");
         location.href="/boardView";
@@ -35,4 +36,20 @@ function createBoard(){
         console.log(error);
     })
 
-}
+};
+$(function() {
+
+    $('#create').click(function(){
+
+        if($('#b_title').val() == ""){
+            alert("제목을 입력해주세요.");
+            return false;
+        }
+
+        if($('#b_content').val() == ""){
+            alert("내용을 입력해주세요.");
+            return false;
+        }
+        createBoard();
+    });
+});

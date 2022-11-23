@@ -46,7 +46,7 @@
                     </select>
                 </c:if>
 
-                <input type="button" value="글쓰기" onclick="createBoard()">
+                <input type="button" id="create" value="글쓰기">
             </div>
         </div>
     </div>

@@ -17,6 +17,13 @@
         <c:set var="board" value="${response}"/>
         <input type="hidden" value="${board.b_no}" class="boardNo" id="boardNo" name="boardNo">
         <div class="board_write_wrap">
+            <div class="bt_wrap">
+                <input type="button" value="글목록" onclick="location.href='/boardView'">
+                <c:if test="${board.user_no == sessionScope.no}">
+                    <input type="button" value="글수정" onclick="location.href='/boardUpdate/${board.b_no}'">
+                    <input type="button" value="글삭제" onclick="location.href='/v1/delete/board?b_no=${board.b_no}'">
+                </c:if>
+            </div>
             <div class="board_write">
                 <div class="title">
                     <dl>
@@ -40,13 +47,7 @@
                     <input type="text" class="text" value="${board.b_content}" id="content" name="content" readonly>
                 </div>
             </div>
-            <div class="bt_wrap">
-                <input type="button" value="글목록" onclick="location.href='/boardView'">
-                <c:if test="${board.user_no == sessionScope.no}">
-                    <input type="button" value="글수정" onclick="location.href='/boardUpdate/${board.b_no}'">
-                    <input type="button" value="글삭제" onclick="location.href='/v1/delete/board?b_no=${board.b_no}'">
-                </c:if>
-            </div>
+
         </div>
     </div>
 </form>
@@ -56,10 +57,17 @@
     <input type="hidden" value="${sessionScope.no}" id="no">
     <input type="hidden" value="${sessionScope.nickname}" id="nickname">
     <textarea id="createCmtContent" class="createCmtContent" placeholder="댓글 내용을 입력하세요."></textarea>
-    <button type="cmt-btn" onclick="saveComment(${board.b_no})" style="cursor: pointer">등록</button>
+    <button class="cmt-btn" onclick="saveComment(${board.b_no})" style="cursor: pointer">등록</button>
 </div>
 <!-- 댓글 리스트 -->
 <table border="1">
+    <thead class="cmt-list" >
+    <tr>
+        <td class="cmt_nickname">작성자</td>
+        <td class="cmt_nickname">내용</td>
+        <td class="cmt_date">작성일</td>
+    </tr>
+    </thead>
     <tbody class="cmt-list">
     <c:forEach items="${comments}" var="comment">
         <input type="hidden" value="${comment.user_no}" id="comment-user_no">
@@ -69,18 +77,14 @@
             <c:if test="${comment.modDate == null}">
                 <td class="cmt_date">${(String.valueOf(comment.regDate)).substring(0, 10)}</td>
             </c:if>
-            <c:if test="${comment.modDate != null}">
-                <td class="cmt_date">${(String.valueOf(comment.modDate)).substring(0, 10)}</td>
-            </c:if>
-        </tr>
-        <tr class="content-box">
             <td class="cmt_content">${comment.bc_content}</td>
-            <c:if test="${comment.user_no == sessionScope.no}">
-                <td>
-                    <button onclick="updateComment(${board.b_no}, ${comment.bc_no})">수정</button>
-                    <button onclick="deleteComment(${board.b_no}, ${comment.bc_no})">삭제</button>
-                </td>
+            <c:if test="${comment.modDate != null}">
+                <td class="cmt_date">${(String.valueOf(comment.modDate)).substring(0, 10)}
             </c:if>
+            <c:if test="${comment.user_no == sessionScope.no}">
+                    <button class="cmt-btn" onclick="updateComment(${board.b_no}, ${comment.bc_no})">수정</button>
+                    <button class="cmt-btn"5 onclick="deleteComment(${board.b_no}, ${comment.bc_no})">삭제</button>
+            </c:if></td>
         </tr>
     </c:forEach>
     </tbody>
