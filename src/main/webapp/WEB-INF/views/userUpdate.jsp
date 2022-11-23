@@ -76,6 +76,6 @@
     <jsp:include page="footer.jsp"></jsp:include>
 </footer>
 </body>
-<script src="script/userUpdateScript.js"></script>
 <script src="script/myPage.js"></script>
+<script src="script/userUpdateScript.js"></script>
 </html>

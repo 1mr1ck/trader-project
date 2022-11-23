@@ -29,3 +29,8 @@ function updateP_check() {
         console.log(response);
     });
 }
+
+function addcomma(value){
+    addCommaValue = value.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    document.getElementById('price').value = addCommaValue;
+}

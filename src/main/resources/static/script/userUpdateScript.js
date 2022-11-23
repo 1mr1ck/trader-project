@@ -185,9 +185,9 @@ function update(){
 
     $.ajax(settings).done(function (response) {
         console.log(response);
+        alert('회원정보 수정 완료');
+        window.location.reload();
     });
-
-    location.href="/myPage";
 }
 
 $(function() {
@@ -246,6 +246,7 @@ $(function() {
                         $('#nickname_ck').addClass("dpn");
                         document.getElementById('nicknameCheck').value = "N"
                     }
+
                 },
                 error: function (data) {
                 }

@@ -11,41 +11,58 @@
 <div class="wrap">
     <div class="out">
         <div class="in">
-            <table>
-                <thead>
-                <tr>
-                    <th>제목</th>
-                    <th>카테고리</th>
-                    <th>판매/구매</th>
-                    <th>작성자</th>
-                    <th>작성날짜</th>
-                    <th>수정날짜</th>
-                </tr>
-                </thead>
-                <tbody>
-                <c:set var="product" value="${response}"/>
-                <input type="hidden" id="p_title" value="${product.p_title}">
-                <tr>
-                    <td>${product.p_title}</td>
-                    <td>${product.category}</td>
-                    <td>${product.p_type}</td>
-                    <td>${product.nickname}</td>
-                    <c:set var="regDate" value="${(String.valueOf(product.regDate)).substring(0, 10)}"/>
-                    <td id="reg_date">${regDate}</td>
-                    <c:set var="modDate" value="${(String.valueOf(product.modDate)).substring(0, 10)}"/>
-                    <td id="mod_date">${modDate}</td>
-                </tr>
-                </tbody>
-            </table>
-            <div>
-                <img src="${product.img_url}"style="width: 400px; height: 400px;">
-            </div>
-            <div>
-    <textarea>
-        내용물
-    </textarea>
-            </div>
-            <form class="wish-box" id="wish-box">
+            <form class="write">
+                <div class="board_wrap">
+                    <c:set var="product" value="${response}"/>
+                    <input type="hidden" value="${product.p_title}" class="boardNo" id="p_title" name="boardNo">
+                    <div class="board_write_wrap">
+                        <div class="board_write">
+                            <div class="title">
+                                <dl>
+                                    <dt>제목</dt>
+                                    <dd><input type="text" value="${product.p_title}" id="title" name="title" readonly></dd>
+                                    <c:if test="${sessionScope.id != null}">
+                                        <button onclick="window.open('/letterWrite/${product.p_no}/${sessionScope.no}/${product.user_no}', '쪽지쓰기', 'width=500, height=500');">
+                                            쪽지쓰기</button>
+                                    </c:if>
+                                </dl>
+                            </div>
+                            <div class="info">
+                                <dl>
+                                    <dt>닉네임</dt>
+                                    <dd><input type="text" id="id" value="${product.nickname}" readonly></dd>
+                                </dl>
+                                <dl>
+                                    <dt>작성/수정일자</dt>
+                                    <c:set var="modDate" value="${(String.valueOf(product.modDate)).substring(0, 10)}"/>
+                                    <dd><input type="text" id="mod_date" style="border: none; outline :none" value="${modDate}"></dd>
+                                </dl>
+                            </div>
+                            <div class="info2">
+                                <dl>
+                                    <dt>카테고리</dt>
+                                    <dd><input type="text" readonly value="${product.category}"></dd>
+                                </dl>
+                                <dl>
+                                    <dt>판매/구매</dt>
+                                    <dd><input type="text" readonly value="${product.p_type}"></dd>
+                                </dl>
+                                <dl>
+                                    <dt>가격</dt>
+                                    <dd><input type="text" readonly value="${product.price}"></dd>
+                                </dl>
+                            </div>
+                            <div class="cont">
+                                <div class="p_img">
+                                    <img src="${product.img_url}"style="width: 400px; height: 400px;">
+                                </div>
+                                <div>
+                                    <textarea class="p_content" readonly>${product.p_content}</textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </form>
             <!-- 댓글 -->
             <!-- 댓글 등록 div -->
@@ -54,10 +71,18 @@
                 <input type="hidden" value="${sessionScope.no}" id="no">
                 <input type="hidden" value="${sessionScope.nickname}" id="nickname">
                 <textarea id="createCmtContent" class="createCmtContent" placeholder="댓글 내용을 입력하세요."></textarea>
-                <button type="cmt-btn" onclick="saveComment(${product.p_no})" style="cursor: pointer">등록</button>
             </div>
+            <div class="commentTotalBtn">
+                <div class="wishBtn">
+                    <form class="wish-box" id="wish-box"></form>
+                </div>
+                <div class="commentBtn">
+                    <button type="cmt-btn" onclick="saveComment(${product.p_no})" style="cursor: pointer">등록</button>
+                </div>
+            </div>
+
             <!-- 댓글 목록 -->
-            <table border="1">
+            <table class="commentListTable">
                 <tbody class="cmt-list">
                 <c:forEach items="${comments}" var="comment">
                     <input type="hidden" value="${comment.user_no}" id="comment-user_no">
@@ -73,23 +98,16 @@
                     </tr>
                     <tr class="content-box">
                         <td class="cmt_content">${comment.pc_content}</td>
+                        <td class="cmtUpdateDeleteBtn">
                         <c:if test="${comment.user_no == sessionScope.no}">
-                            <td>
                                 <button onclick="updateComment(${product.p_no}, ${comment.pc_no})">수정</button>
                                 <button onclick="deleteComment(${product.p_no}, ${comment.pc_no})">삭제</button>
-                            </td>
                         </c:if>
+                        </td>
                     </tr>
                 </c:forEach>
                 </tbody>
             </table>
-        </div>
-        <div>
-            <c:if test="${sessionScope.id != null}">
-                <button onclick="window.open('/letterWrite/${product.p_no}/${sessionScope.no}/${product.user_no}', '쪽지쓰기', 'width=500, height=500');">
-                    쪽지쓰기
-                </button>
-            </c:if>
         </div>
         </div>
     </div>

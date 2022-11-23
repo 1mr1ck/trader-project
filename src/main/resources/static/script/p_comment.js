@@ -43,7 +43,7 @@ function saveComment(p_no) {
             output += '<tr claass="content-box">';
             output += '<td class="cmt_content">' + content + '</td>';
             if(login_no == cmt_user_no) {
-                output += '<td><button onclick="updateComment(' + p_no + ','  + pc_no + ')" class="cmt-btn">수정</button>' +
+                output += '<td class="cmtBtnTd"><button onclick="updateComment(' + p_no + ','  + pc_no + ')" class="cmt-btn">수정</button>' +
                     '<button onclick="deleteComment(' + p_no + ',' +  pc_no + ')" class="cmt-btn">삭제</button></td>' +
                     '</tr>';
             } else {
