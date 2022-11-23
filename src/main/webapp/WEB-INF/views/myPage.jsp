@@ -28,8 +28,6 @@
                                    onKeyup="this.value=this.value.replace(/[^0-9A-Za-z]/g,'');" style="margin: 0;">
                             <input type="text" placeholder="이메일" name="email" id="email" class="email"
                                    value="${sessionScope.email}" readonly autocomplete="off">
-
-
                             <div class="password_check">
                                 <input type="hidden" value="${sessionScope.password}" id="passwordCheckExisting" name="passwordCheckExisting">
                                 <input type="password" placeholder="기존 비밀번호" name="password3" id="password3"

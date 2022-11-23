@@ -1,4 +1,223 @@
+*{
+    margin: 0;
+    padding: 0;
+}
 .out{
     display: flex;
     justify-content: center;
+}
+.in{
+    width: 1000px;
+}
+
+.board_wrap {
+    width: 1000px;
+    margin: 100px auto;
+    font-size: 10px;
+}
+
+.board_title {
+    margin-bottom: 30px;
+}
+
+.board_title strong {
+    font-size: 3rem;
+}
+
+.board_title p {
+    margin-top: 5px;
+    font-size: 1.4rem;
+}
+
+.bt_wrap {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 0;
+}
+
+.bt_wrap input {
+    height: 50px;
+    width: 70px;
+    background-color:#ffc9f6;
+    color: #fff;
+    cursor: pointer;
+    font-size: 15px;
+    min-width: 80px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 20px;
+}
+
+.bt_wrap input:first-child {
+    margin-left: 0;
+}
+
+.board_write {
+    border-top: 2px solid #000;
+}
+
+.board_write .title, .board_write .info, .board_write .info2 {
+    padding: 15px;
+}
+
+.board_write .info {
+    border-top: 1px dashed #ddd;
+    font-size: 0;
+}
+
+.board_write .info2 {
+    border-top: 1px dashed #ddd;
+    border-bottom: 1px solid #000;
+    font-size: 0;
+}
+
+.board_write .title dl {
+    font-size: 0;
+}
+
+.board_write .info dl {
+    display: inline-block;
+    width: 50%;
+    vertical-align: middle;
+}
+
+.board_write .info2 dl {
+    display: inline-block;
+    width: 33%;
+    vertical-align: middle;
+}
+
+.board_write .title dt, .board_write .title dd, .board_write .info dt,
+.board_write .info dd, .board_write .info2 dt, .board_write .info2 dd {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 1.4rem;
+}
+
+.board_write .title dt, .board_write .info dt, .board_write .info2 dt{
+    width: 130px;
+}
+
+.board_write .title dd {
+    width: calc(100% - 300px);
+}
+
+.board_write .title input, .board_write .info input[type="text"], .board_write .info2 input[type="text"]
+{
+    padding: 10px;
+    border: none;
+    box-sizing: border-box;
+    resize: vertical;
+    outline: none;
+}
+
+.board_write .info input[type="text"], .board_write .info2 input[type="text"]{
+    width: 130px;
+}
+
+.board_write .title input[type="text"] {
+    width: 80%;
+}
+
+.board_write .cont {
+    margin-top: 50px;
+    border-bottom: 1px solid #000;
+    text-align: center;
+}
+
+
+input #title {
+    outline : none;
+}
+
+.board_write .cont input {
+    outline :none;
+    border-bottom: 1px solid #000;
+    display: block;
+    width: 100%;
+    height: 300px;
+    padding: 15px;
+    box-sizing: border-box;
+    border: 0;
+    resize: vertical;
+}
+
+.p_content{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 70%;
+    text-align: left;
+    border: none;
+    outline: none;
+    resize: none;
+}
+
+button{
+    padding : 0;
+    background-color: #ffc9f6;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    width: 60px;
+    height: 40px;
+    font-size: 10pt;
+    cursor: pointer;
+}
+
+.comment-create-box{
+    width: 100%;
+    border-bottom: 1px solid #bbbcbd;
+}
+
+
+.createCmtContent{
+    width: 90%;
+    vertical-align: middle;
+    border: none;
+    outline: none;
+    resize: none;
+}
+
+.commentTotalBtn{
+    display: flex;
+    justify-content: space-between;
+}
+
+.wishBtn{
+    margin-top: 5px;
+}
+
+.commentBtn{
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.commentListTable{
+    margin-top: 50px;
+    margin-bottom: 30px;
+    width: 100%;
+    border-bottom: #bbbcbd;
+}
+
+.cmt_nickname{
+    padding-left: 15px;
+}
+
+.cmt_content{
+    width: 90%;
+    height: 35px;
+    padding-left: 15px;
+
+}
+
+.content-box td{
+    margin-bottom: 10px;
+    border-bottom: 1px solid #bbbcbd;
+}
+
+
+
+.commentListTable button{
+    width: 35px;
+    height: 25px;
 }

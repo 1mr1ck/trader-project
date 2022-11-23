@@ -69,17 +69,29 @@ public class UserController {
 
     // update
     @PostMapping("/userUpdate/UpdateProc")
-    public void userUpdate(@RequestBody UserDto userDto, HttpServletResponse response) throws IOException {
+    public void userUpdate(@RequestBody UserDto userDto,HttpServletRequest request, HttpServletResponse response) throws IOException {
         service.userUpdate(userDto);
-        String sRedirect_uri="/";
-        response.sendRedirect(sRedirect_uri);
+        HttpSession session = request.getSession();
+
+
+        session.setAttribute("log",userDto.getId());
+        session.setAttribute("id",userDto.getId());
+        session.setAttribute("nickname", userDto.getNickname());
+        session.setAttribute("no", userDto.getNo());
+        session.setAttribute("password", userDto.getPassword());
+        session.setAttribute("email", userDto.getEmail());
+        session.setAttribute("phone", userDto.getPhone());
+        session.setAttribute("address", userDto.getAddress());
+
     }
 
     // delete
     @PostMapping("/userDelete/userDeleteProc")
-    public void userDelete(@RequestBody UserDto userDto, HttpServletResponse response) throws IOException {
+    public void userDelete(@RequestBody UserDto userDto, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         service.deleteUser(userDto.getNo());
+        HttpSession session = request.getSession();
+        session.invalidate();
         String sRedirect_uri="/";
         response.sendRedirect(sRedirect_uri);
     }
