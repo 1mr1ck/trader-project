@@ -60,13 +60,15 @@ function productSearch() {
             output += '<td>' + p_modDate + '</td>';
             output += '</tr>';
         });
+        output += '<div class="page_btn_box">';
         for (let i = 0; i < totalPage; i++) {
             if (i == 0) {
-                output += '<button onclick=x_page(' + i + ') style="background-color: #ffc9f6">' + (i + 1) + '</button>'
+                output += '<button onclick=x_page(' + i + ') style="background-color: #ffc9f6" class="page_btn">' + (i + 1) + '</button>'
             } else {
-                output += '<button onclick=x_page(' + i + ') style="background-color: #ffffff">' + (i + 1) + '</button>'
+                output += '<button onclick=x_page(' + i + ') style="background-color: #ffffff" class="page_btn">' + (i + 1) + '</button>'
             }
         }
+        output += '</div>';
 
         box.innerHTML = output;
     });
@@ -122,13 +124,15 @@ function x_page(pageNum) {
             output += '<td>' + p_modDate + '</td>';
             output += '</tr>';
         });
+        output += '<div class="page_btn_box">';
         for (let i = 0; i < totalPage; i++) {
             if (i == pageNum) {
-                output += '<button onclick=x_page(' + i + ') style="background-color: #ffc9f6">' + (i + 1) + '</button>'
+                output += '<button onclick=x_page(' + i + ') style="background-color: #ffc9f6" class="page_btn">' + (i + 1) + '</button>'
             } else {
-                output += '<button onclick=x_page(' + i + ') style="background-color: #ffffff">' + (i + 1) + '</button>'
+                output += '<button onclick=x_page(' + i + ') style="background-color: #ffffff" class="page_btn">' + (i + 1) + '</button>'
             }
         }
+        output += '</div>';
 
         box.innerHTML = output;
     });
