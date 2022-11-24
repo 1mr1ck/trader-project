@@ -23,7 +23,8 @@
                             <input type="button" value="글목록" onclick="location.href='/boardView'">
                             <c:if test="${board.user_no == sessionScope.no}">
                                 <input type="button" value="글수정" onclick="location.href='/boardUpdate/${board.b_no}'">
-                                <input type="button" value="글삭제" onclick="location.href='/v1/delete/board?b_no=${board.b_no}'">
+<%--                                <input type="button" value="글삭제" onclick="location.href='/v1/delete/board?b_no=${board.b_no}'">--%>
+                                <input type="button" value="글삭제" id='delete'>
                             </c:if>
                         </div>
                         <div class="board_write">
@@ -86,7 +87,7 @@
                         <td class="cmtUpdateDeleteBtn">
                         <c:if test="${comment.user_no == sessionScope.no}">
                             <button class="cmt-btn" onclick="updateComment(${board.b_no}, ${comment.bc_no})">수정</button>
-                            <button class="cmt-btn" onclick="deleteComment(${board.b_no}, ${comment.bc_no})">삭제</button>
+                            <button class="cmt-btn"  onclick="deleteComment(${board.b_no}, ${comment.bc_no})">삭제</button>
                         </c:if></td>
                     </tr>
                 </c:forEach>
@@ -96,6 +97,7 @@
     </div>
 </div>
 <script src="/script/b_comment.js"></script>
+<script src="/script/boardUpdate.js"></script>
 
 </body>
 <jsp:include page="footer.jsp"></jsp:include>

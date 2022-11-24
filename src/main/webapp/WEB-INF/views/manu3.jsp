@@ -16,23 +16,26 @@
   <div class="home-main__item background-beige">
     <div class="item-box top--box">
       <article class="item-box__text">
-        <h1>공손하게 <br/>주거니받거니 <br/>공주마켓</h1>
+        <h1>공손하게 </h1>
+        <h1>주거니받거니 <br/>공주마켓</h1>
         <p>중고 거래를 공손하게, 이웃과 함께해요.</p>
         <p>가깝고 따뜻한 당신의 친구를 만들어요.</p>
       </article>
       <div class="item-box__img top--img">
         <img
-                src="/css/assets/web/phono-image-1.png"
-                alt="phone-image-1"
+<%--                src="/css/assets/web/phono-image-1.png"--%>
+                src="/img/princess.gif"
+                alt="princess.gif"
                 class="desktop"
         />
         <img
-                src="/css/assets/mobile/phone_image_1.png"
-                alt="phone-image-1"
+                src="/princess.gif"
+                alt="princess.gif"
                 class="mobile"
         />
       </div>
     </div>
   </div>
+</section>
 </body>
 </html>
