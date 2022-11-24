@@ -20,34 +20,34 @@ function my_product() {
         let output ='';
         output += '<div class="out">';
         if(p_check === '전체')
-            output += '<button onclick="setP_check(`전체`)" style="background-color: #ffc9f6" class="p_btn">전체</button>';
+            output += '<div class="p_btn_box"><button onclick="setP_check(`전체`)" style="background-color: #ffc9f6" class="p_btn">전체</button>';
         else
-            output += '<button onclick="setP_check(`전체`)" style="background-color: #fff" class="p_btn">전체</button>';
+            output += '<div class="p_btn_box"><button onclick="setP_check(`전체`)" style="background-color: #eee" class="p_btn">전체</button>';
         if(p_check === '진행중')
             output += '<button onclick="setP_check(`진행중`)" style="background-color: #ffc9f6" class="p_btn">진행중</button>';
         else
-            output += '<button onclick="setP_check(`진행중`)" style="background-color: #fff" class="p_btn">진행중</button>';
+            output += '<button onclick="setP_check(`진행중`)" style="background-color: #eee" class="p_btn">진행중</button>';
         if(p_check === '예약중')
             output += '<button onclick="setP_check(`예약중`)" style="background-color: #ffc9f6" class="p_btn">예약중</button>';
         else
-            output += '<button onclick="setP_check(`예약중`)" style="background-color: #fff" class="p_btn">예약중</button>';
+            output += '<button onclick="setP_check(`예약중`)" style="background-color: #eee" class="p_btn">예약중</button>';
         if(p_check === '거래완')
-            output += '<button onclick="setP_check(`거래완`)" style="background-color: #ffc9f6" class="p_btn">거래완료</button>';
+            output += '<button onclick="setP_check(`거래완`)" style="background-color: #ffc9f6" class="p_btn">거래완료</button></div>';
         else
-            output += '<button onclick="setP_check(`거래완`)" style="background-color: #fff" class="p_btn">거래완료</button>';
+            output += '<button onclick="setP_check(`거래완`)" style="background-color: #eee" class="p_btn">거래완료</button></div>';
 
         if(p_type === '전체')
-            output += '<div><button onclick="setP_type(`전체`)" style="background-color: #ffc9f6" class="p_btn">전체</button>';
+            output += '<div class="p_btn_box"><button onclick="setP_type(`전체`)" style="background-color: #ffc9f6" class="p_btn">전체</button>';
         else
-            output += '<div><button onclick="setP_type(`전체`)" style="background-color: #fff" class="p_btn">전체</button>';
+            output += '<div class="p_btn_box"><button onclick="setP_type(`전체`)" style="background-color: #eee" class="p_btn">전체</button>';
         if(p_type === '삽니다')
-            output += '<button onclick="setP_type(`삽니다`)" style="background-color: #ffc9f6 class="p_btn"">삽니다</button>';
+            output += '<button onclick="setP_type(`삽니다`)" style="background-color: #ffc9f6" class="p_btn">삽니다</button>';
         else
-            output += '<button onclick="setP_type(`삽니다`)" style="background-color: #fff" class="p_btn">삽니다</button>';
+            output += '<button onclick="setP_type(`삽니다`)" style="background-color: #eee" class="p_btn">삽니다</button>';
         if(p_type === '팝니다')
             output += '<button onclick="setP_type(`팝니다`)" style="background-color: #ffc9f6" class="p_btn">팝니다</button></div>';
         else
-            output += '<button onclick="setP_type(`팝니다`)" style="background-color: #fff" class="p_btn">팝니다</button></div>';
+            output += '<button onclick="setP_type(`팝니다`)" style="background-color: #eee" class="p_btn">팝니다</button></div>';
         output += '<div class="in">';
         output += '<form method="POST">'
         output += '<input type="hidden" value="' + login_no + '" id="user_no" name="user_no">'
@@ -87,26 +87,30 @@ function my_product() {
             output += '<tr>'
             output += '<td>' + category + '</td>'
             output += '<td onclick="location.href=`/productView/' + p_no + '`" style="cursor: pointer">' + title + '</td>'
+            if(content.length > 50) {
+                content = content.substring(0, 51);
+                content += " ...";
+            }
             output += '<td>' + content + '</td>'
             output += '<td>' + price + '원</td>'
             output += '<td>' + check + '</td>'
             output += '<td>' + type + '</td>'
-            output += '<td><button onclick="location.href=`productUpdate/' + p_no + '`">수정</button>'
-            output += '<button onclick="productDelete(' + p_no + ',' + user_no +')">삭제</button></td>'
+            output += '<td><button onclick="location.href=`productUpdate/' + p_no + '`" class="p_btn_U_D">수정</button>'
+            output += '<button onclick="productDelete(' + p_no + ',' + user_no +')" class="p_btn_U_D">삭제</button></td>'
             output += '</tr>'
 
         })
         output += '</tbody>';
         output += '</table>';
-        output += '</div>';
+        output += '</div><div class="page_btn_box">';
         for (let i = 0; i < totalPages; i++) {
             if (i == 0) {
-                output += '<button onclick=x_page(' + i + ') style="background-color: #ffc9f6">' + (i + 1) + '</button>'
+                output += '<button onclick=x_page(' + i + ') style="background-color: #ffc9f6" class="page_btn">' + (i + 1) + '</button>'
             } else {
-                output += '<button onclick=x_page(' + i + ') style="background-color: #ffffff">' + (i + 1) + '</button>'
+                output += '<button onclick=x_page(' + i + ') style="background-color: #ffffff" class="page_btn">' + (i + 1) + '</button>'
             }
         }
-        output += '</div>';
+        output += '</div></div>';
 
         box.innerHTML = output;
     });
@@ -132,34 +136,34 @@ function x_page(pageNum) {
         let output ='';
         output += '<div class="out">';
         if(p_check === '전체')
-            output += '<button onclick="setP_check(`전체`)" style="background-color: #ffc9f6" class="p_btn">전체</button>';
+            output += '<div class="p_btn_box"><button onclick="setP_check(`전체`)" style="background-color: #ffc9f6" class="p_btn">전체</button>';
         else
-            output += '<button onclick="setP_check(`전체`)" style="background-color: #fff" class="p_btn">전체</button>';
+            output += '<div class="p_btn_box"><button onclick="setP_check(`전체`)" style="background-color: #eee" class="p_btn">전체</button>';
         if(p_check === '진행중')
             output += '<button onclick="setP_check(`진행중`)" style="background-color: #ffc9f6" class="p_btn">진행중</button>';
         else
-            output += '<button onclick="setP_check(`진행중`)" style="background-color: #fff" class="p_btn">진행중</button>';
+            output += '<button onclick="setP_check(`진행중`)" style="background-color: #eee" class="p_btn">진행중</button>';
         if(p_check === '예약중')
             output += '<button onclick="setP_check(`예약중`)" style="background-color: #ffc9f6" class="p_btn">예약중</button>';
         else
-            output += '<button onclick="setP_check(`예약중`)" style="background-color: #fff" class="p_btn">예약중</button>';
+            output += '<button onclick="setP_check(`예약중`)" style="background-color: #eee" class="p_btn">예약중</button>';
         if(p_check === '거래완')
-            output += '<button onclick="setP_check(`거래완`)" style="background-color: #ffc9f6" class="p_btn">거래완료</button>';
+            output += '<button onclick="setP_check(`거래완`)" style="background-color: #ffc9f6" class="p_btn">거래완료</button></div>';
         else
-            output += '<button onclick="setP_check(`거래완`)" style="background-color: #fff" class="p_btn">거래완료</button>';
+            output += '<button onclick="setP_check(`거래완`)" style="background-color: #eee" class="p_btn">거래완료</button></div>';
 
         if(p_type === '전체')
-            output += '<div><button onclick="setP_type(`전체`)" style="background-color: #ffc9f6" class="p_btn">전체</button>';
+            output += '<div class="p_btn_box"><button onclick="setP_type(`전체`)" style="background-color: #ffc9f6" class="p_btn">전체</button>';
         else
-            output += '<div><button onclick="setP_type(`전체`)" style="background-color: #fff" class="p_btn">전체</button>';
+            output += '<div class="p_btn_box"><button onclick="setP_type(`전체`)" style="background-color: #eee" class="p_btn">전체</button>';
         if(p_type === '삽니다')
             output += '<button onclick="setP_type(`삽니다`)" style="background-color: #ffc9f6" class="p_btn">삽니다</button>';
         else
-            output += '<button onclick="setP_type(`삽니다`)" style="background-color: #fff" class="p_btn">삽니다</button>';
+            output += '<button onclick="setP_type(`삽니다`)" style="background-color: #eee" class="p_btn">삽니다</button>';
         if(p_type === '팝니다')
             output += '<button onclick="setP_type(`팝니다`)" style="background-color: #ffc9f6" class="p_btn">팝니다</button></div>';
         else
-            output += '<button onclick="setP_type(`팝니다`)" style="background-color: #fff" class="p_btn">팝니다</button></div>';
+            output += '<button onclick="setP_type(`팝니다`)" style="background-color: #eee" class="p_btn">팝니다</button></div>';
         output += '<div class="in">';
         output += '<form method="POST">'
         output += '<input type="hidden" value="' + login_no + '" id="user_no" name="user_no">'
@@ -197,28 +201,32 @@ function x_page(pageNum) {
             output += '<tr>'
             output += '<td>' + category + '</td>'
             output += '<td onclick="location.href=`/productView/' + p_no + '`" style="cursor: pointer">' + title + '</td>'
+            if(content.length > 50) {
+                content = content.substring(0, 51);
+                content += " ...";
+            }
             output += '<td>' + content + '</td>'
             output += '<td>' + price + '원</td>'
             output += '<td>' + check + '</td>'
             output += '<td>' + type + '</td>'
-            output += '<td><button onclick="location.href=`productUpdate/' + p_no + '`">수정</button>'
-            output += '<button onclick="productDelete(' + p_no + ',' + user_no +')">삭제</button></td>'
+            output += '<td><button onclick="location.href=`productUpdate/' + p_no + '`" class="p_btn_U_D">수정</button>'
+            output += '<button onclick="productDelete(' + p_no + ',' + user_no +')" class="p_btn_U_D">삭제</button></td>'
             output += '</tr>'
 
         })
         output += '</tbody>';
         output += '</table>';
-        output += '</div>';
+        output += '</div><div class="page_btn_box">';
         for (let i = 0; i < totalPages; i++) {
             if (i == pageNum) {
-                output += '<button onclick=x_page(' + i + ') style="background-color: #ffc9f6">' + (i + 1) + '</button>'
+                output += '<button onclick=x_page(' + i + ') style="background-color: #ffc9f6" class="page_btn">' + (i + 1) + '</button>'
             } else {
-                output += '<button onclick=x_page(' + i + ') style="background-color: #ffffff">' + (i + 1) + '</button>'
+                output += '<button onclick=x_page(' + i + ') style="background-color: #ffffff" class="page_btn">' + (i + 1) + '</button>'
             }
         }
 
 
-        output += '</div>';
+        output += '</div></div>';
 
         box.innerHTML = output;
     });

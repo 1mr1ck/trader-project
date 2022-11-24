@@ -37,3 +37,21 @@ footer{
     grid-area: footer;
 }
 
+.p_btn{
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
+    border:none;
+    margin: 30px 20px 0 20px;
+}
+
+.p_btn_box, .page_btn_box{
+    text-align: center;
+}
+
+.page_btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    border:none;
+}

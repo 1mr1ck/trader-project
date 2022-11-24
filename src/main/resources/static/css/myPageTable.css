@@ -1,7 +1,7 @@
 .in{
-    margin-top: 5%;
     display: flex;
     justify-content: center;
+    margin: 0;
 }
 table {
     text-align: center;
@@ -61,5 +61,17 @@ table.type04 td {
 
 .p_no {
     width: 100px;
+}
+
+.p_btn_U_D{
+    padding: 0;
+    background-color: #ffc9f6;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    width: 35px;
+    height: 25px;
+    font-size: 10pt;
+    cursor: pointer;
 }
 
