@@ -36,7 +36,6 @@
                     </select>
                     <input type="text" id="keyword" name="keyword" placeholder="전체">
                     <input type="button" onclick="productSearch()" value="검색" style="cursor: pointer">
-                    <input type="button" onclick="location.href='/'" value="home" style="cursor: pointer">
                 </form>
             </div>
             <hr>
