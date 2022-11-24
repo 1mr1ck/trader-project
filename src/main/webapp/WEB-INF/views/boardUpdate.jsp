@@ -14,6 +14,10 @@
             <strong>커뮤니티(수정)</strong>
             <p>회원님의 아름다움을 알고 싶습니다.</p>
         </div>
+        <div class="bt_wrap">
+                <input type="button" value="글목록" onclick="location.href='/boardView'">
+                <input type="button" value="글수정" id="update">
+        </div>
         <div class="board_write_wrap">
             <c:set var="board" value="${response}"/>
             <input type="hidden" value="${board.b_no}" class="boardNo" id="b_no" name="b_no">
@@ -29,18 +33,11 @@
                         <dt>닉네임</dt>
                         <dd><input type="text" id="nickname" name="nickname" value="${sessionScope.nickname}" readonly></dd>
                     </dl>
-
                 </div>
                 <div class="cont">
                     <input type="text" placeholder="내용을 입력해주세요." value="${board.b_content}" id="b_content" class="text" name="b_content" required>
                     <input type="hidden" name="user_no" value="${board.user_no}">
                 </div>
-            </div>
-            <div class="bt_wrap">
-                <c:if test="${board.user_no == sessionScope.no}">
-                    <input type="button" value="글목록" onclick="location.href='/boardView'">
-                    <input type="button" value="글수정" id="update">
-                </c:if>
             </div>
         </div>
     </div>

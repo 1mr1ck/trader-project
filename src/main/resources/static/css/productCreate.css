@@ -3,6 +3,11 @@
     padding: 0;
 }
 
+input{
+    border: none;
+    outline: none;
+}
+
 .product_wrap {
     width: 1000px;
     margin: 100px auto;
@@ -34,10 +39,11 @@
     background-color: #ffc9f6;
     color: #fff;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 19px;
     min-width: 80px;
     margin-left: 10px;
-    border-radius: 2px;
+    border-radius: 5px;
+    border: none;
 }
 
 .bt_wrap input:first-child {
@@ -100,7 +106,6 @@
 {
     padding: 10px;
     box-sizing: border-box;
-    resize: vertical;
 }
 
 .product_write .title input[type="text"] {
@@ -120,7 +125,6 @@
     padding: 15px;
     box-sizing: border-box;
     border: 0;
-    resize: vertical;
 }
 
 @media ( max-width : 1000px) {
@@ -155,9 +159,16 @@ select {
     padding: .8em .5em; /* 여백으로 높이 설정 */
     font-family: inherit;  /* 폰트 상속 */
     background: url(https://farm1.staticflickr.com/379/19928272501_4ef877c265_t.jpg) no-repeat 95% 50%; /* 네이티브 화살표 대체 */
-    border: 1px solid #000000;
+    border: 1px solid #b4b4b4;
     border-radius: 0px; /* iOS 둥근모서리 제거 */
     -webkit-appearance: none; /* 네이티브 외형 감추기 */
     -moz-appearance: none;
     appearance: none;
+}
+
+.title{
+    border-bottom: 1px dashed #bbbcbd;
+}
+.info{
+    border-bottom: 1px dashed #bbbcbd;
 }

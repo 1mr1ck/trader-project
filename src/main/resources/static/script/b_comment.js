@@ -42,21 +42,21 @@ function saveComment(b_no) {
             output += '<td class="cmt_nickname">' + cmt_nickname + '</td>';
             output += '<td class="cmt_date">' + modDate + '</td>'
             output += '</tr>';
-            output += '<tr claass="content-box">';
+            output += '<tr class="content-box">';
             output += '<td class="cmt_content">' + content + '</td>';
             if(login_no == cmt_user_no) {
-                output += '<td><button onclick="updateComment(' + b_no + ','  + bc_no + ')" class="cmt-btn">수정</button>' +
+                output += '<td class="cmtUpdateDeleteBtn"><button onclick="updateComment(' + b_no + ','  + bc_no + ')" class="cmt-btn">수정</button>' +
                     '<button onclick="deleteComment(' + b_no + ',' +  bc_no + ')" class="cmt-btn">삭제</button></td>' +
                     '</tr>';
             } else {
+                output += '<td class="cmtUpdateDeleteBtn"></td>';
                 output += '</tr>';
             }
 
-
+            content_box.value = "";
             cmtList.innerHTML = output;
         })
 
-        content_box.value = "";
         alert("댓글 등록이 완료되었습니다.");
     });
 }
@@ -92,15 +92,18 @@ function updateComment(b_no, bc_no) {
             output += '<td class="cmt_nickname">' + cmt_nickname + '</td>';
             output += '<td class="cmt_date">' + modDate + '</td>';
             output += '</tr>';
+            output += '<tr class="content-box">';
             if(bc_no == cmt_no) {
-                output += '<td><input type="text" id="updateContent" name="updateContent" value="' + content + '"></td>';
-                output += '<td><button onclick="modifyComment(' + b_no + ',' + cmt_no + ')" class="cmt-btn">수정</button>' +
+                output += '<td><input type="text" class="updateContent" id="updateContent" name="updateContent" value="' + content + '"></td>';
+                output += '<td class="cmtUpdateDeleteBtn"><button onclick="modifyComment(' + b_no + ',' + cmt_no + ')" class="cmt-btn">수정</button>' +
                     '<button onclick="modCancelComment(' + b_no + ',' + cmt_no + ')" class="cmt-btn">취소</button></td>';
             } else {
                 output += '<td class="cmt_content">' + content + '</td>';
                 if(login_no == cmt_user_no) {
-                    output += '<td><button onclick="updateComment(' + b_no + ',' + cmt_no + '" class="cmt-btn">수정</button>' +
+                    output += '<td class="cmtUpdateDeleteBtn"><button onclick="updateComment(' + b_no + ',' + cmt_no + '" class="cmt-btn">수정</button>' +
                         '<button onclick="deleteComment(' + b_no + ',' + cmt_no + '" class="cmt-btn">삭제</button></td>';
+                } else{
+                    output += '<td class="cmtUpdateDeleteBtn"></td>';
                 }
             }
             output += '</tr>';
@@ -142,13 +145,14 @@ function modifyComment(b_no, bc_no) {
             output += '<td class="cmt_nickname">' + cmt_nickname + '</td>';
             output += '<td class="cmt_date">' + modDate + '</td>'
             output += '</tr>';
-            output += '<tr claass="content-box">';
+            output += '<tr class="content-box">';
             output += '<td class="cmt_content">' + content + '</td>';
             if(login_no == cmt_user_no) {
-                output += '<td><button onclick="updateComment(' + b_no + ','  + bc_no + ')" class="cmt-btn">수정</button>' +
+                output += '<td class="cmtUpdateDeleteBtn"><button onclick="updateComment(' + b_no + ','  + bc_no + ')" class="cmt-btn">수정</button>' +
                     '<button onclick="deleteComment(' + b_no + ',' +  bc_no + ')" class="cmt-btn">삭제</button></td>' +
                     '</tr>';
             } else {
+                output += '<td class="cmtUpdateDeleteBtn"></td>';
                 output += '</tr>';
             }
 
@@ -190,13 +194,14 @@ function modCancelComment(b_no, bc_no) {
             output += '<td class="cmt_nickname">' + cmt_nickname + '</td>';
             output += '<td class="cmt_date">' + modDate + '</td>'
             output += '</tr>';
-            output += '<tr claass="content-box">';
+            output += '<tr class="content-box">';
             output += '<td class="cmt_content">' + content + '</td>';
             if(login_no == cmt_user_no) {
-                output += '<td><button onclick="updateComment(' + b_no + ','  + bc_no + ')" class="cmt-btn">수정</button>' +
+                output += '<td class="cmtUpdateDeleteBtn"><button onclick="updateComment(' + b_no + ','  + bc_no + ')" class="cmt-btn">수정</button>' +
                     '<button onclick="deleteComment(' + b_no + ',' +  bc_no + ')" class="cmt-btn">삭제</button></td>' +
                     '</tr>';
             } else {
+                output += '<td class="cmtUpdateDeleteBtn"></td>';
                 output += '</tr>';
             }
 
@@ -232,6 +237,7 @@ function deleteComment(b_no, bc_no) {
         if(list.length === 0) {
             cmtList.innerHTML = output;
         } else {
+            output = '<tr>';
             list.forEach(e => {
                 const modStr = e.modDate;
                 const modDate = modStr.substring(0,10);
@@ -240,17 +246,17 @@ function deleteComment(b_no, bc_no) {
                 const user_nickname = e.user_nickname;
                 const cmt_user_no = e.user_no;
 
-                output = '<tr>';
                 output += '<td class="cmt_nickname">' + user_nickname + '</td>';
                 output += '<td class="cmt_date">' + modDate + '</td>';
                 output += '</tr>';
                 output += '<tr class="content-box">';
-                output += '<td class=cmt_content">' + content + '</td>';
+                output += '<td class="cmt_content">' + content + '</td>';
                 if(login_no == cmt_user_no) {
-                    output += '<td><button onclick="updateComment(' + b_no + ',' + cmt_no + ')" class="cmt-btn">수정</button>' +
+                    output += '<td class="cmtUpdateDeleteBtn"><button onclick="updateComment(' + b_no + ',' + cmt_no + ')" class="cmt-btn">수정</button>' +
                         '<button onclick="deleteComment(' + b_no + ',' + cmt_no + ')" class="cmt-btn">삭제</button></td>' +
                         '</tr>';
                 } else {
+                    output += '<td class="cmtUpdateDeleteBtn"></td>';
                     output += '</tr>';
                 }
 

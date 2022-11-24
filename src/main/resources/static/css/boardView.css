@@ -34,6 +34,8 @@ h1{
 }
 .board-table th {
     text-align: center;
+    background-color: #ffc9f6;
+    color: #fff;
 }
 .boardBtn{
     display: flex;
