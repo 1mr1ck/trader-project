@@ -8,6 +8,7 @@
     <title>Title</title>
     <link rel="stylesheet" href="/css/header.css">
     <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-round.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 </head>
 <body>
 <header class="header1">

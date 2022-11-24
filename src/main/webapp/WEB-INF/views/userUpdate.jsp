@@ -2,7 +2,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <link rel="stylesheet" href="/css/myPageTemplate.css">
     <link rel="stylesheet" href="/css/myPageTable.css">
     <link rel="stylesheet" href="/css/join.css">

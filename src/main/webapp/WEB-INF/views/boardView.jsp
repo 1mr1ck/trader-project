@@ -42,6 +42,19 @@
                 </c:forEach>
                 </tbody>
             </table>
+            <c:set value="${totalPage}" var="totalPage"/>
+            <div class="page-btn-box">
+                <c:forEach var="i" begin="0" end="${Integer.parseInt(totalPage)-1}">
+                    <c:choose>
+                        <c:when test="${i eq 0}">
+                            <button onclick=x_page(${i}) style="background-color: #ffc9f6">${i+1}</button>
+                        </c:when>
+                        <c:otherwise>
+                            <button onclick=x_page(${i}) style="background-color: #ffffff">${i+1}</button>
+                        </c:otherwise>
+                    </c:choose>
+                </c:forEach>
+            </div>
             <div class="search">
                 <div class="searchBtn">
                     <input name="keyword" type="text" placeholder="검색어를 입력해주세요">
@@ -52,4 +65,5 @@
 </div>
 </body>
 <jsp:include page="footer.jsp"></jsp:include>
+<script src="script/boardListPage.js"></script>
 </html>

@@ -13,9 +13,6 @@ function productSearch() {
         "url": "http://localhost:8080/search/product/category/" + category + "/p_type/" + p_type + "/keyword/" + keyword,
         "method": "GET",
         "timeout": 0,
-        "headers": {
-            "Authorization": "KakaoAK f311a885f3d384727233750637411113"
-        },
     };
 
     const box = document.querySelector('.container');

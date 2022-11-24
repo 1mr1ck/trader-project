@@ -52,7 +52,6 @@
 </div>
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="script/productSearch.js"></script>
 </body>
 <jsp:include page="footer.jsp"></jsp:include>
