@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'NanumSquareRound';
+}
+.out{
+    display: flex;
+    justify-content: center;
+}
+.in{
+    margin-top: 50px;
+}
+
+table {
+    text-align: center;
+    vertical-align: middle;
+    border-collapse: separate;
+    border-spacing: 1px;
+    line-height: 1.5;
+    border-top: 1px solid #ccc;
+    margin: 20px 10px;
+    width: 95%;
+}
+
+table.letter-table th {
+    padding: 10px;
+    font-weight: bold;
+    vertical-align: top;
+    border-bottom: 1px solid #ccc;
+    background-color: #ffc9f6;
+    color: #fff;
+}
+
+table.letter-table td {
+    vertical-align: middle;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.letterWriteInputDiv{
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 95%;
+    border-bottom: 1px solid #bbbcbd;
+}
+.letterWriteInput{
+    border: none;
+    outline: none;
+}
+
+.letterBtn{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 10px;
+}
+
+input[type=button]{
+    padding : 0;
+    margin-right: 10px;
+    background-color: #ffc9f6;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    width: 50px;
+    height: 30px;
+    font-size: 10pt;
+    cursor: pointer;
+}
+
+.tradingCheck{
+    margin-left: 20px;
+    margin-top: -30px;
+}
+
+select {
+    width: 100px; /* 원하는 너비설정 */
+    padding-left: 15px;
+    height: 30px;
+    font-family: inherit;  /* 폰트 상속 */
+    background: url(https://farm1.staticflickr.com/379/19928272501_4ef877c265_t.jpg) no-repeat 95% 50%; /* 네이티브 화살표 대체 */
+    border: 1px solid #ffc9f6;
+    border-radius: 5px; /* iOS 둥근모서리 제거 */
+    -webkit-appearance: none; /* 네이티브 외형 감추기 */
+    -moz-appearance: none;
+    appearance: none;
+}
