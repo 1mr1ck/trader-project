@@ -107,3 +107,14 @@ input[type=button] {
 input::placeholder{
     color: #ffc9f6;
 }
+
+.page_btn_box{
+    text-align: center;
+}
+
+.page_btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    border:none;
+}

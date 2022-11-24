@@ -86,6 +86,10 @@ function my_product() {
 
             output += '<tr>'
             output += '<td>' + category + '</td>'
+            if(title.length > 20) {
+                title = title.substring(0, 21);
+                title += " ...";
+            }
             output += '<td onclick="location.href=`/productView/' + p_no + '`" style="cursor: pointer">' + title + '</td>'
             if(content.length > 50) {
                 content = content.substring(0, 51);
@@ -200,6 +204,10 @@ function x_page(pageNum) {
 
             output += '<tr>'
             output += '<td>' + category + '</td>'
+            if(title.length > 20) {
+                title = title.substring(0, 21);
+                title += " ...";
+            }
             output += '<td onclick="location.href=`/productView/' + p_no + '`" style="cursor: pointer">' + title + '</td>'
             if(content.length > 50) {
                 content = content.substring(0, 51);
