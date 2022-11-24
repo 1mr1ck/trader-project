@@ -45,5 +45,6 @@
     <jsp:include page="footer.jsp"></jsp:include>
 </footer>
 </body>
+<script src="script/myPage.js"></script>
 <script src="script/userDeleteScript.js"></script>
 </html>
