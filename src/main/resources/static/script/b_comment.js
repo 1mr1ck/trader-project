@@ -11,6 +11,11 @@ function saveComment(b_no) {
     }
     const bc_content = document.getElementById('createCmtContent').value;
 
+    if(bc_content === "") {
+        alert("내용을 입력해주세요.");
+        return;
+    }
+
     let settings = {
         "url": "http://localhost:8080/b_comment/board/" + b_no,
         "method": "POST",

@@ -10,6 +10,11 @@ function saveComment(p_no) {
     }
     const pc_content = document.getElementById('createCmtContent').value;
 
+    if(pc_content === "") {
+        alert("내용을 입력해주세요.");
+        return;
+    }
+
     let settings = {
         "url": "http://localhost:8080/p_comment/product/" + p_no,
         "method": "POST",
