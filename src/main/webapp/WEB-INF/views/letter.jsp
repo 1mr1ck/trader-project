@@ -12,7 +12,7 @@
         <tr>
             <th>수신자</th>
             <th>상품제목</th>
-            <th>메시지내용</th>
+            <th class="content">메시지내용</th>
             <th>보낸시간</th>
         </tr>
         </thead>
