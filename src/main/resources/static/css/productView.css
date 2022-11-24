@@ -211,6 +211,12 @@ button{
 
 }
 
+.updateContent{
+    width: 90%;
+    height: 35px;
+    padding-left: 15px;
+}
+
 .content-box td {
     border-bottom: 1px dashed #bbbcbd;
 }

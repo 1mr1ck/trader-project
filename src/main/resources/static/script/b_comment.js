@@ -94,7 +94,7 @@ function updateComment(b_no, bc_no) {
             output += '</tr>';
             output += '<tr class="content-box">';
             if(bc_no == cmt_no) {
-                output += '<td><input type="text" class="updateContent" id="updateContent" name="updateContent" value="' + content + '"></td>';
+                output += '<td class="cmt_content"><input type="text" class="updateContent" id="updateContent" name="updateContent" value="' + content + '"></td>';
                 output += '<td class="cmtUpdateDeleteBtn"><button onclick="modifyComment(' + b_no + ',' + cmt_no + ')" class="cmt-btn">수정</button>' +
                     '<button onclick="modCancelComment(' + b_no + ',' + cmt_no + ')" class="cmt-btn">취소</button></td>';
             } else {
