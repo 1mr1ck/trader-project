@@ -99,21 +99,11 @@ function my_product() {
         output += '</tbody>';
         output += '</table>';
         output += '</div>';
-        if(totalPages < 10) {
-            for (let i = 0; i < totalPages; i++) {
-                if (i == 0) {
-                    output += '<button onclick=x_page(' + i + ') style="background-color: #ffc9f6">' + (i + 1) + '</button>'
-                } else {
-                    output += '<button onclick=x_page(' + i + ') style="background-color: #ffffff">' + (i + 1) + '</button>'
-                }
-            }
-        } else {
-            for (let i = 0; i < 10; i++) {
-                if (i == 0) {
-                    output += '<button onclick=x_page(' + i + ') style="background-color: #ffc9f6">' + (i + 1) + '</button>'
-                } else {
-                    output += '<button onclick=x_page(' + i + ') style="background-color: #ffffff">' + (i + 1) + '</button>'
-                }
+        for (let i = 0; i < totalPages; i++) {
+            if (i == 0) {
+                output += '<button onclick=x_page(' + i + ') style="background-color: #ffc9f6">' + (i + 1) + '</button>'
+            } else {
+                output += '<button onclick=x_page(' + i + ') style="background-color: #ffffff">' + (i + 1) + '</button>'
             }
         }
         output += '</div>';
@@ -189,8 +179,6 @@ function x_page(pageNum) {
         output += '<tbody>';
 
         const list = response.content;
-        const size = response.pageable;
-        const totalEle = response.totalElements;
         const totalPages = response.totalPages;
 
         list.forEach(e => {
@@ -221,43 +209,15 @@ function x_page(pageNum) {
         output += '</tbody>';
         output += '</table>';
         output += '</div>';
-        if(totalPages < 10) {
-            for (let i = 0; i < totalPages; i++) {
-                if (i == pageNum) {
-                    output += '<button onclick=x_page(' + i + ') style="background-color: #ffc9f6">' + (i + 1) + '</button>'
-                } else {
-                    output += '<button onclick=x_page(' + i + ') style="background-color: #ffffff">' + (i + 1) + '</button>'
-                }
-            }
-        } else {
-            if(totalPages - 10 < pageNum) {
-                if(totalPages - 11 > 0) {
-                    for (let i = 0; i < 10; i++) {
-                        if (i == pageNum) {
-                            output += '<button onclick=x_page(' + i + ') style="background-color: #ffc9f6">' + (i + 1) + '</button>'
-                        } else {
-                            output += '<button onclick=x_page(' + i + ') style="background-color: #ffffff">' + (i + 1) + '</button>'
-                        }
-                    }
-                } else {
-                    for (let i = totalPages - 11; i < totalPages - 1; i++) {
-                        if (i == pageNum) {
-                            output += '<button onclick=x_page(' + i + ') style="background-color: #ffc9f6">' + (i + 1) + '</button>'
-                        } else {
-                            output += '<button onclick=x_page(' + i + ') style="background-color: #ffffff">' + (i + 1) + '</button>'
-                        }
-                    }
-                }
+        for (let i = 0; i < totalPages; i++) {
+            if (i == pageNum) {
+                output += '<button onclick=x_page(' + i + ') style="background-color: #ffc9f6">' + (i + 1) + '</button>'
             } else {
-                for(let i=pageNum-1; i<pageNum + 9; i++) {
-                    if (i == pageNum) {
-                        output += '<button onclick=x_page(' + i + ') style="background-color: #ffc9f6">' + (i + 1) + '</button>'
-                    } else {
-                        output += '<button onclick=x_page(' + i + ') style="background-color: #ffffff">' + (i + 1) + '</button>'
-                    }
-                }
+                output += '<button onclick=x_page(' + i + ') style="background-color: #ffffff">' + (i + 1) + '</button>'
             }
         }
+
+
         output += '</div>';
 
         box.innerHTML = output;
