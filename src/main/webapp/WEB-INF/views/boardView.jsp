@@ -46,7 +46,7 @@
             <div class="page_btn_box">
                 <c:forEach var="i" begin="0" end="${Integer.parseInt(totalPage)-1}">
                     <c:choose>
-                        <c:when test="${i eq 0}">
+                        <c:when test="${i == 0}">
                             <button onclick=x_page(${i}) style="background-color: #ffc9f6" class="page_btn">${i+1}</button>
                         </c:when>
                         <c:otherwise>
@@ -54,11 +54,6 @@
                         </c:otherwise>
                     </c:choose>
                 </c:forEach>
-            </div>
-            <div class="search">
-                <div class="searchBtn">
-                    <input name="keyword" type="text" placeholder="검색어를 입력해주세요">
-                </div>
             </div>
         </div>
     </div>

@@ -73,7 +73,9 @@
             </div>
             <div class="commentTotalBtn">
                 <div class="wishBtn">
-                    <form class="wish-box" id="wish-box"></form>
+                    <div class="wish-box" id="wish-box">
+
+                    </div>
                 </div>
                 <div class="commentBtn">
                     <button type="cmt-btn" onclick="saveComment(${product.p_no})" style="cursor: pointer">등록</button>
@@ -115,5 +117,6 @@
 <script src="/script/wish.js"></script>
 <script src="/script/productUpdateP_check.js"></script>
 </body>
+
 <jsp:include page="footer.jsp"></jsp:include>
 </html>

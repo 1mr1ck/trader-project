@@ -1,6 +1,4 @@
 function productSearch() {
-    $('.title').empty();
-    $('.container').empty();
 
     let category = $('#category').val();
     let p_type = $('#p_type').val();
@@ -15,6 +13,7 @@ function productSearch() {
         "timeout": 0,
     };
 
+    const titlebox = document.querySelector('.title');
     const btn_box = document.querySelector('.page_btn_box');
     const box = document.querySelector('.container');
     $.ajax(settings).done(function (response) {
@@ -23,17 +22,16 @@ function productSearch() {
         const list = response.content;
         const totalPage = response.totalPages;
 
-        $('.title').append(
-            `<tr>
-				<th>이미지</th>
-				<th>제목</th>
-				<th>카테고리</th>
-				<th>작성자</th>
-				<th>판매/구매</th>
-				<th>가격</th>
-				<th>작성/수정날짜</th>
-			</tr>`
-        );
+        var titleOutput = "";
+        titleOutput += '<tr></tr>';
+        titleOutput += '<th>이미지</th>';
+        titleOutput += '<th>이미지</th>';
+        titleOutput += '<th>이미지</th>';
+        titleOutput += '<th>이미지</th>';
+        titleOutput += '<th>이미지</th>';
+        titleOutput += '<th>이미지</th>';
+        titleOutput += '<th>이미지</th>';
+        titleOutput += '</tr>';
 
         var output = "";
         var btn_output = "";
@@ -72,6 +70,7 @@ function productSearch() {
 
         box.innerHTML = output;
         btn_box.innerHTML = btn_output;
+        titlebox.innerHTML = titleOutput;
     });
 }
 

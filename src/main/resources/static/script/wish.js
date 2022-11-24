@@ -25,6 +25,7 @@ function wishOnload() {
     $.ajax(settings).done(function (result) {
         const wish_img = result;
 
+
         var output = "";
         const w_no = wish_img.w_no;
 
@@ -60,14 +61,7 @@ function wishGo(p_no, user_no) {
     }
 
     $.ajax(settings).done(e=> {
-        let wish_no = e.w_no;
-
-        var output = "";
-
-        output += '<button onclick="wishCancel(' + wish_no + ')" style="background-color: transparent;"><img src="/img/wish.png" style="width: 50px; height: 50px;"></button>';
-        output += '<input type="hidden" value="' + wish_no + '" name="w_no" id="w_no">';
-
-        wish_box.innerHTML = output;
+        wishOnload();
     })
 }
 
@@ -86,11 +80,7 @@ function wishCancel(w_no) {
     }
 
     $.ajax(settings).done(e=> {
-        var output = "";
-
-        output += '<button onclick="wishGo' + '(' + product_no + ',' + log_no + ')" style="background-color: transparent;">' + '<img src="/img/Nowish.png" style="width: 50px; height: 50px;"></button>';
-
-        wish_box.innerHTML = output;
+        wishOnload();
     })
 }
 

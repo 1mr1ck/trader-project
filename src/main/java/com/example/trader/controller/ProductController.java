@@ -3,8 +3,10 @@ package com.example.trader.controller;
 import com.example.trader.domain.p_comment.P_comment;
 import com.example.trader.domain.product.Product;
 import com.example.trader.domain.product.ProductDto;
+import com.example.trader.domain.wish.Wish;
 import com.example.trader.service.P_commentService;
 import com.example.trader.service.ProductService;
+import com.example.trader.service.WishService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -25,6 +27,9 @@ public class ProductController {
     private ProductService service;
 
     @Autowired
+    private WishService wishService;
+
+    @Autowired
     private P_commentService p_commentService;
 
     // Create
@@ -40,6 +45,7 @@ public class ProductController {
         modelAndView.addObject("response", getProduct(p_no));
         List<P_comment> p_commentList = p_commentService.commentsByP_no(p_no);
         modelAndView.addObject("comments", p_commentList);
+
         return modelAndView;
     }
 
