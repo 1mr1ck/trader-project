@@ -2,7 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
-    <title>Trader Join</title>
+    <title>공주마켓</title>
     <link rel="stylesheet" href="/css/join.css">
 </head>
 <jsp:include page="header.jsp"></jsp:include>

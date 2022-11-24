@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>게시판 작성</title>
+    <title>공주마켓</title>
     <link rel="stylesheet" href="/css/productCreate.css">
 </head>
 <jsp:include page="header.jsp"></jsp:include>
