@@ -24,7 +24,6 @@ table {
 }
 
 table.type04 th {
-    vertical-align: middle;
     padding: 10px;
     font-weight: bold;
     vertical-align: top;
@@ -36,7 +35,6 @@ table.type04 th {
 table.type04 td {
     vertical-align: middle;
     padding: 10px;
-    vertical-align: top;
     border-bottom: 1px solid #ccc;
 }
 
