@@ -37,15 +37,13 @@ function x_page(pageNum) {
             listOutput += '<td>' + b_modDate + '</td>';
             listOutput += '</tr>';
         });
-
         for (let i = 0; i < totalPage; i++) {
             if (i == pageNum) {
-                btnOutput += '<button onclick=x_page(' + i + ') style="background-color: #ffc9f6">' + (i + 1) + '</button>'
+                btnOutput += '<button onclick=x_page(' + i + ') style="background-color: #ffc9f6" class="page_btn">' + (i + 1) + '</button>'
             } else {
-                btnOutput += '<button onclick=x_page(' + i + ') style="background-color: #ffffff">' + (i + 1) + '</button>'
+                btnOutput += '<button onclick=x_page(' + i + ') style="background-color: #ffffff" class="page_btn">' + (i + 1) + '</button>'
             }
         }
-
         boardList.innerHTML = listOutput;
         box.innerHTML = btnOutput;
     });

@@ -43,14 +43,14 @@
                 </tbody>
             </table>
             <c:set value="${totalPage}" var="totalPage"/>
-            <div class="page-btn-box">
+            <div class="page_btn_box">
                 <c:forEach var="i" begin="0" end="${Integer.parseInt(totalPage)-1}">
                     <c:choose>
                         <c:when test="${i eq 0}">
-                            <button onclick=x_page(${i}) style="background-color: #ffc9f6">${i+1}</button>
+                            <button onclick=x_page(${i}) style="background-color: #ffc9f6" class="page_btn">${i+1}</button>
                         </c:when>
                         <c:otherwise>
-                            <button onclick=x_page(${i}) style="background-color: #ffffff">${i+1}</button>
+                            <button onclick=x_page(${i}) style="background-color: #ffffff" class="page_btn">${i+1}</button>
                         </c:otherwise>
                     </c:choose>
                 </c:forEach>
