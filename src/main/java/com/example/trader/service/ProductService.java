@@ -77,7 +77,7 @@ public class ProductService {
 
     // Search By Category And P_type And Keyword
     @Transactional
-    public List<Product> searchProductByCategoryAndP_typeAndKeyword(String category, String p_type, String keyword) {
+    public Page<Product> searchProductByCategoryAndP_typeAndKeyword(String category, String p_type, String keyword, Pageable pageable) {
         if(category.equals("전체"))
             category = "";
         if(p_type.equals("전체"))
@@ -87,7 +87,7 @@ public class ProductService {
         category = "%" + category + "%";
         p_type = "%" + p_type + "%";
         keyword = "%" + keyword + "%";
-        return repository.findByCategoryAndP_typeAndKeyword(category, p_type, keyword);
+        return repository.findByCategoryAndP_typeAndKeyword(category, p_type, keyword, pageable);
     }
 
     @Transactional

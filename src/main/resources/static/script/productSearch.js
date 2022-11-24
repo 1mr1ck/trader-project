@@ -10,7 +10,7 @@ function productSearch() {
         keyword = "전체"
 
     let settings = {
-        "url": "http://localhost:8080/v1/search/product/category/" + category + "/p_type/" + p_type + "/keyword/" + keyword,
+        "url": "http://localhost:8080/search/product/category/" + category + "/p_type/" + p_type + "/keyword/" + keyword,
         "method": "GET",
         "timeout": 0,
         "headers": {
@@ -18,10 +18,12 @@ function productSearch() {
         },
     };
 
+    const box = document.querySelector('.container');
     $.ajax(settings).done(function (response) {
         console.log(response);
 
-        const list = response;
+        const list = response.content;
+        const totalPage = response.totalPages;
 
         $('.title').append(
             `<tr>
@@ -34,6 +36,8 @@ function productSearch() {
 				<th>작성/수정날짜</th>
 			</tr>`
         );
+
+        var output = "";
 
         list.forEach(e => {
             const p_no = e.p_no;
@@ -49,17 +53,22 @@ function productSearch() {
             const priceStr = e.price;
             const price = priceStr.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 
-            $('.container').append(
-                `<tr>
-					<td><img src="${img_url}" style="width: 100px; height: 100px;"></td>
-					<td><a href="productView/${p_no}">${p_title}</a></td>
-					<td>${category}</td>
-					<td>${nickname}</td>
-					<td>${p_type}</td>
-					<td>${price}원</td>
-					<td>${p_modDate}</td>
-				</tr>`
-            );
+            output += '<tr>';
+            output += '<td><img src="' + img_url + '" style="width: 100px; height: 100px;"></td>';
+            output += '<td><a href="productView/"' + p_no + '">' + p_title + '</a></td>';
+            output += '<td>' + category + '</td>';
+            output += '<td>' + nickname + '</td>';
+            output += '<td>' + p_type + '</td>';
+            output += '<td>' + priceStr + '원</td>';
+            output += '<td>' + p_modDate + '</td>';
+            output += '</tr>';
         });
+        for (let i = 0; i < totalPage; i++) {
+            if (i == 0) {
+                output += '<button onclick=x_page(' + i + ') style="background-color: #ffc9f6">' + (i + 1) + '</button>'
+            } else {
+                output += '<button onclick=x_page(' + i + ') style="background-color: #ffffff">' + (i + 1) + '</button>'
+            }
+        }
     });
 }

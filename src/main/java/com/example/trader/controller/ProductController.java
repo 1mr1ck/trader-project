@@ -67,13 +67,13 @@ public class ProductController {
 
     // 페이징 처리 메소드
     @PostMapping("/search/product/user_no/{user_no}/p_type/{p_type}/p_check/{p_check}")
-    public Page<Product> findByUserNo_page1(@PathVariable int user_no, @PathVariable String p_type, @PathVariable String p_check, @PageableDefault(size=2, sort="mod_date", direction = Sort.Direction.DESC) Pageable pageable) {
+    public Page<Product> findByUserNo_page1(@PathVariable int user_no, @PathVariable String p_type, @PathVariable String p_check, @PageableDefault(size=5, sort="mod_date", direction = Sort.Direction.DESC) Pageable pageable) {
         return service.findByUserNo(user_no, p_type, p_check, pageable);
     }
 
     // 선택한 페이지 리스트
     @PostMapping("/search/product/user_no/{user_no}/p_type/{p_type}/p_check/{p_check}/pageNum/{pageNum}")
-    public Page<Product> findByUserNo_pageX(@PathVariable int user_no, @PathVariable String p_type, @PathVariable String p_check, @PageableDefault(size=2, sort="mod_date", direction = Sort.Direction.DESC) Pageable pageable, @PathVariable int pageNum) {
+    public Page<Product> findByUserNo_pageX(@PathVariable int user_no, @PathVariable String p_type, @PathVariable String p_check, @PageableDefault(size=5, sort="mod_date", direction = Sort.Direction.DESC) Pageable pageable, @PathVariable int pageNum) {
 
         return service.findByUserNo(user_no, p_type, p_check, pageable.withPage(pageNum));
     }
@@ -89,9 +89,9 @@ public class ProductController {
     }
 
     // GetProductByCategoryAndP_typeAndKeyword
-    @GetMapping("/v1/search/product/category/{category}/p_type/{p_type}/keyword/{keyword}")
-    public List<Product> getProductByCategoryAndP_typeAndKeyword(@PathVariable String category, @PathVariable String p_type, @PathVariable String keyword) {
-        return service.searchProductByCategoryAndP_typeAndKeyword(category, p_type, keyword);
+    @GetMapping("/search/product/category/{category}/p_type/{p_type}/keyword/{keyword}")
+    public Page<Product> getProductByCategoryAndP_typeAndKeyword(@PathVariable String category, @PathVariable String p_type, @PathVariable String keyword, @PageableDefault(size=10, sort="mod_date", direction = Sort.Direction.DESC) Pageable pageable) {
+        return service.searchProductByCategoryAndP_typeAndKeyword(category, p_type, keyword, pageable);
     }
 
     // GetProductByUser_noAndP_typeAndP_check
