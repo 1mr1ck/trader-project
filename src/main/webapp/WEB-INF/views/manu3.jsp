@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: ADMIN
-  Date: 2022-11-23
-  Time: 오후 5:39
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -23,13 +16,12 @@
       </article>
       <div class="item-box__img top--img">
         <img
-<%--                src="/css/assets/web/phono-image-1.png"--%>
                 src="/img/princess.gif"
                 alt="princess.gif"
                 class="desktop"
         />
         <img
-                src="/princess.gif"
+                src="/img/princess.gif"
                 alt="princess.gif"
                 class="mobile"
         />

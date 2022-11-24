@@ -23,14 +23,14 @@ function productSearch() {
         const totalPage = response.totalPages;
 
         var titleOutput = "";
-        titleOutput += '<tr></tr>';
+        titleOutput += '<tr>';
         titleOutput += '<th>이미지</th>';
-        titleOutput += '<th>이미지</th>';
-        titleOutput += '<th>이미지</th>';
-        titleOutput += '<th>이미지</th>';
-        titleOutput += '<th>이미지</th>';
-        titleOutput += '<th>이미지</th>';
-        titleOutput += '<th>이미지</th>';
+        titleOutput += '<th>제목</th>';
+        titleOutput += '<th>카테고리</th>';
+        titleOutput += '<th>닉네임</th>';
+        titleOutput += '<th>삽니다/팝니다</th>';
+        titleOutput += '<th>가격</th>';
+        titleOutput += '<th>작성/수정날짜</th>';
         titleOutput += '</tr>';
 
         var output = "";
