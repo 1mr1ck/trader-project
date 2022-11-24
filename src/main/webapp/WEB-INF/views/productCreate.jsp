@@ -41,12 +41,12 @@
                 <div class="title">
                     <dl>
                         <dt>이미지</dt>
-                        <dd><input type="file" id="input_img" accept="image/*"></dd>
+                        <dd><input class="imgInput" type="file" id="input_img" accept="image/*"></dd>
                         <input type="hidden" id="user_no" name="user_no" value="${sessionScope.no}">
                     </dl>
                 </div>
                 <div>
-                    <select id="category" name="category" required>
+                    <select class="categorySel" id="category" name="category" required>
                         <option value="전체">전체</option>
                         <option value="전자기기">전자기기</option>
                         <option value="가구/인테리어">가구/인테리어</option>
@@ -62,7 +62,7 @@
                         <option value="식물">식물</option>
                         <option value="기타 중고물품">기타 중고물품</option>
                     </select>
-                    <select id="p_type" name="p_type" required>
+                    <select class="categorySel" id="p_type" name="p_type" required>
                         <option value="팝니다">팝니다</option>
                         <option value="삽니다">삽니다</option>
                     </select>

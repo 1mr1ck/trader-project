@@ -36,16 +36,15 @@
             <div class="bt_wrap">
                 <c:if test="${sessionScope.no == 1}">
                     <select id="notice" name="notice" required>
-                        <option value="공지">공지</option>
-                        <option value="그냥 글쓰기">그냥 글쓰기</option>
+                        <option value="공지">공지 작성</option>
+                        <option value="그냥 글쓰기">일반 게시글</option>
                     </select>
                 </c:if>
                 <c:if test="${sessionScope.no != 1}">
-                    <select id="notice" name="notice" required>
+                    <select hidden id="notice" name="notice" required>
                         <option value="그냥 글쓰기">그냥 글쓰기</option>
                     </select>
                 </c:if>
-
                 <input type="button" id="create" value="글쓰기">
             </div>
         </div>

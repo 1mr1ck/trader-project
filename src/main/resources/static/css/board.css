@@ -2,6 +2,13 @@
     margin: 0;
     padding: 0;
 }
+.out{
+    display: flex;
+    justify-content: center;
+}
+.in{
+    width: 1000px;
+}
 
 .board_wrap {
     width: 1000px;
@@ -30,8 +37,8 @@
 }
 
 .bt_wrap input {
-    height: 50px;
-    width: 70px;
+    height: 40px;
+    width: 60px;
     background-color:#ffc9f6;
     color: #fff;
     cursor: pointer;
@@ -39,7 +46,7 @@
     min-width: 80px;
     margin-left: 10px;
     border: none;
-    border-radius: 20px;
+    border-radius: 5px;
 }
 
 .bt_wrap input:first-child {
@@ -143,56 +150,100 @@ input #title {
     }
 }
 
-.comment-create-box{
-    text-align: right;
-    width: 1000px;
-    margin: 10px auto;
-}
-.comment-create-box .createCmtContent{
-    display: block;
-    height: 100px;
-    box-sizing: border-box;
-    resize: none;
-    outline: none;
+button{
+    padding : 0;
+    background-color: #ffc9f6;
     border: none;
-    border-top: 1px solid #000000;
-    border-bottom: solid 1px #000000;
-}
-textarea{
-    width: 1000px;
-
-}
-table{
-    width: 1000px;
-    margin: 10px auto;
-    border: none;
-}
-.cmt-list{
-    border: none;
-}
-.cmt_nickname, cmt_contet{
-    text-align: center;
-}
-
-td{
-    border: none;
-    border-bottom: 1px solid #000000;
-    height: 30px;
-    padding: 5px;
-}
-
-.cmt_date{
-    text-align: right;
-    width: 200px;
-}
-.cmt-btn{
-    width: 30px;
-    height: 20px;
-    background-color:#ffc9f6;
-    color: #fff;
+    color: white;
+    border-radius: 5px;
+    width: 60px;
+    height: 40px;
+    font-size: 10pt;
     cursor: pointer;
-    font-size: 13px;
-    border: none;
-    border-radius: 3px;
+}
 
+.comment-create-box{
+    width: 100%;
+    border-bottom: 1px solid #bbbcbd;
+}
+
+
+.createCmtContent{
+    width: 90%;
+    vertical-align: middle;
+    border: none;
+    outline: none;
+    resize: none;
+}
+
+.commentTotalBtn{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.wishBtn{
+    margin-top: 5px;
+}
+
+.commentBtn{
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.commentListTable{
+    margin-top: 50px;
+    margin-bottom: 30px;
+    width: 100%;
+    border-bottom: #bbbcbd;
+}
+
+.cmt_nickname{
+    padding-left: 15px;
+}
+
+.cmt_content{
+    width: 90%;
+    height: 35px;
+    padding-left: 15px;
+
+}
+
+.content-box td {
+    border-bottom: 1px dashed #bbbcbd;
+}
+.updateContent{
+    padding-left: 15px;
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 34px;
+    font-size: 16px;
+}
+
+.commentListTable button{
+    width: 35px;
+    height: 25px;
+}
+
+.cmtUpdateDeleteBtn{
+    display: flex;
+    height: 35px;
+    justify-content: space-around;
+    padding-top: 10px;
+    padding-right: 25px;
+    border-bottom: 1px dashed #bbbcbd;
+}
+
+.title input{
+    border: none;
+    outline: none;
+}
+.info input{
+    border: none;
+    outline: none;
+}
+
+.cont input{
+    border: none;
+    outline: none;
 }
