@@ -2,7 +2,7 @@
 <html>
 <head>
     <link rel="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
-    <title>상품목록</title>
+    <title>공주마켓</title>
     <link rel="stylesheet" href="/css/productSearch.css">
 </head>
 <jsp:include page="header.jsp"></jsp:include>

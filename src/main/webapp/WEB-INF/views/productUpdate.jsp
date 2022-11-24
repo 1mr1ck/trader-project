@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>상품수정</title>
+    <title>공주마켓</title>
     <link rel="stylesheet" href="/css/productCreate.css">
 </head>
 <jsp:include page="header.jsp"></jsp:include>

@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
-    <title>게시판 목록</title>
+    <title>공주마켓</title>
     <link rel="stylesheet" href="/css/boardView.css">
 </head>
 <jsp:include page="header.jsp"></jsp:include>

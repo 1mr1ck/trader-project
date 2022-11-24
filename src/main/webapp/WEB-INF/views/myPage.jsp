@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="/css/myPageTemplate.css">
     <link rel="stylesheet" href="/css/myPageTable.css">
     <link rel="stylesheet" href="/css/join.css">
-    <title>Trader myPage</title>
+    <title>공주마켓</title>
 </head>
 <header>
     <jsp:include page="header.jsp"></jsp:include>

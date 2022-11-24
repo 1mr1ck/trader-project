@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="/css/myPageTemplate.css">
     <link rel="stylesheet" href="/css/myPageTable.css">
     <link rel="stylesheet" href="/css/login.css">
-    <title>Trader</title>
+    <title>공주마켓</title>
 </head>
 <body>
 <header>

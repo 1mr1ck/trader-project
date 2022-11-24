@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>공주마켓</title>
   <link rel="stylesheet" href="/css/manu3.css">
 </head>
 <body>
