@@ -55,11 +55,11 @@ function productSearch() {
 
             output += '<tr>';
             output += '<td><img src="' + img_url + '" style="width: 100px; height: 100px;"></td>';
-            output += '<td><a href="productView/"' + p_no + '">' + p_title + '</a></td>';
+            output += '<td><a href="/productView/' + p_no + '">' + p_title + '</a></td>';
             output += '<td>' + category + '</td>';
             output += '<td>' + nickname + '</td>';
             output += '<td>' + p_type + '</td>';
-            output += '<td>' + priceStr + '원</td>';
+            output += '<td>' + price + '원</td>';
             output += '<td>' + p_modDate + '</td>';
             output += '</tr>';
         });
@@ -70,5 +70,7 @@ function productSearch() {
                 output += '<button onclick=x_page(' + i + ') style="background-color: #ffffff">' + (i + 1) + '</button>'
             }
         }
+
+        box.innerHTML = output;
     });
 }
