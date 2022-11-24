@@ -29,6 +29,7 @@ header{
 }
 aside{
     grid-area: aside;
+    border-right : solid 1px #dadada;
 }
 section{
     grid-area: section;

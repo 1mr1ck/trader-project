@@ -69,7 +69,7 @@ public class BoardController {
     }
 
     @GetMapping("/boardView")
-    public ModelAndView SearchTotalPageviews(@PageableDefault(size=2, sort="mod_date", direction = Sort.Direction.DESC) Pageable pageable) throws IOException {
+    public ModelAndView SearchTotalPageviews(@PageableDefault(size=10, sort="mod_date", direction = Sort.Direction.DESC) Pageable pageable) throws IOException {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("boardView");
         modelAndView.addObject("response", getBoardAll(pageable).getContent());
@@ -78,7 +78,7 @@ public class BoardController {
     }
 
     @PostMapping("/boardView/pageNum/{pageNum}")
-    public Page<Board> boardList(@PathVariable int pageNum, @PageableDefault(size=2, sort="mod_date", direction = Sort.Direction.DESC) Pageable pageable) {
+    public Page<Board> boardList(@PathVariable int pageNum, @PageableDefault(size=10, sort="mod_date", direction = Sort.Direction.DESC) Pageable pageable) {
         return service.boardByPage(pageable.withPage(pageNum));
     }
 

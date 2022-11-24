@@ -33,35 +33,7 @@ table.type04 td {
     color : black;
 }
 
-.modDate{
-    width: 100px;
-}
-.regDate{
-    width: 100px;
-}
-.nickname{
-    width: 100px;
-}
-.title{
-    width: 150px;
-}
-.category{
-    width : 100px;
-}
-.type{
-    width: 100px;
-}
-.check{
-    width: 100px;
-}
 
-.b_no {
-    width: 100px;
-}
-
-.p_no {
-    width: 100px;
-}
 
 .p_btn_U_D{
     padding: 0;

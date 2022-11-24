@@ -15,6 +15,7 @@ function productSearch() {
         "timeout": 0,
     };
 
+    const btn_box = document.querySelector('.page_btn_box');
     const box = document.querySelector('.container');
     $.ajax(settings).done(function (response) {
         console.log(response);
@@ -35,6 +36,7 @@ function productSearch() {
         );
 
         var output = "";
+        var btn_output = "";
 
         list.forEach(e => {
             const p_no = e.p_no;
@@ -60,17 +62,16 @@ function productSearch() {
             output += '<td>' + p_modDate + '</td>';
             output += '</tr>';
         });
-        output += '<div class="page_btn_box">';
         for (let i = 0; i < totalPage; i++) {
             if (i == 0) {
-                output += '<button onclick=x_page(' + i + ') style="background-color: #ffc9f6" class="page_btn">' + (i + 1) + '</button>'
+                btn_output += '<button onclick=x_page(' + i + ') style="background-color: #ffc9f6" class="page_btn">' + (i + 1) + '</button>'
             } else {
-                output += '<button onclick=x_page(' + i + ') style="background-color: #ffffff" class="page_btn">' + (i + 1) + '</button>'
+                btn_output += '<button onclick=x_page(' + i + ') style="background-color: #ffffff" class="page_btn">' + (i + 1) + '</button>'
             }
         }
-        output += '</div>';
 
         box.innerHTML = output;
+        btn_box.innerHTML = btn_output;
     });
 }
 
@@ -91,6 +92,7 @@ function x_page(pageNum) {
         },
     };
 
+    const btn_box = document.querySelector('.page_btn_box');
     const box = document.querySelector('.container');
     $.ajax(settings).done(function (response) {
         console.log(response);
@@ -99,6 +101,7 @@ function x_page(pageNum) {
         const totalPage = response.totalPages;
 
         var output = "";
+        var btn_output = "";
 
         list.forEach(e => {
             const p_no = e.p_no;
@@ -124,16 +127,15 @@ function x_page(pageNum) {
             output += '<td>' + p_modDate + '</td>';
             output += '</tr>';
         });
-        output += '<div class="page_btn_box">';
         for (let i = 0; i < totalPage; i++) {
             if (i == pageNum) {
-                output += '<button onclick=x_page(' + i + ') style="background-color: #ffc9f6" class="page_btn">' + (i + 1) + '</button>'
+                btn_output += '<button onclick=x_page(' + i + ') style="background-color: #ffc9f6" class="page_btn">' + (i + 1) + '</button>'
             } else {
-                output += '<button onclick=x_page(' + i + ') style="background-color: #ffffff" class="page_btn">' + (i + 1) + '</button>'
+                btn_output += '<button onclick=x_page(' + i + ') style="background-color: #ffffff" class="page_btn">' + (i + 1) + '</button>'
             }
         }
-        output += '</div>';
 
         box.innerHTML = output;
+        btn_box.innerHTML = btn_output;
     });
 }
