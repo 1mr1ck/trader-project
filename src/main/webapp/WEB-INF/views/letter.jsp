@@ -2,18 +2,18 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
-    <title>쪽지함</title>
+    <title>내 쪽지함</title>
     <link rel="stylesheet" href="/css/letter.css">
 </head>
 <body>
-    <h1>쪽지함</h1>
-    <table>
-        <thead>
+    <h1>내 쪽지함</h1>
+    <table class="letter-table">
+        <thead class="letter-thead">
         <tr>
-            <th>상대방</th>
-            <th>상품명</th>
-            <th>메시지</th>
-            <th>작성시간</th>
+            <th>수신자</th>
+            <th>상품제목</th>
+            <th>메시지내용</th>
+            <th>보낸시간</th>
         </tr>
         </thead>
         <tbody>
