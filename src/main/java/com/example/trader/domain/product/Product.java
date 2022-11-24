@@ -29,7 +29,7 @@ public class Product extends Timestamp {
     private String img_url;
     private String p_type;
     private String nickname;
-    private int price;
+    private String price;
 
     public Product(ProductDto productDto) {
         this.user_no = productDto.getUser_no();

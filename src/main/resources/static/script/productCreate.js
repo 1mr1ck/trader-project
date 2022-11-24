@@ -44,7 +44,16 @@ function productCreate() {
         let nickname = $('#nickname').val();
         let price = $('#price').val();
 
+        console.log(user_no);
+        console.log(other_no);
+        console.log(p_title);
+        console.log(p_content);
+        console.log(category);
+        console.log(p_check);
         console.log(img_url);
+        console.log(p_type);
+        console.log(nickname);
+        console.log(price);
 
         let createSettings = {
             "url": "http://localhost:8080/v1/write/product",
