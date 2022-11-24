@@ -27,7 +27,7 @@
                 </c:if>
                 <td>${letter.p_title}</td>
                 <td>${letter.l_content}</td>
-                <c:set var="regDate" value="${(String.valueOf(letter.regDate)).substring(12, 16)}"/>
+                <c:set var="regDate" value="${(String.valueOf(letter.regDate)).substring(11, 16)}"/>
                 <td>${regDate}</td>
             </tr>
         </c:forEach>

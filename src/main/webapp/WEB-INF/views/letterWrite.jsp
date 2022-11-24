@@ -18,7 +18,7 @@
                         <td>${letter.other_nickname}</td>
                     </c:if>
                     <td>${letter.l_content}</td>
-                    <c:set var="regDate" value="${(String.valueOf(letter.regDate)).substring(12, 16)}"/>
+                    <c:set var="regDate" value="${(String.valueOf(letter.regDate)).substring(11, 16)}"/>
                     <td>${regDate}</td>
                 </tr>
                 <c:set var="user_no" value="${letter.user_no}"/>
@@ -45,7 +45,7 @@
         </div>
         <div>
             <input type="button" onclick="letterWrite()" value="submit" id="btnInput" style="cursor: pointer">
-            <input type="button" onclick="location.href='/'" value="home" style="cursor: pointer">
+            <input type="button" onclick="location.href='/myLetter/${sessionScope.no}'" value="쪽지함" style="cursor: pointer">
         </div>
     </form>
     <div>
