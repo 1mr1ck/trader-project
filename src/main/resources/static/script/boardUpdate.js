@@ -49,3 +49,25 @@ $(function() {
         boardUpdate();
     });
 });
+
+function deleteBoard() {
+    let b_no = $('#boardNo').val();
+    document.location.href='http://localhost:8080/v1/delete/board?b_no='+b_no;
+}
+
+$(function() {
+
+    $('#delete').click(function(){
+
+    if (confirm("정말 삭제하시겠습니까??") == true){    //확인
+
+        deleteBoard();
+
+    }else{   //취소
+
+        return false;
+
+    }
+
+    });
+});

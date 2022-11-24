@@ -7,7 +7,7 @@
 </head>
 <jsp:include page="header.jsp"></jsp:include>
 <body>
-<form class="write">
+<form class="write" >
     <div class="board_wrap">
         <div class="board_title">
             <strong>커뮤니티(수정)</strong>
