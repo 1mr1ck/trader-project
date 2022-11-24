@@ -6,6 +6,8 @@ import com.example.trader.domain.p_comment.P_comment;
 import com.example.trader.domain.p_comment.P_commentDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import com.example.trader.domain.board.BoardDto;
 import org.springframework.transaction.annotation.Transactional;
@@ -34,8 +36,8 @@ public class BoardService {
         return board;
     }
 
-    public List<Board> readBoardAll() {
-        return repository.findAll_DESC();
+    public Page<Board> readBoardAll(Pageable pageable) {
+        return repository.findAll_DESC(pageable);
     }
 
     // 1user userNo board
@@ -58,5 +60,7 @@ public class BoardService {
     public void deleteBoard(int b_no) {repository.deleteById(b_no);}
 
 
-
+    public Page<Board> boardByPage(Pageable pageable) {
+        return repository.findAllByPage(pageable);
+    }
 }

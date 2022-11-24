@@ -6,6 +6,10 @@ import com.example.trader.service.B_commentService;
 import com.example.trader.service.BoardService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
@@ -65,17 +69,22 @@ public class BoardController {
     }
 
     @GetMapping("/boardView")
-    public ModelAndView SearchTotalPageviews() throws IOException {
+    public ModelAndView SearchTotalPageviews(@PageableDefault(size=10, sort="mod_date", direction = Sort.Direction.DESC) Pageable pageable) throws IOException {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("boardView");
-        modelAndView.addObject("response", getBoardAll());
+        modelAndView.addObject("response", getBoardAll(pageable).getContent());
         return modelAndView;
+    }
+
+    @PostMapping("/boardView/pageNum/{pageNum}")
+    public Page<Board> boardList(@PathVariable int pageNum, @PageableDefault(size=10, sort="mod_date", direction = Sort.Direction.DESC) Pageable pageable) {
+        return service.boardByPage(pageable.withPage(pageNum));
     }
 
     //getBoardAll
     @GetMapping("/v1/search/boardAll")
-    public List<Board> getBoardAll () throws IOException {
-        return service.readBoardAll();
+    public Page<Board> getBoardAll (@PageableDefault(size=10, sort="mod_date", direction = Sort.Direction.DESC) Pageable pageable) throws IOException {
+        return service.readBoardAll(pageable);
     }
 
     //post

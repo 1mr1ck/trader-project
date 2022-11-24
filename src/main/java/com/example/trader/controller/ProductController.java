@@ -94,6 +94,11 @@ public class ProductController {
         return service.searchProductByCategoryAndP_typeAndKeyword(category, p_type, keyword, pageable);
     }
 
+    @GetMapping("/search/product/category/{category}/p_type/{p_type}/keyword/{keyword}/pageNum/{pageNum}")
+    public Page<Product> getProductByCategoryAndP_typeAndKeyword(@PathVariable String category, @PathVariable String p_type, @PathVariable String keyword, @PathVariable int pageNum, @PageableDefault(size=10, sort="mod_date", direction = Sort.Direction.DESC) Pageable pageable) {
+        return service.searchProductByCategoryAndP_typeAndKeyword(category, p_type, keyword, pageable.withPage(pageNum));
+    }
+
     // GetProductByUser_noAndP_typeAndP_check
     @PostMapping("/v1/search/product/user_no/{user_no}/p_type/{p_type}/p_check/{p_check}")
     public List<Product> getProductByUser_noAndP_typeAndKeyword(@PathVariable int user_no, @PathVariable String p_type, @PathVariable String p_check) {

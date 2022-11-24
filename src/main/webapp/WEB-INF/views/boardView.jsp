@@ -30,7 +30,7 @@
                     <th class="th-date">등록일</th>
                 </tr>
                 </thead>
-                <tbody>
+                <tbody class="boardList">
                 <c:forEach items="${response}" var="list">
                     <tr>
                         <td>${list.b_no}</td>
