@@ -74,7 +74,7 @@ function letterWrite() {
                 console.log(e.make);
                 const l_content = e.l_content;
                 const regStr = e.regDate;
-                const regDate = regStr.substring(12, 16);
+                const regDate = regStr.substring(11, 16);
 
                 output += '<tr><td>' + nickname + '</td><td>' + l_content + '</td><td>' + regDate + '</td></tr>';
             });
