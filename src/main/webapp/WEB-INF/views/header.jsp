@@ -47,7 +47,7 @@
         <li><a href="/logout">로그아웃</a></li>
     </ul>
     </c:if>
-    <a href="header.jsp" class="navbar1_manubtn">메뉴</a>
+    <a href="smallMenu" class="navbar1_manubtn">메뉴</a>
 </header>
 </body>
 </html>
