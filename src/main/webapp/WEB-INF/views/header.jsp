@@ -9,6 +9,14 @@
     <link rel="stylesheet" href="/css/header.css">
     <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-round.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <!-- favicon image -->
+    <link rel="shortcut icon" href="/img/gongju.png">
+
+    <meta property="og:title" content="공주마켓">
+    <meta property="og:description" content="공손하게주거니받거니">
+    <meta property="og:image" content="/img/gongju.png">
+
+    <!-- ... -->
 </head>
 <body>
 <header class="header1">
