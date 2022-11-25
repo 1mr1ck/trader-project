@@ -8,7 +8,7 @@ function productUpdate() {
     let price = $('#price').val();
 
     var settings = {
-        "url": "http://localhost:8080/v1/update/product",
+        "url": "/v1/update/product",
         "method": "POST",
         "timeout": 0,
         "headers": {

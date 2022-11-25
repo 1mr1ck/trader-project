@@ -7,7 +7,7 @@ let p_check = document.getElementById('p_check').value;
 // 상품 게시글
 function my_product() {
     var settings = {
-        "url": "http://localhost:8080/search/product/user_no/" + login_no + "/p_type/" + p_type + "/p_check/" + p_check,
+        "url": "/search/product/user_no/" + login_no + "/p_type/" + p_type + "/p_check/" + p_check,
         "method": "POST",
         "timeout": 0,
         "headers": {
@@ -124,7 +124,7 @@ function my_product() {
 function x_page(pageNum) {
     console.log(pageNum);
     var settings = {
-        "url": "http://localhost:8080/search/product/user_no/" + login_no + "/p_type/" + p_type + "/p_check/" + p_check + "/pageNum/" + pageNum,
+        "url": "/search/product/user_no/" + login_no + "/p_type/" + p_type + "/p_check/" + p_check + "/pageNum/" + pageNum,
         "method": "POST",
         "timeout": 0,
         "headers": {
@@ -253,7 +253,7 @@ function setP_type(type) {
 // 상품 게시글 삭제
 function productDelete(p_no, user_no) {
     var settings = {
-        "url": "http://localhost:8080/v1/delete/product?p_no=" + p_no + "&user_no=" + user_no,
+        "url": "/v1/delete/product?p_no=" + p_no + "&user_no=" + user_no,
         "method": "POST",
         "timeout": 0,
         "headers": {
@@ -334,7 +334,7 @@ function my_board() {
 function my_boardCmt() {
 
     let settings = {
-        "url" : "http://localhost:8080/b_comment/user/" + login_no,
+        "url" : "/b_comment/user/" + login_no,
         "method" : "POST",
         "timeout" : 0,
         "headers" : {
@@ -394,7 +394,7 @@ function my_boardCmt() {
 function my_productCmt() {
 
     let settings = {
-        "url" : "http://localhost:8080/p_comment/user/" + login_no,
+        "url" : "/p_comment/user/" + login_no,
         "method" : "POST",
         "timeout" : 0,
         "headers" : {
@@ -453,7 +453,7 @@ function my_productCmt() {
 function my_wish() {
 
     let settings = {
-        "url" : "http://localhost:8080/wish/" + login_no,
+        "url" : "/wish/" + login_no,
         "method" : "POST",
         "timeout" : 0,
         "headers" : {

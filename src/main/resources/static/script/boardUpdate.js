@@ -8,7 +8,7 @@ function boardUpdate () {
 
 
     var settings = {
-        "url": "http://localhost:8080/v1/update/board/",
+        "url": "/v1/update/board/",
         "method": "POST",
         "timeout": 0,
         "headers": {
@@ -52,7 +52,7 @@ $(function() {
 
 function deleteBoard() {
     let b_no = $('#boardNo').val();
-    document.location.href='http://localhost:8080/v1/delete/board?b_no='+b_no;
+    document.location.href='/v1/delete/board?b_no='+b_no;
 }
 
 $(function() {

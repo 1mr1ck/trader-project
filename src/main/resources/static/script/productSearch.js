@@ -8,7 +8,7 @@ function productSearch() {
         keyword = "전체"
 
     let settings = {
-        "url": "http://localhost:8080/search/product/category/" + category + "/p_type/" + p_type + "/keyword/" + keyword,
+        "url": "/search/product/category/" + category + "/p_type/" + p_type + "/keyword/" + keyword,
         "method": "GET",
         "timeout": 0,
     };
@@ -83,7 +83,7 @@ function x_page(pageNum) {
         keyword = "전체"
 
     let settings = {
-        "url": "http://localhost:8080/search/product/category/" + category + "/p_type/" + p_type + "/keyword/" + keyword + "/pageNum/" + pageNum,
+        "url": "/search/product/category/" + category + "/p_type/" + p_type + "/keyword/" + keyword + "/pageNum/" + pageNum,
         "method": "GET",
         "timeout": 0,
         "headers": {

@@ -17,7 +17,7 @@ function saveComment(b_no) {
     }
 
     let settings = {
-        "url": "http://localhost:8080/b_comment/board/" + b_no,
+        "url": "/b_comment/board/" + b_no,
         "method": "POST",
         "timeout": 0,
         "headers": {
@@ -70,7 +70,7 @@ function saveComment(b_no) {
 function updateComment(b_no, bc_no) {
 
     let settings = {
-        "url" : "http://localhost:8080/b_comments/board/" + b_no,
+        "url" : "/b_comments/board/" + b_no,
         "method" : "POST",
         "timeout" : 0,
         "header" : {
@@ -122,7 +122,7 @@ function updateComment(b_no, bc_no) {
 function modifyComment(b_no, bc_no) {
     const updateContent = document.getElementById('updateContent').value;
     let settings = {
-        "url" : "http://localhost:8080/b_comment/board/" + b_no + "/" + bc_no + "/update",
+        "url" : "/b_comment/board/" + b_no + "/" + bc_no + "/update",
         "method" : "POST",
         "timeout" : 0,
         "headers" : {
@@ -171,7 +171,7 @@ function modifyComment(b_no, bc_no) {
 function modCancelComment(b_no, bc_no) {
 
     let settings = {
-        "url": "http://localhost:8080/b_comments/board/" + b_no,
+        "url": "/b_comments/board/" + b_no,
         "method": "POST",
         "timeout": 0,
         "headers": {
@@ -222,7 +222,7 @@ function modCancelComment(b_no, bc_no) {
 function deleteComment(b_no, bc_no) {
 
     var settings = {
-        "url" : "http://localhost:8080/b_comment/board/" + b_no + "/" + bc_no + "/delete",
+        "url" : "/b_comment/board/" + b_no + "/" + bc_no + "/delete",
         "method" : "POST",
         "timeout" : 0,
         "headers" : {

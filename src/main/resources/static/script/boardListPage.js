@@ -2,7 +2,7 @@ function x_page(pageNum) {
 
 
     var settings = {
-        "url": "http://localhost:8080/boardView/pageNum/" + pageNum,
+        "url": "/boardView/pageNum/" + pageNum,
         "method": "POST",
         "timeout": 0,
         "headers": {

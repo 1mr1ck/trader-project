@@ -7,7 +7,7 @@ function updateP_check() {
         other_no = 1;
 
     var settings = {
-        "url": "http://localhost:8080/v1/update/product/p_check",
+        "url": "/v1/update/product/p_check",
         "method": "POST",
         "timeout": 0,
         "headers": {

@@ -11,7 +11,7 @@ function createBoard(){
     }
 
     let settings = {
-        "url": "http://localhost:8080/v1/write/board",
+        "url": "/v1/write/board",
         "method": "POST",
         "timeout": 0,
         "headers": {

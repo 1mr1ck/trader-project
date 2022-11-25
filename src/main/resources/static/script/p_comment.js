@@ -16,7 +16,7 @@ function saveComment(p_no) {
     }
 
     let settings = {
-        "url": "http://localhost:8080/p_comment/product/" + p_no,
+        "url": "/p_comment/product/" + p_no,
         "method": "POST",
         "timeout": 0,
         "headers": {
@@ -69,7 +69,7 @@ function saveComment(p_no) {
 function updateComment(p_no, pc_no) {
 
     let settings = {
-        "url" : "http://localhost:8080/p_comments/product/" + p_no,
+        "url" : "/p_comments/product/" + p_no,
         "method" : "POST",
         "timeout" : 0,
         "header" : {
@@ -122,7 +122,7 @@ function updateComment(p_no, pc_no) {
 function modifyComment(p_no, pc_no) {
     const updateContent = document.getElementById("updateContent").value;
     let settings = {
-        "url": "http://localhost:8080/p_comment/product/" + p_no + "/" + pc_no + "/update",
+        "url": "/p_comment/product/" + p_no + "/" + pc_no + "/update",
         "method": "POST",
         "timeout": 0,
         "headers": {
@@ -175,7 +175,7 @@ function modifyComment(p_no, pc_no) {
 function modCancleComment(p_no, pc_no) {
 
     let settings = {
-        "url": "http://localhost:8080/p_comments" +
+        "url": "/p_comments" +
             "/product/" + p_no,
         "method": "POST",
         "timeout": 0,
@@ -226,7 +226,7 @@ function modCancleComment(p_no, pc_no) {
 function deleteComment(p_no, pc_no) {
 
     let settings = {
-        "url": "http://localhost:8080/p_comment/product/" + p_no + "/" + pc_no + "/delete",
+        "url": "/p_comment/product/" + p_no + "/" + pc_no + "/delete",
         "method": "POST",
         "timeout": 0,
         "headers": {

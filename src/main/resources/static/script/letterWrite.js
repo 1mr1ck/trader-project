@@ -28,7 +28,7 @@ function letterWrite() {
     }
 
     let writeSettings = {
-        "url": "http://localhost:8080/v1/write/letter",
+        "url": "/v1/write/letter",
         "method": "POST",
         "timeout": 0,
         "headers": {
@@ -48,7 +48,7 @@ function letterWrite() {
     };
 
     let printSettings = {
-        "url": "http://localhost:8080/v1/read/letter/" + p_no + "/" + user_no + "/" + other_no,
+        "url": "/v1/read/letter/" + p_no + "/" + user_no + "/" + other_no,
         "method": "POST",
         "timeout": 0,
         "headers": {

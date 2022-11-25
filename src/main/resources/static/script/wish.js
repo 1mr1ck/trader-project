@@ -10,7 +10,7 @@ const wish_box = document.getElementById('wish-box');
 // 처음에 페이지 이동할 때 onload
 function wishOnload() {
     let settings = {
-        "url": "http://localhost:8080/wish/" + product_no + "/" + log_no,
+        "url": "/wish/" + product_no + "/" + log_no,
         "method": "POST",
         "timeout": 0,
         "headers": {
@@ -47,7 +47,7 @@ function wishGo(p_no, user_no) {
     }
 
     let settings = {
-        "url": "http://localhost:8080/product/wish/" + p_no + "/" + user_no,
+        "url": "/product/wish/" + p_no + "/" + user_no,
         "method": "POST",
         "timeout": 0,
         "headers": {
@@ -68,7 +68,7 @@ function wishGo(p_no, user_no) {
 function wishCancel(w_no) {
 
     let settings = {
-        "url": "http://localhost:8080/product/wish/" + w_no + "/delete",
+        "url": "/product/wish/" + w_no + "/delete",
         "method": "POST",
         "timeout": 0,
         "headers": {

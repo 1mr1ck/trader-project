@@ -56,7 +56,7 @@ function productCreate() {
         console.log(price);
 
         let createSettings = {
-            "url": "http://localhost:8080/v1/write/product",
+            "url": "/v1/write/product",
             "method": "POST",
             "timeout": 0,
             "headers": {
