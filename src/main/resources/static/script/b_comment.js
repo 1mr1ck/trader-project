@@ -17,7 +17,7 @@ function saveComment(b_no) {
     }
 
     let settings = {
-        "url": "http://localhost:8080/b_comment/board/" + b_no,
+        "url": "/b_comment/board/" + b_no,
         "method": "POST",
         "timeout": 0,
         "headers": {
