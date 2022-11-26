@@ -101,4 +101,9 @@ public class MainController {
     public String manu() {
         return "manu";
     }
+
+    @RequestMapping("/smallMenu")
+    public String smallMenu(){
+        return "smallMenu";
+    }
 }
