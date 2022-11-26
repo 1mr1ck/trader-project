@@ -49,11 +49,12 @@
         }
         input[type=button]{
             text-align: center;
-            width: 130px;
-            height: 75px;
+            width: 20%;
+            height: 14%;
             border: none;
             font-size: 15px;
-            padding: 15px;
+            padding-top: 15px;
+            padding-bottom: 15px;
             border-radius: 15px;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
             text-decoration: none;
