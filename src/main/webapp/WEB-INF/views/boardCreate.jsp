@@ -7,7 +7,6 @@
 </head>
 <jsp:include page="header.jsp"></jsp:include>
 <body>
-<form class="write">
     <div class="board_wrap">
         <div class="board_title">
             <strong>커뮤니티</strong>
@@ -45,11 +44,10 @@
                         <option value="그냥 글쓰기">그냥 글쓰기</option>
                     </select>
                 </c:if>
-                <input type="button" id="create" value="글쓰기">
+                <input type="button" onclick="createBoard()" id="create" value="글쓰기">
             </div>
         </div>
     </div>
-</form>
 <script src="script/createBoard.js"></script>
 </body>
 <jsp:include page="footer.jsp"></jsp:include>

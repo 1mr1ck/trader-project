@@ -32,11 +32,6 @@ function createBoard(){
         alert("글쓰기 성공");
         location.href="/boardView";
     });
-    $.ajax(settings).fail(function(error){
-        alert("글쓰기 실패");
-        console.log(error);
-    })
-
 };
 $(function() {
 
@@ -51,6 +46,5 @@ $(function() {
             alert("내용을 입력해주세요.");
             return false;
         }
-        createBoard();
     });
 });
