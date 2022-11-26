@@ -98,7 +98,7 @@ function updateComment(p_no, pc_no) {
             output += '</tr>';
             output += '<tr class="content-box">';
             if(pc_no == cmt_no) {
-                output += '<td class="cmt_content"><input type="text" class="updateContent" id="updateContent" name="updateContent" value="' + content + '"</td>';
+                output += '<td class="cmt_content"><input type="text" class="updateContent" id="updateContent" name="updateContent" value="' + content + '" style="border: 3px solid #ffc9f6"></td>';
                 output += '<td class="cmtUpdateDeleteBtn"><button onclick="modifyComment(' + p_no + ','  + cmt_no + ')" class="cmt-btn">수정</button>' +
                     '<button onclick="modCancleComment(' + p_no + ','  + cmt_no + ')" class="cmt-btn">취소</button></td>';
             } else {
