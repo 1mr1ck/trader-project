@@ -10,6 +10,16 @@ function createBoard(){
         noticeCheck=true;
     }
 
+    if(b_title == "") {
+        alert("제목을 입력해주세요.");
+        return;
+    }
+
+    if(b_content == "") {
+        alert("내용을 입력해주세요.");
+        return;
+    }
+
     let settings = {
         "url": "/v1/write/board",
         "method": "POST",
@@ -33,18 +43,3 @@ function createBoard(){
         location.href="/boardView";
     });
 };
-$(function() {
-
-    $('#create').click(function(){
-
-        if($('#b_title').val() == ""){
-            alert("제목을 입력해주세요.");
-            return false;
-        }
-
-        if($('#b_content').val() == ""){
-            alert("내용을 입력해주세요.");
-            return false;
-        }
-    });
-});
