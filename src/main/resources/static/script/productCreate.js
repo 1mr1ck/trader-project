@@ -14,6 +14,26 @@ function uncomma(str) {
 
 function productCreate() {
 
+    if($('#p_title').val() === ""){
+        alert("제목을 입력해주세요.");
+        return false;
+    }
+
+    if($('#price').val() === ""){
+        alert("가격을 입력해주세요.");
+        return false;
+    }
+
+    if($('#input_img').val() === ""){
+        alert("이미지를 넣어주세요.");
+        return false;
+    }
+
+    if($('#p_content').val() === ""){
+        alert("내용을 입력해주세요.");
+        return false;
+    }
+
     var file = document.getElementById('input_img');
     var form = new FormData();
     form.append("image", file.files[0])
@@ -43,17 +63,6 @@ function productCreate() {
         let p_type = $('#p_type').val();
         let nickname = $('#nickname').val();
         let price = $('#price').val();
-
-        console.log(user_no);
-        console.log(other_no);
-        console.log(p_title);
-        console.log(p_content);
-        console.log(category);
-        console.log(p_check);
-        console.log(img_url);
-        console.log(p_type);
-        console.log(nickname);
-        console.log(price);
 
         let createSettings = {
             "url": "/v1/write/product",

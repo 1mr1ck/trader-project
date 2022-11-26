@@ -252,6 +252,9 @@ function setP_type(type) {
 
 // 상품 게시글 삭제
 function productDelete(p_no, user_no) {
+    if(confirm("등록 물픔을 삭제하시겠습니까?") == false) {
+        return;
+    }
     var settings = {
         "url": "/v1/delete/product?p_no=" + p_no + "&user_no=" + user_no,
         "method": "POST",

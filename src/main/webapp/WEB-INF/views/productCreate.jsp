@@ -68,7 +68,7 @@
                 </div>
             </div>
             <div class="bt_wrap">
-                <input class="buttons" type="button" onclick="productCreate()" value="상품등록" style="cursor: pointer">
+                <input class="buttons" type="button" onclick="productCreate()" value="상품등록" id="p_create_btn" style="cursor: pointer">
             </div>
         </div>
     </div>
