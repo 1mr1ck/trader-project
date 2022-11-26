@@ -44,6 +44,8 @@ function productCreate() {
         let nickname = $('#nickname').val();
         let price = $('#price').val();
 
+        if(p_title)
+
         console.log(user_no);
         console.log(other_no);
         console.log(p_title);
@@ -83,3 +85,29 @@ function productCreate() {
         });
     });
 }
+
+$(function() {
+
+    $('#p_create_btn').click(function(){
+
+        if($('#p_title').val() == ""){
+            alert("제목을 입력해주세요.");
+            return false;
+        }
+
+        if($('#price').val() == ""){
+            alert("가격을 입력해주세요.");
+            return false;
+        }
+
+        if($('#input_img').val() == ""){
+            alert("이미지를 넣어주세요.");
+            return false;
+        }
+
+        if($('#p_content').val() == ""){
+            alert("내용을 입력해주세요.");
+            return false;
+        }
+    });
+});
