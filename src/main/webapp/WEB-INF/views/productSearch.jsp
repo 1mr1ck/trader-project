@@ -16,14 +16,14 @@
                     <select id="category" name="category" required>
                         <option value="전체">전체</option>
                         <option value="전자기기">전자기기</option>
-                        <option value="가구/인테리어">가구/인테리어</option>
+                        <option value="가구,인테리어">가구,인테리어</option>
                         <option value="유아동">유아동</option>
                         <option value="의류">의류</option>
                         <option value="스포츠">스포츠</option>
-                        <option value="취미/게임/음반">취미/게임/음반</option>
+                        <option value="취미,게임,음반">취미,게임,음반</option>
                         <option value="도서">도서</option>
                         <option value="중고차">중고차</option>
-                        <option value="티켓/교환권">티켓/교환권</option>
+                        <option value="티켓,교환권">티켓,교환권</option>
                         <option value="식품">식품</option>
                         <option value="반려동물용품">반려동물용품</option>
                         <option value="식물">식물</option>
